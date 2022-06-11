@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.50e52837bc8a3fd7f4069e657638c673.js"
+  "/precache-manifest.65e255c7cb50a83a72bc8f6fe5d31588.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "www.rgpvnotes.in"});
