@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# dynamically generated folders
+src/pages/
+
 # generated types
 .astro/
 
