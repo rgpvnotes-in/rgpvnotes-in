@@ -2,6 +2,7 @@
   "name": "www.rgpvnotes.in",
   "type": "module",
   "version": "1.0.0",
+  "license": "gpl-3.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
