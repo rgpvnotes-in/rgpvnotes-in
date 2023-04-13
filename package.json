@@ -1,17 +1,65 @@
 {
-  "name": "www.rgpvnotes.in",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/vue": "^2.1.1",
-    "astro": "^2.2.0",
-    "vue": "^3.2.30"
-  }
+    "name": "www.rgpvnotes.in",
+    "version": "2.0.0-astro",
+    "description": "www.rgpvnotes.in build with astro framework.",
+    "keywords": [
+        "astro",
+        "islands",
+        "blog",
+        "static",
+        "statically-generated",
+        "components",
+        "yarn",
+        "node",
+        "eslint",
+        "prettier",
+        "hybrid",
+        "browser"
+    ],
+    "bugs": {
+        "url": "https://github.com/rgpvnotes-in/rgpvnotes-in/issues",
+        "email": "report-bugs@rgpvnotes.in"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rgpvnotes-in/rgpvnotes-in.git"
+    },
+    "license": "GPL-3.0-only",
+    "author": {
+        "name": "RGPV Notes",
+        "email": "hey@rgpvnotes.in",
+        "url": "https://www.rgpvnotes.in/"
+    },
+    "type": "module",
+    "scripts": {
+        "astro": "astro",
+        "build": "astro build",
+        "dev": "astro dev",
+        "prepare": "husky install",
+        "preview": "astro preview",
+        "start": "astro dev"
+    },
+    "lint-staged": {
+        "*.js": "eslint --cache --fix",
+        "*.{js,css,md}": "prettier --write"
+    },
+    "dependencies": {
+        "@astrojs/vue": "^2.1.1",
+        "astro": "^2.2.1",
+        "vue": "^3.2.47"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.58.0",
+        "@typescript-eslint/parser": "^5.58.0",
+        "eslint": "^8.38.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-vue": "^9.10.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.1",
+        "prettier": "2.8.7"
+    },
+    "engines": {
+        "node": ">=18.15.0",
+        "npm": "~9.6.4"
+    }
 }
