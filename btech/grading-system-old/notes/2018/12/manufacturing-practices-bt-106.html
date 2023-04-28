@@ -389,9 +389,9 @@ NOTES
 <span class="Tooltip">
 <button class="Tooltip-btn click-btn click-btn--book">Click Here For Books</button>
 <span class="Tooltip-box"><ul class="text-left">
-<li><a target="_blank" rel="external nofollow" href="https://dl.flipkart.com/dl//decode-advanced-computer-architecture-rgpv-sem-vi-cse-r-17/p/itmfebyzpf8mtqgj?pid=9789333218634&affid=rgpvnotes">Decode</a></li>
-<li><a target="_blank" rel="external nofollow" href="https://www.amazon.in/gp/product/B06XKMG62G/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B06XKMG62G&linkCode=as2&tag=rgpvnotes06-21&linkId=d25b2fca4953e57d12432430a61fa457">Shivani</a></li>
-<li><a target="_blank" rel="external nofollow" href="https://dl.flipkart.com/dl//decode-mathematics-ii-rgpv-b-tech-sem-ii-common-r-18/p/itmfetrmtwet6bua?pid=9789333201377&affid=rgpvnotes">Technical</a></li>
+<li><a target="_blank" rel="external nofollow" href="https://dl.flipkart.com/dl//decode-advanced-computer-architecture-rgpv-sem-vi-cse-r-17/p/itmfebyzpf8mtqgj?pid=9789333218634&affid=rgpvnotes">Server 1</a></li>
+<li><a target="_blank" rel="external nofollow" href="https://www.amazon.in/gp/product/B06XKMG62G/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B06XKMG62G&linkCode=as2&tag=rgpvnotes06-21&linkId=d25b2fca4953e57d12432430a61fa457">Server 2</a></li>
+
 </ul></span></span>
 </div>
 
@@ -1065,6 +1065,19 @@ then all odd numbers for view & even for download buttons
         </script>
 <script>
   
+const __subjectName = document.querySelector('#Blog1 > div.blog-posts.hfeed.row.work-posts.grid > div > div.sjps.entry-content > div:nth-child(2) > h5').innerText.slice(0, -9).replace(/\s/gm, '%20').toLowerCase();
+// document.querySelector('div.separator > div > span > span > ul > li:nth-child(3)').remove();
+
+const __server1Link = `https://www.amazon.in/s?k=${__subjectName}&i=stripbooks&crid=1L2MEIGT2WNIK&sprefix=${__subjectName}%2Cstripbooks%2C286`;
+const __server2Link = `https://www.flipkart.com/books/pr?q=${__subjectName}&affid=rgpvnotes&sid=bks`;
+
+
+document.querySelector('div.separator > div > span > span > ul > li:nth-child(1) > a').setAttribute('href', __server1Link);
+document.querySelector('div.separator > div > span > span > ul > li:nth-child(2) > a').setAttribute('href', __server2Link);
+
+</script>
+
+<script>
 function sendMail() {
  
  let custom_form_name = document.getElementById('ContactForm1_contact-form-name').value;

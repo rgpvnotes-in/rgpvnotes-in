@@ -153,7 +153,7 @@ body#layout div#numbers , body#layout section#services , body#layout section#cli
 display:none;
 }
 --></style>
-<script src='https://ajax.gooogleapi.com/ajax/libs/jquery/1.7.32/jquery.min.js'></script>
+
 <link href='https://cdn.rgpvnotes.in/BE/notes/css/page.css' rel='stylesheet'/>
 <script type='text/javascript'>//<![CDATA[
 
@@ -702,6 +702,19 @@ display:none;
 <script src='https://cdn.rgpvnotes.in/BE/notes/js/script6.js'></script>
 <script>
   
+const __subjectName = document.querySelector('#Blog1 > div.blog-posts.hfeed.row.work-posts.grid > div > div.sjps.entry-content > div:nth-child(2) > h5').innerText.slice(0, -9).replace(/\s/gm, '%20').toLowerCase();
+// document.querySelector('div.separator > div > span > span > ul > li:nth-child(3)').remove();
+
+const __server1Link = `https://www.amazon.in/s?k=${__subjectName}&i=stripbooks&crid=1L2MEIGT2WNIK&sprefix=${__subjectName}%2Cstripbooks%2C286`;
+const __server2Link = `https://www.flipkart.com/books/pr?q=${__subjectName}&affid=rgpvnotes&sid=bks`;
+
+
+document.querySelector('div.separator > div > span > span > ul > li:nth-child(1) > a').setAttribute('href', __server1Link);
+document.querySelector('div.separator > div > span > span > ul > li:nth-child(2) > a').setAttribute('href', __server2Link);
+
+</script>
+
+<script>
 function sendMail() {
  
  let custom_form_name = document.getElementById('ContactForm1_contact-form-name').value;
