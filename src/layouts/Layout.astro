@@ -13,6 +13,9 @@ import '@assets/vendor/swiper/swiper-bundle.min.css';
 // Template Main CSS File
 import '@assets/css/style.css';
 
+import favIcon from '@assets/img/favicon.png';
+import favIconApple from '@assets/img/apple-touch-icon.png';
+
 export interface Props {
     title: string;
 }
@@ -31,8 +34,8 @@ const { title } = Astro.props;
         <meta content="" name="keywords" />
 
         <!-- Favicons -->
-        <link href="@assets/img/favicon.png" rel="icon" />
-        <link href="@assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href={favIcon} rel="icon" />
+        <link href={favIconApple} rel="apple-touch-icon" />
 
         <!-- Google Fonts -->
         <link

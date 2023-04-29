@@ -1,5 +1,7 @@
 <script setup>
 
+import heroImg from '../../../assets/img/hero-img.png'
+
 </script>
 
 <template>
@@ -14,7 +16,7 @@
       <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
     </div>
     <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-      <img src="/assets/img/hero-img.png" class="img-fluid animated" alt="">
+      <img :src="heroImg" class="img-fluid animated" alt="">
     </div>
   </div>
 </div>

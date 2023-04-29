@@ -1,5 +1,5 @@
 <script setup>
-
+import featuresImage from '../../../assets/img/features.svg'
 </script>
 
 <template>
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
-            <img src="/assets/img/features.svg" alt="" class="img-fluid">
+            <img :src="featuresImage" alt="" class="img-fluid">
           </div>
         </div>
 

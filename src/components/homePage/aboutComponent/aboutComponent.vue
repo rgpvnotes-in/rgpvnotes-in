@@ -1,4 +1,6 @@
 <script setup>
+import aboutImg from '../../../assets/img/about.jpg'
+
 
 </script>
 
@@ -10,7 +12,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-            <img src="/assets/img/about.jpg" class="img-fluid" alt="">
+            <img :src="aboutImg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
             <h3>Voluptatem dignissimos provident quasi corporis</h3>
