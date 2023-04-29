@@ -1,30 +1,61 @@
 ---
-import Test from "../components/test-test.vue";
+import HeaderComponent from '../components/headerComponent/headerComponent.vue';
+import FooterComponent from '../components/footerComponent/footerComponent.vue';
+
+// Vendor CSS Files
+import '@assets/vendor/aos/aos.css';
+import '@assets/vendor/bootstrap/css/bootstrap.min.css';
+import '@assets/vendor/bootstrap-icons/bootstrap-icons.css';
+import '@assets/vendor/boxicons/css/boxicons.min.css';
+import '@assets/vendor/glightbox/css/glightbox.min.css';
+import '@assets/vendor/swiper/swiper-bundle.min.css';
+
+// Template Main CSS File
+import '@assets/css/style.css';
+
 export interface Props {
-  title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <Test />
-    <slot />
-    <style>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    </style>
+        <title>Techie Bootstrap Template - Index</title>
+        <meta content="" name="description" />
+        <meta content="" name="keywords" />
 
-    <style>
+        <!-- Favicons -->
+        <link href="@assets/img/favicon.png" rel="icon" />
+        <link href="@assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    </style>
-  </body>
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <HeaderComponent />
+        <slot />
+        <FooterComponent />
+        <!-- Vendor JS Files -->
+        <script src="/assets/vendor/purecounter/purecounter_vanilla.js" is:inline></script>
+        <script src="/assets/vendor/aos/aos.js" is:inline></script>
+        <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:inline
+        ></script>
+        <script src="/assets/vendor/glightbox/js/glightbox.min.js" is:inline></script>
+        <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" is:inline></script>
+        <script src="/assets/vendor/swiper/swiper-bundle.min.js" is:inline></script>
+        <script src="/assets/vendor/php-email-form/validate.js" is:inline></script>
+
+        <!-- Template Main JS File -->
+        <script src="/assets/js/main.js" is:inline></script>
+    </body>
 </html>

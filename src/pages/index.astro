@@ -1,10 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import AboutComponent from '../components/homePage/aboutComponent/aboutComponent.vue';
+import ContactComponent from '../components/homePage/contactComponent/contactComponent.vue';
+import CountComponent from '../components/homePage/countComponent/countComponent.vue';
+import FaqComponent from '../components/homePage/faqComponent/faqComponent.vue';
+import FeaturesComponent from '../components/homePage/featuresComponent/featuresComponent.vue';
+import HeroComponent from '../components/homePage/heroComponent/heroComponent.vue';
+import PortfolioComponent from '../components/homePage/portfolioComponent/portfolioComponent.vue';
+import PricingComponent from '../components/homePage/pricingComponent/pricingComponent.vue';
+import ServicesComponent from '../components/homePage/servicesComponent/servicesComponent.vue';
+import TestimonialsComponent from '../components/homePage/testimonialsComponent/testimonialsComponent.vue';
 ---
 
 <Layout title="">
-<> </>
+    <HeroComponent />
+    <main id="main">
+        <AboutComponent />
+        <CountComponent />
+        <ServicesComponent />
+        <FeaturesComponent />
+        <TestimonialsComponent />
+        <PortfolioComponent />
+        <PricingComponent />
+        <FaqComponent />
+        <ContactComponent />
+    </main>
 </Layout>
 
-<style>
-</style>
+<style></style>
