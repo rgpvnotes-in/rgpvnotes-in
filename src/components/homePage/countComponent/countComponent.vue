@@ -1,38 +1,90 @@
 <script setup>
 
+import notesImage from '../../../assets/img/counter/notes.png'
+import uploadImage from '../../../assets/img/counter/upload.png'
+import downloadImage from '../../../assets/img/counter/download.png'
+import teamImage from '../../../assets/img/counter/team.png'
+
 </script>
 
 <template>
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container">
-
-        <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Clients</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hard Workers</p>
-          </div>
-
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts">
+    <div class="container">
+      <div class="row counters">
+        <div class="col-lg-3 col-6 text-center">
+          <img :src="notesImage" alt="" />
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="500"
+            data-purecounter-duration="1"
+            class="purecounter"
+          ></span>
+          <p>SUBJECTS NOTES AVAILABLE</p>
         </div>
 
-      </div>
-    </section><!-- End Counts Section -->
+        <div class="col-lg-3 col-6 text-center">
+          <img :src="uploadImage" alt="" />
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="5000"
+            data-purecounter-duration="1"
+            class="purecounter"
+          ></span>
+          <p>MB PDF UPLOADED</p>
+        </div>
 
+        <div class="col-lg-3 col-6 text-center">
+          <img :src="downloadImage" alt="" />
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="100000"
+            data-purecounter-duration="1"
+            class="purecounter"
+          ></span>
+          <p>FILES DOWNLOADED</p>
+        </div>
+
+        <div class="col-lg-3 col-6 text-center">
+          <img :src="teamImage" alt="" />
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="15"
+            data-purecounter-duration="1"
+            class="purecounter"
+          ></span>
+          <p>MEMBERS IN TEAM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Counts Section -->
 </template>
+
+
+<style scoped>
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  background: linear-gradient( 90deg,rgba(88,70,249,0.5) 0%,rgba(123,39,216,0.5) 100% ),url(/assets/img/counts-bg.png) center center no-repeat;
+  padding: 80px 0 60px;
+  background-size: cover;
+}
+
+.counts .counters span {
+  font-size: 48px;
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.counts .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+</style>

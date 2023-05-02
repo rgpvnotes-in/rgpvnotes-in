@@ -13,17 +13,17 @@ import TestimonialsComponent from '../components/homePage/testimonialsComponent/
 ---
 
 <Layout title="">
-    <HeroComponent />
+    <HeroComponent client:load  />
     <main id="main">
-        <AboutComponent />
-        <CountComponent />
-        <ServicesComponent />
-        <FeaturesComponent />
-        <TestimonialsComponent />
-        <PortfolioComponent />
-        <PricingComponent />
-        <FaqComponent />
-        <ContactComponent />
+        <AboutComponent  client:visible />
+        <CountComponent  client:visible  />
+        <ServicesComponent  client:visible  />
+        <!-- <FeaturesComponent  client:visible  /> -->
+        <!-- <TestimonialsComponent /> -->
+        <PortfolioComponent  client:visible  />
+        <!-- <PricingComponent  client:visible /> -->
+        <!-- <FaqComponent  client:visible  /> -->
+        <ContactComponent client:idle  />
     </main>
 </Layout>
 
