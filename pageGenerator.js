@@ -1,42 +1,11 @@
-import fs from "fs";
+import fs from 'fs';
+import {
+    programNamesArray,
+    schemeNamesArray,
+} from './src/utils/const/index.js';
 
 try {
-  const programNamesArray = [
-    "MBA",
-    "M.Arch",
-    "B.Tech",
-    "BE",
-    "BE-PTDC",
-    "B.Tech-PTDC",
-    "B.Pharm (PCI)",
-    "B.Pharm",
-    "B.Arch",
-    "M.E",
-    "M.Tech",
-    "M.Tech (Part Time)",
-    "M.Pharm",
-    "M.Pharm PCI",
-    "MCA 2 Year",
-    "MCA",
-    "MCA Dual Degree",
-    "MBA Integrated",
-    "DDI-PG",
-    "Diploma",
-    "Ph.D",
-    "Ph.D Entrance",
-    "PGCMB",
-    "Pharm D",
-  ];
-  const schemeNamesArray = [
-    "Grading System",
-    "Non Grading System",
-    "Lateral Entry",
-    "CBCS",
-    "CBGS",
-    "As per COA",
-  ];
-
-  const slugFileContent = (programName, schemeName) => `---
+    const slugFileContent = (programName, schemeName) => `---
 import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -68,52 +37,52 @@ const { post } = Astro.props;
 
 <style></style>`;
 
-const indexFileContent = (programName, schemeName) => ``;
+    const indexFileContent = (programName, schemeName) => ``;
 
-  for (const programName of programNamesArray) {
-    const programPath = `src/pages/${programName
-      .toLowerCase()
-      .replace(/\s/gm, "-")
-      .replace(/\./gm, "")}`;
-    // create folder with program name
-    if (!fs.existsSync(programPath)) {
-      console.log("creating new folder with path: " + programPath);
-      fs.mkdirSync(programPath);
-    }
-
-    for (const schemeName of schemeNamesArray) {
-      const schemePath = `${programPath}/${schemeName
-        .toLowerCase()
-        .replace(/\s/gm, "-")
-        .replace(/\./gm, "")}/`;
-
-      // create folder with program name
-      if (!fs.existsSync(schemePath)) {
-        console.log("creating new folder with path: " + schemePath);
-        fs.mkdirSync(schemePath);
-      }
-
-      // create slug file
-      fs.writeFile(
-        `${schemePath}/[...slug].astro`,
-        slugFileContent(programName, schemeName),
-        function (err) {
-          if (err) throw err;
-          console.log("File written successfully.");
+    for (const programName of programNamesArray) {
+        const programPath = `src/pages/${programName.shortDisplayText
+            .toLowerCase()
+            .replace(/\s/gm, '-')
+            .replace(/\./gm, '')}`;
+        // create folder with program name
+        if (!fs.existsSync(programPath)) {
+            console.log('creating new folder with path: ' + programPath);
+            fs.mkdirSync(programPath);
         }
-      );
 
-      // create slug file
-      fs.writeFile(
-        `${schemePath}/index.astro`,
-        indexFileContent(programName, schemeName),
-        function (err) {
-          if (err) throw err;
-          console.log("File written successfully.");
+        for (const schemeName of schemeNamesArray) {
+            const schemePath = `${programPath}/${schemeName
+                .toLowerCase()
+                .replace(/\s/gm, '-')
+                .replace(/\./gm, '')}/`;
+
+            // create folder with program name
+            if (!fs.existsSync(schemePath)) {
+                console.log('creating new folder with path: ' + schemePath);
+                fs.mkdirSync(schemePath);
+            }
+
+            // create slug file
+            fs.writeFile(
+                `${schemePath}/[...slug].astro`,
+                slugFileContent(programName.parameterText, schemeName),
+                function (err) {
+                    if (err) throw err;
+                    console.log('File written successfully.');
+                },
+            );
+
+            // create slug file
+            fs.writeFile(
+                `${schemePath}/index.astro`,
+                indexFileContent(programName.parameterText, schemeName),
+                function (err) {
+                    if (err) throw err;
+                    console.log('File written successfully.');
+                },
+            );
         }
-      );
     }
-  }
 } catch (error) {
-  console.log(error);
+    console.log(error);
 }
