@@ -1,56 +1,5 @@
 <script setup>
-const typeFilters = [
-    {
-        cssClass: 'grading',
-        text: 'Grading System',
-    },
-    {
-        cssClass: 'non-grading',
-        text: 'Non Grading System',
-    },
-    {
-        cssClass: 'lateral-entry',
-        text: 'Lateral Entry',
-    },
-    {
-        cssClass: 'cbcs',
-        text: 'CBCS',
-    },
-    {
-        cssClass: 'cbgs',
-        text: 'CBGS',
-    },
-    {
-        cssClass: 'as-per-coa',
-        text: 'As per COA',
-    },
-];
-const programList = [
-    {
-        programLink: '/be/',
-        programName: 'Bachelor of Engineering',
-        programCategory: [
-            {
-                name: 'non-grading',
-                image: 'assets/img/program/be-non-grading.png',
-            },
-            { name: 'grading', image: 'assets/img/program/be-grading.png' },
-            { name: 'cbcs', image: 'assets/img/program/be-cbcs.png' },
-            { name: 'cbgs', image: 'assets/img/program/be-cbgs.png' },
-        ],
-    },
-    {
-        programLink: '/btech/',
-        programName: 'Bachelor of Technology',
-        programCategory: [
-            {
-                name: 'non-grading',
-                image: 'assets/img/program/btech-non-grading.png',
-            },
-            { name: 'grading', image: 'assets/img/program/btech-grading.png' },
-        ],
-    },
-];
+import { typeFilters, programList } from '@utils/const/index.js';
 
 const systemName = (cssClassName) => {
     const systemDetails = typeFilters.find(
@@ -124,7 +73,6 @@ const systemName = (cssClassName) => {
     </section>
     <!-- End Portfolio Section -->
 </template>
-
 
 <style scoped>
 /*--------------------------------------------------------------
