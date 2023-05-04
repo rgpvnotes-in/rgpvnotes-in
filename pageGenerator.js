@@ -37,24 +37,33 @@ const { post } = Astro.props;
 
 <style></style>`;
 
-    const indexFileContent = (programName, schemeName) => ``;
+    const schemeIndexFileContent = (programName, schemeName) =>
+        `${programName} - ${schemeName}`;
+    const programIndexFileContent = (programName) => `${programName}`;
 
     for (const programName of programNamesArray) {
-        const programPath = `src/pages/${programName.shortDisplayText
-            .toLowerCase()
-            .replace(/\s/gm, '-')
-            .replace(/\./gm, '')}`;
+        const programPath = `src/pages/${programName.folderName}`;
         // create folder with program name
         if (!fs.existsSync(programPath)) {
             console.log('creating new folder with path: ' + programPath);
             fs.mkdirSync(programPath);
         }
 
+        // write index file for program
+        fs.writeFile(
+            `${programPath}/index.astro`,
+            programIndexFileContent(programName.folderName),
+            function (err) {
+                if (err) throw err;
+                console.log(
+                    'index file written successfully for ' +
+                        programName.folderName,
+                );
+            },
+        );
+
         for (const schemeName of schemeNamesArray) {
-            const schemePath = `${programPath}/${schemeName.shortDisplayText
-                .toLowerCase()
-                .replace(/\s/gm, '-')
-                .replace(/\./gm, '')}/`;
+            const schemePath = `${programPath}/${schemeName.folderName}/`;
 
             // create folder with program name
             if (!fs.existsSync(schemePath)) {
@@ -66,25 +75,35 @@ const { post } = Astro.props;
             fs.writeFile(
                 `${schemePath}/[...slug].astro`,
                 slugFileContent(
-                    programName.parameterText,
+                    programName.folderName,
                     schemeName.shortDisplayText,
                 ),
                 function (err) {
                     if (err) throw err;
-                    console.log('File written successfully.');
+                    console.log(
+                        'slug file written successfully for ' +
+                            programName.folderName +
+                            ' , ' +
+                            schemeName.shortDisplayText,
+                    );
                 },
             );
 
             // create slug file
             fs.writeFile(
                 `${schemePath}/index.astro`,
-                indexFileContent(
-                    programName.parameterText,
+                schemeIndexFileContent(
+                    programName.folderName,
                     schemeName.shortDisplayText,
                 ),
                 function (err) {
                     if (err) throw err;
-                    console.log('File written successfully.');
+                    console.log(
+                        'index file written successfully for ' +
+                            programName.folderName +
+                            ' , ' +
+                            schemeName.shortDisplayText,
+                    );
                 },
             );
         }
