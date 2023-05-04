@@ -59,7 +59,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'MBA',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mba',
     },
     {
         _id: 2,
@@ -67,7 +67,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'M.Arch',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'march',
     },
     {
         _id: 3,
@@ -91,7 +91,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'BE-PTDC',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'be-ptdc',
     },
     {
         _id: 6,
@@ -99,7 +99,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'B.Tech-PTDC',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'btech-ptdc',
     },
     {
         _id: 7,
@@ -107,7 +107,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'B.Pharm (PCI)',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'bpharm-(pci)',
     },
     {
         _id: 8,
@@ -115,7 +115,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'B.Pharm',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'bpharm',
     },
     {
         _id: 9,
@@ -123,7 +123,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'B.Arch',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'barch',
     },
     {
         _id: 10,
@@ -131,7 +131,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'M.E',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'me',
     },
     {
         _id: 11,
@@ -139,7 +139,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'M.Tech',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mtech',
     },
     {
         _id: 12,
@@ -147,7 +147,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'M.Tech (Part Time)',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mtech-(part-time)',
     },
     {
         _id: 13,
@@ -155,7 +155,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'M.Pharm',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mpharm',
     },
     {
         _id: 14,
@@ -163,7 +163,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'M.Pharm PCI',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mpharm-pci',
     },
     {
         _id: 15,
@@ -171,7 +171,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'MCA 2 Year',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mca-2-year',
     },
     {
         _id: 16,
@@ -179,7 +179,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'MCA',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mca',
     },
     {
         _id: 17,
@@ -187,7 +187,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'MCA Dual Degree',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mca-dual-degree',
     },
     {
         _id: 18,
@@ -195,7 +195,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'MBA Integrated',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'mba-integrated',
     },
     {
         _id: 19,
@@ -203,7 +203,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'DDI-PG',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'ddi-pg',
     },
     {
         _id: 20,
@@ -211,7 +211,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'Diploma',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'diploma',
     },
     {
         _id: 21,
@@ -219,7 +219,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'Ph.D',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'phd',
     },
     {
         _id: 22,
@@ -227,7 +227,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'Ph.D Entrance',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'phd-entrance',
     },
     {
         _id: 23,
@@ -235,7 +235,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'PGCMB',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'pgcmb',
     },
     {
         _id: 24,
@@ -243,7 +243,7 @@ export const programNamesArray = [
         _display: true,
         shortDisplayText: 'Pharm D',
         longDisplayText: '',
-        folderName: '',
+        folderName: 'pharm-d',
     },
 ];
 
