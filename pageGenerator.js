@@ -63,7 +63,7 @@ const { post } = Astro.props;
         );
 
         for (const schemeName of schemeNamesArray) {
-            const schemePath = `${programPath}/${schemeName.folderName}/`;
+            const schemePath = `${programPath}/${schemeName.shortDisplayText}/`;
 
             // create folder with program name
             if (!fs.existsSync(schemePath)) {
