@@ -51,7 +51,7 @@ const { post } = Astro.props;
         }
 
         for (const schemeName of schemeNamesArray) {
-            const schemePath = `${programPath}/${schemeName
+            const schemePath = `${programPath}/${schemeName.shortDisplayText
                 .toLowerCase()
                 .replace(/\s/gm, '-')
                 .replace(/\./gm, '')}/`;
@@ -65,7 +65,10 @@ const { post } = Astro.props;
             // create slug file
             fs.writeFile(
                 `${schemePath}/[...slug].astro`,
-                slugFileContent(programName.parameterText, schemeName),
+                slugFileContent(
+                    programName.parameterText,
+                    schemeName.shortDisplayText,
+                ),
                 function (err) {
                     if (err) throw err;
                     console.log('File written successfully.');
@@ -75,7 +78,10 @@ const { post } = Astro.props;
             // create slug file
             fs.writeFile(
                 `${schemePath}/index.astro`,
-                indexFileContent(programName.parameterText, schemeName),
+                indexFileContent(
+                    programName.parameterText,
+                    schemeName.shortDisplayText,
+                ),
                 function (err) {
                     if (err) throw err;
                     console.log('File written successfully.');
