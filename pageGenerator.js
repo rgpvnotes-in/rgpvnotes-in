@@ -38,8 +38,39 @@ const { post } = Astro.props;
 <style></style>`;
 
     const schemeIndexFileContent = (programName, schemeName) =>
-        `${programName} - ${schemeName}`;
-    const programIndexFileContent = (programName) => `${programName}`;
+        `---
+    import Layout from "../../../layouts/Layout.astro";
+    
+    // constants
+    const programName = '${programName}';
+    const schemeName = '${schemeName}';
+  
+    
+    const { slug } = Astro.params;
+    const { post } = Astro.props;
+    ---
+    
+    <Layout title="">
+      <></>
+    </Layout>
+    
+    <style></style>`;
+
+    const programIndexFileContent = (programName) => `---
+    import Layout from "../../../layouts/Layout.astro";
+    
+    // constants
+    const programName = '${programName}';
+    
+    const { slug } = Astro.params;
+    const { post } = Astro.props;
+    ---
+    
+    <Layout title="">
+      <></>
+    </Layout>
+    
+    <style></style>`;
 
     for (const programName of programNamesArray) {
         const programPath = `src/pages/${programName.folderName}`;
@@ -52,7 +83,7 @@ const { post } = Astro.props;
         // write index file for program
         fs.writeFile(
             `${programPath}/index.astro`,
-            programIndexFileContent(programName.folderName),
+            programIndexFileContent(programName.shortDisplayText),
             function (err) {
                 if (err) throw err;
                 console.log(
@@ -75,7 +106,7 @@ const { post } = Astro.props;
             fs.writeFile(
                 `${schemePath}/[...slug].astro`,
                 slugFileContent(
-                    programName.folderName,
+                    programName.shortDisplayText,
                     schemeName.shortDisplayText,
                 ),
                 function (err) {
@@ -93,7 +124,7 @@ const { post } = Astro.props;
             fs.writeFile(
                 `${schemePath}/index.astro`,
                 schemeIndexFileContent(
-                    programName.folderName,
+                    programName.shortDisplayText,
                     schemeName.shortDisplayText,
                 ),
                 function (err) {
