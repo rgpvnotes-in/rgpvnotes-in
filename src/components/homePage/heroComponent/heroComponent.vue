@@ -159,7 +159,7 @@ const redirectToStudyMaterialPage = (
                                 :key="yearName"
                                 @click="changeSelectedYear(yearName)"
                                 class="btn-get-started me-2 mb-2"
-                                >{{ yearName }}</span
+                                >{{ yearName.longDisplayText }}</span
                             >
                         </div>
                     </div>
@@ -182,7 +182,7 @@ const redirectToStudyMaterialPage = (
                                 :key="branchName"
                                 @click="changeSelectedBranch(branchName)"
                                 class="btn-get-started me-2 mb-2"
-                                >{{ branchName }}</span
+                                >{{ branchName.longDisplayText }}</span
                             >
                         </div>
                     </div>
