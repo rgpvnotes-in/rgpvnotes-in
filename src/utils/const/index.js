@@ -299,10 +299,34 @@ export const schemeNamesArray = [
 ];
 
 export const yearArray = [
-    { _id: 1, _order: 1, _display: true, longDisplayText: 'First Year' },
-    { _id: 2, _order: 2, _display: true, longDisplayText: 'Second Year' },
-    { _id: 3, _order: 3, _display: true, longDisplayText: 'Third Year' },
-    { _id: 4, _order: 4, _display: true, longDisplayText: 'Fourth Year' },
+    {
+        _id: 1,
+        _order: 1,
+        _display: true,
+        longDisplayText: 'First Year',
+        shortDisplayText: '1st year',
+    },
+    {
+        _id: 2,
+        _order: 2,
+        _display: true,
+        longDisplayText: 'Second Year',
+        shortDisplayText: '2nd year',
+    },
+    {
+        _id: 3,
+        _order: 3,
+        _display: true,
+        longDisplayText: 'Third Year',
+        shortDisplayText: '3rd year',
+    },
+    {
+        _id: 4,
+        _order: 4,
+        _display: true,
+        longDisplayText: 'Fourth Year',
+        shortDisplayText: '4th year',
+    },
 ];
 
 export const branchArray = [
@@ -338,7 +362,7 @@ export const branchArray = [
         _id: 5,
         _order: 5,
         _display: true,
-        longDisplayText: 'Electronics & Comm.',
+        longDisplayText: 'Electronics & Comm',
         branchShortCode: 'EC',
     },
 ];
