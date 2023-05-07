@@ -18,30 +18,30 @@ import {
  */
 const getStaticPathsContent = (programName, schemeName) => {
     return `---
-    import Layout from "../../../layouts/Layout.astro";
-    // constants
-    const programName = '${programName}';
-    const schemeName = '${schemeName}';
-    export async function getStaticPaths() {
-      const getSlugsData = await fetch(
-        'http://backend.rgpvnotes.in/api/v1/all_post.php?program_name=' + programName + '&scheme_name=' + schemeName
-      ).then((response) => response.json());
-      return getSlugsData.content.map((post) => {   
-        return {
-          params: { slug: post.slug },
-          props: { post },
-        };
-      });
-    }
-    const { slug } = Astro.params;
-    const { post } = Astro.props;
-    ---
-    <Layout title="">
-      <h1>{slug}</h1>
-      <h1>{JSON.stringify(post.post_id)}</h1>
-      <></>
-    </Layout>
-    <style></style>`;
+import Layout from "../../../layouts/Layout.astro";
+// constants
+const programName = '${programName}';
+const schemeName = '${schemeName}';
+export async function getStaticPaths() {
+  const getSlugsData = await fetch(
+    'http://backend.rgpvnotes.in/api/v1/all_post.php?program_name=' + programName + '&scheme_name=' + schemeName
+  ).then((response) => response.json());
+  return getSlugsData.content.map((post) => {   
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+}
+const { slug } = Astro.params;
+const { post } = Astro.props;
+---
+<Layout title="">
+  <h1>{slug}</h1>
+  <h1>{JSON.stringify(post.post_id)}</h1>
+  <></>
+</Layout>
+<style></style>`;
 };
 
 /**
@@ -52,33 +52,33 @@ const getStaticPathsContent = (programName, schemeName) => {
  */
 const getIndexFileContent = (programName, schemeName = '') => {
     return `---
-    import Layout from "../../../layouts/Layout.astro";
-    // constants
-    const programName = '${programName}';
-    const schemeName = '${schemeName}';
-    const { slug } = Astro.params;
-    const { post } = Astro.props;
-    ---
-    <Layout title="">
-      <></>
-    </Layout>
-    <style></style>`;
+import Layout from "../../../layouts/Layout.astro";
+// constants
+const programName = '${programName}';
+const schemeName = '${schemeName}';
+const { slug } = Astro.params;
+const { post } = Astro.props;
+---
+<Layout title="">
+  <></>
+</Layout>
+<style></style>`;
 };
 
 const getYearIndexContent = (programName, schemeName = '', yearName = '') => {
     return `---
-    import Layout from "../../../../layouts/Layout.astro";
-    // constants
-    const programName = '${programName}';
-    const schemeName = '${schemeName}';
-    const yearName = '${yearName}';
-    const { slug } = Astro.params;
-    const { post } = Astro.props;
-    ---
-    <Layout title="">
-      <></>
-    </Layout>
-    <style></style>`;
+import Layout from "../../../../layouts/Layout.astro";
+// constants
+const programName = '${programName}';
+const schemeName = '${schemeName}';
+const yearName = '${yearName}';
+const { slug } = Astro.params;
+const { post } = Astro.props;
+---
+<Layout title="">
+  <></>
+</Layout>
+<style></style>`;
 };
 
 const getBranchYearIndexContent = (
@@ -88,19 +88,19 @@ const getBranchYearIndexContent = (
     branchName = '',
 ) => {
     return `---
-    import Layout from "../../../../layouts/Layout.astro";
-    // constants
-    const programName = '${programName}';
-    const schemeName = '${schemeName}';
-    const yearName = '${yearName}';
-    const branchName = '${branchName}';
-    const { slug } = Astro.params;
-    const { post } = Astro.props;
-    ---
-    <Layout title="">
-      <></>
-    </Layout>
-    <style></style>`;
+import Layout from "../../../../layouts/Layout.astro";
+// constants
+const programName = '${programName}';
+const schemeName = '${schemeName}';
+const yearName = '${yearName}';
+const branchName = '${branchName}';
+const { slug } = Astro.params;
+const { post } = Astro.props;
+---
+<Layout title="">
+  <></>
+</Layout>
+<style></style>`;
 };
 
 try {
