@@ -5,7 +5,7 @@
  */
 export const programIndexContent = (programName = '') => {
     return `---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 // constants
 const programName = '${programName}';
 const { slug } = Astro.params;
