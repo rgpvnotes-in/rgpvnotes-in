@@ -74,6 +74,13 @@ const schemeName = '${schemeName}';
 const yearName = '${yearName}';
 const { slug } = Astro.params;
 const { post } = Astro.props;
+
+const getBranchYearData = await fetch(
+    'http://backend.rgpvnotes.in/api/v1/search.php?program_name=' + programName + '&scheme_name=' + schemeName + '&subject_year=' + yearName
+    ).then((response) => response.json()
+    ).then((response) => response.content);
+
+
 ---
 <Layout title="">
   <></>
@@ -96,6 +103,16 @@ const yearName = '${yearName}';
 const branchName = '${branchName}';
 const { slug } = Astro.params;
 const { post } = Astro.props;
+
+
+
+const getBranchYearData = await fetch(
+    'http://backend.rgpvnotes.in/api/v1/search.php?program_name=' + programName + '&scheme_name=' + schemeName + '&subject_branch=' + branchName  + '&subject_year=' + yearName
+    ).then((response) => response.json()
+    ).then((response) => response.content);
+
+
+
 ---
 <Layout title="">
   <></>
@@ -196,7 +213,7 @@ try {
                             getBranchYearIndexContent(
                                 program.shortDisplayText,
                                 scheme.shortDisplayText,
-                                yearObject.shortDisplayText,
+                                yearObject.longDisplayText,
                                 branchObject.longDisplayText,
                             );
                         fs.writeFileSync(
