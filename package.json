@@ -35,7 +35,7 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
-    "generate": "node './structure generator/index.js'",
+    "generate": "node ./structure_generator/index.js",
     "prepare": "husky install",
     "preview": "astro preview",
     "start": "astro dev"
