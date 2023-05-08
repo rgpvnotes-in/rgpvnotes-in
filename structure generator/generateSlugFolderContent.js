@@ -1,10 +1,10 @@
 /**
- * This function generates the content for a slug file
+ * This function returns the content for a slug file
  * @param {string} programName - The name of the program for which the slug file is being generated
  * @param {string} schemeName - The name of the scheme for which the slug file is being generated
  * @returns {string} The content of the slug file
  */
-export const programSchemeSlugContent = (programName, schemeName) => {
+export const programSchemeSlugContent = (programName = '', schemeName = '') => {
     return `---
 import Layout from "../../../layouts/Layout.astro";
 // constants
