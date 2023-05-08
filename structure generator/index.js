@@ -1,6 +1,18 @@
 /**
- * This module generates index and slug files for each program and scheme
- * @module generateIndexFiles
+ * This script generates the directory structure and files for a website.
+ * It creates directories for programs, schemes, years, and branches, and generates index files for each.
+ *  @module generateIndexFiles
+ *
+ * Dependencies:
+ * - fs: Node.js built-in file system module
+ * - programNamesArray: an array of program names imported from a constants file
+ * - schemeNamesArray: an array of scheme names imported from a constants file
+ * - yearArray: an array of year objects imported from a constants file
+ * - branchArray: an array of branch objects imported from a constants file
+ * - getFirstYearIndexContent: a function that generates the content for the first year index file
+ * - getProgramSchemeIndexContent: a function that generates the content for the program/scheme index file
+ * - getProgramSchemeSlugContent: a function that generates the content for the program/scheme slug file
+ * - getYearBranchIndexContent: a function that generates the content for the year/branch index file
  */
 import fs from 'fs';
 import {
@@ -10,115 +22,11 @@ import {
     branchArray,
 } from './src/utils/const/index.js';
 
-/**
- * This function generates the content for a slug file
- * @param {string} programName - The name of the program for which the slug file is being generated
- * @param {string} schemeName - The name of the scheme for which the slug file is being generated
- * @returns {string} The content of the slug file
- */
-const getStaticPathsContent = (programName, schemeName) => {
-    return `---
-import Layout from "../../../layouts/Layout.astro";
-// constants
-const programName = '${programName}';
-const schemeName = '${schemeName}';
-export async function getStaticPaths() {
-  const getSlugsData = await fetch(
-    'http://backend.rgpvnotes.in/api/v1/all_post.php?program_name=' + programName + '&scheme_name=' + schemeName
-  ).then((response) => response.json());
-  return getSlugsData.content.map((post) => {   
-    return {
-      params: { slug: post.slug },
-      props: { post },
-    };
-  });
-}
-const { slug } = Astro.params;
-const { post } = Astro.props;
----
-<Layout title="">
-  <h1>{slug}</h1>
-  <h1>{JSON.stringify(post.post_id)}</h1>
-  <></>
-</Layout>
-<style></style>`;
-};
-
-/**
- * This function generates the content for an index file
- * @param {string} programName - The name of the program for which the index file is being generated
- * @param {string} [schemeName=''] - The name of the scheme for which the index file is being generated
- * @returns {string} The content of the index file
- */
-const getIndexFileContent = (programName, schemeName = '') => {
-    return `---
-import Layout from "../../../layouts/Layout.astro";
-// constants
-const programName = '${programName}';
-const schemeName = '${schemeName}';
-const { slug } = Astro.params;
-const { post } = Astro.props;
----
-<Layout title="">
-  <></>
-</Layout>
-<style></style>`;
-};
-
-const getYearIndexContent = (programName, schemeName = '', yearName = '') => {
-    return `---
-import Layout from "../../../../layouts/Layout.astro";
-// constants
-const programName = '${programName}';
-const schemeName = '${schemeName}';
-const yearName = '${yearName}';
-const { slug } = Astro.params;
-const { post } = Astro.props;
-
-const getBranchYearData = await fetch(
-    'http://backend.rgpvnotes.in/api/v1/search.php?program_name=' + programName + '&scheme_name=' + schemeName + '&subject_year=' + yearName
-    ).then((response) => response.json()
-    ).then((response) => response.content);
-
-
----
-<Layout title="">
-  <></>
-</Layout>
-<style></style>`;
-};
-
-const getBranchYearIndexContent = (
-    programName,
-    schemeName = '',
-    yearName = '',
-    branchName = '',
-) => {
-    return `---
-import Layout from "../../../../layouts/Layout.astro";
-// constants
-const programName = '${programName}';
-const schemeName = '${schemeName}';
-const yearName = '${yearName}';
-const branchName = '${branchName}';
-const { slug } = Astro.params;
-const { post } = Astro.props;
-
-
-
-const getBranchYearData = await fetch(
-    'http://backend.rgpvnotes.in/api/v1/search.php?program_name=' + programName + '&scheme_name=' + schemeName + '&subject_branch=' + branchName  + '&subject_year=' + yearName
-    ).then((response) => response.json()
-    ).then((response) => response.content);
-
-
-
----
-<Layout title="">
-  <></>
-</Layout>
-<style></style>`;
-};
+import { firstYearIndexContent as getFirstYearIndexContent } from './generateFirstYearAllBranchContent.js';
+import { programSchemeIndexContent as getProgramSchemeIndexContent } from './generateProgramSchemeIndexContent.js';
+import { programSchemeSlugContent as getProgramSchemeSlugContent } from './generateSlugFolderContent.js';
+import { yearBranchIndexContent as getYearBranchIndexContent } from './generateYearBranchContent.js';
+import { programIndexContent as getProgramIndexContent } from './generateProgramIndexContent.js';
 
 try {
     // loop through each program
@@ -132,7 +40,7 @@ try {
         }
 
         // write index file for program
-        const programIndexContent = getIndexFileContent(
+        const programIndexContent = getProgramIndexContent(
             program.shortDisplayText,
         );
         fs.writeFileSync(`${programPath}/index.astro`, programIndexContent);
@@ -151,7 +59,7 @@ try {
             }
 
             // create slug file
-            const slugFileContent = getStaticPathsContent(
+            const slugFileContent = getProgramSchemeSlugContent(
                 program.shortDisplayText,
                 scheme.shortDisplayText,
             );
@@ -161,7 +69,7 @@ try {
             );
 
             // create index file for scheme
-            const schemeIndexContent = getIndexFileContent(
+            const schemeIndexContent = getProgramSchemeIndexContent(
                 program.shortDisplayText,
                 scheme.shortDisplayText,
             );
@@ -183,7 +91,7 @@ try {
                     }
 
                     // create index file for scheme
-                    const yearIndexContent = getYearIndexContent(
+                    const yearIndexContent = getFirstYearIndexContent(
                         program.shortDisplayText,
                         scheme.shortDisplayText,
                         yearObject.shortDisplayText,
@@ -210,7 +118,7 @@ try {
                         }
                         // create index file for scheme
                         const branchYearIndexContent =
-                            getBranchYearIndexContent(
+                            getYearBranchIndexContent(
                                 program.shortDisplayText,
                                 scheme.shortDisplayText,
                                 yearObject.longDisplayText,
