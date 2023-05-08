@@ -20,7 +20,7 @@ import {
     schemeNamesArray,
     yearArray,
     branchArray,
-} from './src/utils/const/index.js';
+} from '../src/utils/const/index.js';
 
 import { firstYearIndexContent as getFirstYearIndexContent } from './generateFirstYearAllBranchContent.js';
 import { programSchemeIndexContent as getProgramSchemeIndexContent } from './generateProgramSchemeIndexContent.js';
@@ -50,7 +50,7 @@ try {
 
         // loop through each scheme
         for (const scheme of schemeNamesArray) {
-            const schemePath = `${programPath}/${scheme.shortDisplayText}`;
+            const schemePath = `${programPath}/${scheme.folderName}`;
 
             // create folder with program and scheme name if it does not exist
             if (!fs.existsSync(schemePath)) {

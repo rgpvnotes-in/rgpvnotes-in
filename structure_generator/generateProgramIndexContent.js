@@ -3,7 +3,7 @@
  * @param {string} [programName=''] - The name of the program for which the index file is being generated
  * @returns {string} The content of the index file
  */
-export const programSchemeIndexContent = (programName = '') => {
+export const programIndexContent = (programName = '') => {
     return `---
 import Layout from "../../../layouts/Layout.astro";
 // constants
