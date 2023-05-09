@@ -16,7 +16,7 @@ const schemeName = '${schemeName}';
 const { slug } = Astro.params;
 const { post } = Astro.props;
 ---
-<Layout title="">
+<Layout title="" isInnerPage={isInnerPage}>
   <></>
 </Layout>
 <style></style>`;

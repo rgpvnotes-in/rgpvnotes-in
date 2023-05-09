@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { post } = Astro.props;
 ---
-<Layout title="">
+<Layout title="" isInnerPage={isInnerPage}>
   <h1>{slug}</h1>
   <h1>{JSON.stringify(post.post_id)}</h1>
   <></>

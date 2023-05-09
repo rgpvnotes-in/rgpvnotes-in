@@ -26,7 +26,7 @@ export const firstYearIndexContent = (
   ).then((response) => response.json()).then((response) => response.content);
   
   ---
-  <Layout title="">
+  <Layout title="" isInnerPage={isInnerPage}>
     {/* Add content here */}
     <></>
   </Layout>

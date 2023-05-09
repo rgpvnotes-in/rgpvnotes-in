@@ -1,11 +1,19 @@
 <script setup>
 
 import logoImage from '../../assets/img/logo.png'
+
+const componentsProps = defineProps({
+  isInnerPage: Boolean
+})
+
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { isInnerPage } = componentsProps;
+
 </script>
 
 <template>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top" v-bind:class="{ 'header-inner-pages': isInnerPage }">
     <div class="container d-flex align-items-center justify-content-between">
       <a href="/" class="logo"
         ><img :src="logoImage" alt="" class="img-fluid"

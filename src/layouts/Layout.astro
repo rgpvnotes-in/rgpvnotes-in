@@ -18,9 +18,10 @@ import favIconApple from '@assets/img/apple-touch-icon.png';
 
 export interface Props {
     title: string;
+    isInnerPage: boolean;
 }
 
-const { title } = Astro.props;
+const { title, isInnerPage=true } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@ const { title } = Astro.props;
     </head>
 
     <body>
-        <HeaderComponent />
+        <HeaderComponent isInnerPage={isInnerPage} />
         <slot />
         <FooterComponent />
         <!-- Vendor JS Files -->
