@@ -262,7 +262,7 @@ export const schemeNamesArray = [
         _display: true,
         shortDisplayText: 'Non Grading System',
         longDisplayText: 'Non Grading System',
-        folderName: 'nonGrading',
+        folderName: 'non-grading',
     },
     {
         _id: 3,
@@ -270,7 +270,7 @@ export const schemeNamesArray = [
         _display: true,
         shortDisplayText: 'Lateral Entry',
         longDisplayText: 'Lateral Entry',
-        folderName: 'lateralEntry',
+        folderName: 'lateral-entry',
     },
     {
         _id: 4,
@@ -294,7 +294,7 @@ export const schemeNamesArray = [
         _display: true,
         shortDisplayText: 'As per COA',
         longDisplayText: 'As per COA',
-        folderName: 'asPerCoa',
+        folderName: 'as-per-coa',
     },
 ];
 
