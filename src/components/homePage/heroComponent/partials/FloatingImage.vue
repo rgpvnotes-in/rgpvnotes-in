@@ -1,22 +1,16 @@
 <script setup>
-import RightFloatingImage from './partials/FloatingImage.vue';
-import LeftSearchAndSelector from './partials/SearchAndSelector.vue';
-
+import heroImg from '../../../../assets/img/hero-img.png';
 </script>
 
 <template>
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container-fluid" data-aos="fade-up">
-            <div class="row justify-content-center align-items-center">
-                <LeftSearchAndSelector />
-                <RightFloatingImage />
-            </div>
-        </div>
-    </section>
-    <!-- End Hero -->
+    <div
+        class="col-xl-3 col-lg-6 order-1 order-lg-2 hero-img"
+        data-aos="zoom-in"
+        data-aos-delay="150"
+    >
+        <img :src="heroImg" class="img-fluid animated" alt="" />
+    </div>
 </template>
-
 
 <style scoped>
 /*--------------------------------------------------------------
