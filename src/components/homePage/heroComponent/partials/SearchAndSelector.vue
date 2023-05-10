@@ -101,9 +101,9 @@ export default {
             selectedBranch = '',
         ) => {
             if ('1st year' === selectedYear) {
-                window.location.href = `/${selectedProgram}/${selectedScheme}/${selectedYear}`;
+                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase()}/${selectedYear}`;
             } else {
-                window.location.href = `/${selectedProgram}/${selectedScheme}/${selectedBranch}-${selectedYear}`;
+                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase()}/${selectedBranch.toLowerCase()}-${selectedYear}`;
             }
         };
         return {
@@ -265,7 +265,7 @@ export default {
                     :key="branchName._id"
                     @click="
                         changeSelectedBranch(
-                            branchName.longDisplayText.toLowerCase(),
+                            branchName.longDisplayText,
                         )
                     "
                     class="btn-get-started me-2 mb-2"
