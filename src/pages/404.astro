@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import InnerPageContainer from '../components/innerPageComponent/innerPageComponent.vue';
 ---
 
-<Layout title="">
-<> </>
+<Layout title="" isInnerPage={false}>
+    <InnerPageContainer>
+        <h1>404 page</h1>
+      </InnerPageContainer>
 </Layout>
 
 <style>
