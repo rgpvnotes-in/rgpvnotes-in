@@ -71,8 +71,18 @@ export default {
         };
         const changeSelectedYear = (year = '') => {
             selectedYear.value = year;
-            shouldShowYear.value = false;
-            shouldShowBranch.value = true;
+
+            if ('1st year' === year) {
+                redirectToStudyMaterialPage(
+                    selectedProgram.value,
+                    selectedScheme.value,
+                    selectedYear.value,
+                    selectedBranch.value,
+                );
+            } else {
+                shouldShowYear.value = false;
+                shouldShowBranch.value = true;
+            }
         };
         const changeSelectedBranch = (branch = '') => {
             selectedBranch.value = branch;
@@ -85,22 +95,15 @@ export default {
         };
 
         const redirectToStudyMaterialPage = (
-            selectedProgram,
-            selectedScheme,
-            selectedYear,
-            selectedBranch,
+            selectedProgram = '',
+            selectedScheme = '',
+            selectedYear = '',
+            selectedBranch = '',
         ) => {
-            if (
-                selectedProgram &&
-                selectedScheme &&
-                selectedYear &&
-                selectedBranch
-            ) {
-                if ('1st year' === selectedYear) {
-                    window.location.href = `\\${selectedProgram}\\${selectedScheme}\\${selectedYear}`;
-                } else {
-                    window.location.href = `\\${selectedProgram}\\${selectedScheme}\\${selectedYear}\\${selectedBranch}\\`;
-                }
+            if ('1st year' === selectedYear) {
+                window.location.href = `/${selectedProgram}/${selectedScheme}/${selectedYear}`;
+            } else {
+                window.location.href = `/${selectedProgram}/${selectedScheme}/${selectedBranch}-${selectedYear}`;
             }
         };
         return {
@@ -260,7 +263,11 @@ export default {
                 <span
                     v-for="branchName in branchArray"
                     :key="branchName._id"
-                    @click="changeSelectedBranch(branchName.longDisplayText)"
+                    @click="
+                        changeSelectedBranch(
+                            branchName.longDisplayText.toLowerCase(),
+                        )
+                    "
                     class="btn-get-started me-2 mb-2"
                     >{{ branchName.longDisplayText }}</span
                 >
