@@ -8,7 +8,7 @@ import breadcrumbsComponent from '../breadcrumbsComponent/breadcrumbsComponent.v
 
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <slot />
             </div>
         </section>
     </main>

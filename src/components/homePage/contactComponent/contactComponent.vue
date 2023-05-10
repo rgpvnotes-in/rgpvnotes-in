@@ -7,7 +7,7 @@ const contactSubject = ref('');
 const contactMessage = ref('');
 
 const submitContactForm = () => {
-  console.log(contactName.value);
+
     const custom_form_name = contactName.value;
     const custom_form_email = contactEmail.value;
     const custom_form_message = `Subject: ${contactSubject.value} %0d%0a%0d%0a%0d%0a%0d%0a%0d%0a Message: ${contactMessage.value}`;
