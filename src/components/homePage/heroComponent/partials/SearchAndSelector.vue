@@ -1,12 +1,5 @@
-<script setup>
+<script>
 import { ref } from 'vue';
-
-const componentProps = defineProps({
-    isInnerPage: Boolean,
-});
-
-// eslint-disable-next-line vue/no-setup-props-destructure
-const { isInnerPage = true } = componentProps;
 
 import {
     programNamesArray,
@@ -15,50 +8,116 @@ import {
     branchArray,
 } from '@utils/const/index.js';
 
-const shouldShowProgram = ref(true);
-const shouldShowScheme = ref(false);
-const shouldShowYear = ref(false);
-const shouldShowBranch = ref(false);
+export default {
+    props: {
+        isInnerPage: Boolean,
+        selectedProgramProp: {
+            required: false,
+            type: String,
+            default: '',
+        },
+        selectedSchemeProp: {
+            required: false,
+            type: String,
+            default: '',
+        },
+        selectedYearProp: {
+            required: false,
+            type: String,
+            default: '',
+        },
+        selectedBranchProp: {
+            required: false,
+            type: String,
+            default: '',
+        },
+    },
+    setup(props) {
+        const shouldShowProgram =
+            props.selectedProgramProp === '' ? ref(true) : ref(false);
+        const shouldShowScheme =
+            props.selectedSchemeProp === '' ? ref(true) : ref(false);
+        const shouldShowYear =
+            props.selectedYearProp === '' ? ref(true) : ref(false);
+        const shouldShowBranch =
+            props.selectedBranchProp === '' ? ref(true) : ref(false);
 
-const selectedProgram = ref('');
-const selectedScheme = ref('');
-const selectedYear = ref('');
-const selectedBranch = ref('');
+        const selectedProgram =
+            props.selectedProgramProp === ''
+                ? ref('')
+                : ref(props.selectedProgramProp);
+        const selectedScheme =
+            props.selectedSchemeProp === ''
+                ? ref('')
+                : ref(props.selectedSchemeProp);
+        const selectedYear =
+            props.selectedYearProp === ''
+                ? ref('')
+                : ref(props.selectedYearProp);
+        const selectedBranch =
+            props.selectedBranchProp === ''
+                ? ref('')
+                : ref(props.selectedBranchProp);
 
-const changeSelectedProgram = (programName = '') => {
-    selectedProgram.value = programName;
-    shouldShowProgram.value = false;
-    shouldShowScheme.value = true;
-};
-const changeSelectedScheme = (schemeName = '') => {
-    selectedScheme.value = schemeName;
-    shouldShowScheme.value = false;
-    shouldShowYear.value = true;
-};
-const changeSelectedYear = (year = '') => {
-    selectedYear.value = year;
-    shouldShowYear.value = false;
-    shouldShowBranch.value = true;
-};
-const changeSelectedBranch = (branch = '') => {
-    selectedBranch.value = branch;
-    redirectToStudyMaterialPage(
-        selectedProgram.value,
-        selectedScheme.value,
-        selectedYear.value,
-        selectedBranch.value,
-    );
-};
+        const changeSelectedProgram = (programName = '') => {
+            selectedProgram.value = programName;
+            shouldShowProgram.value = false;
+            shouldShowScheme.value = true;
+        };
+        const changeSelectedScheme = (schemeName = '') => {
+            selectedScheme.value = schemeName;
+            shouldShowScheme.value = false;
+            shouldShowYear.value = true;
+        };
+        const changeSelectedYear = (year = '') => {
+            selectedYear.value = year;
+            shouldShowYear.value = false;
+            shouldShowBranch.value = true;
+        };
+        const changeSelectedBranch = (branch = '') => {
+            selectedBranch.value = branch;
+            redirectToStudyMaterialPage(
+                selectedProgram.value,
+                selectedScheme.value,
+                selectedYear.value,
+                selectedBranch.value,
+            );
+        };
 
-const redirectToStudyMaterialPage = (
-    selectedProgram,
-    selectedScheme,
-    selectedYear,
-    selectedBranch,
-) => {
-    if (selectedProgram && selectedScheme && selectedYear && selectedBranch) {
-        window.location.href = `\\${selectedProgram}\\${selectedScheme}\\${selectedYear}\\${selectedBranch}`;
-    }
+        const redirectToStudyMaterialPage = (
+            selectedProgram,
+            selectedScheme,
+            selectedYear,
+            selectedBranch,
+        ) => {
+            if (
+                selectedProgram &&
+                selectedScheme &&
+                selectedYear &&
+                selectedBranch
+            ) {
+                if ('1st year' === selectedYear) {
+                    window.location.href = `\\${selectedProgram}\\${selectedScheme}\\${selectedYear}`;
+                } else {
+                    window.location.href = `\\${selectedProgram}\\${selectedScheme}\\${selectedYear}\\${selectedBranch}\\`;
+                }
+            }
+        };
+        return {
+            programNamesArray,
+            schemeNamesArray,
+            yearArray,
+            branchArray,
+            changeSelectedProgram,
+            changeSelectedScheme,
+            changeSelectedYear,
+            changeSelectedBranch,
+            shouldShowProgram,
+            shouldShowScheme,
+            shouldShowYear,
+            shouldShowBranch,
+        };
+    },
 };
 </script>
 
@@ -67,7 +126,7 @@ const redirectToStudyMaterialPage = (
         class="pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
         :class="[
             isInnerPage
-                ? 'inner-pages-css col-xl-12 col-lg-12'
+                ? 'inner-pages-css col-xl-12 col-lg-12 align-items-center'
                 : 'col-xl-6 col-lg-6',
         ]"
     >
@@ -97,7 +156,10 @@ const redirectToStudyMaterialPage = (
             </button>
         </div>
 
-        <div class="d-flex align-items-center flex-column mb-3">
+        <div
+            class="d-flex align-items-center flex-column mb-3"
+            :class="[isInnerPage ? 'w-100' : '']"
+        >
             <hr class="search-subject-division" data-content="OR" />
         </div>
 
@@ -120,7 +182,7 @@ const redirectToStudyMaterialPage = (
                 <span
                     v-for="programName in programNamesArray"
                     :key="programName._id"
-                    @click="changeSelectedProgram(programName.parameterText)"
+                    @click="changeSelectedProgram(programName.folderName)"
                     class="btn-get-started me-2 mb-2"
                     >{{ programName.shortDisplayText }}</span
                 >
@@ -129,10 +191,15 @@ const redirectToStudyMaterialPage = (
 
         <div
             data-select-scheme-container
-            v-if="shouldShowScheme"
+            v-else-if="shouldShowScheme"
             class="d-flex align-items-center flex-column hero-custom-container"
         >
-            <h3 class="text-white mb-3">Please select the scheme</h3>
+            <h3
+                class="mb-3"
+                :class="[isInnerPage ? 'text-dark' : 'text-white']"
+            >
+                Please select the scheme
+            </h3>
 
             <div
                 data-program-btn-container
@@ -140,8 +207,8 @@ const redirectToStudyMaterialPage = (
             >
                 <span
                     v-for="schemeName in schemeNamesArray"
-                    :key="schemeName"
-                    @click="changeSelectedScheme(schemeName.parameterText)"
+                    :key="schemeName._id"
+                    @click="changeSelectedScheme(schemeName.folderName)"
                     class="btn-get-started me-2 mb-2"
                     >{{ schemeName.shortDisplayText }}</span
                 >
@@ -150,10 +217,15 @@ const redirectToStudyMaterialPage = (
 
         <div
             data-select-year-container
-            v-if="shouldShowYear"
+            v-else-if="shouldShowYear"
             class="d-flex align-items-center flex-column hero-custom-container"
         >
-            <h3 class="text-white mb-3">Please select the year</h3>
+            <h3
+                class="mb-3"
+                :class="[isInnerPage ? 'text-dark' : 'text-white']"
+            >
+                Please select the year
+            </h3>
 
             <div
                 data-program-btn-container
@@ -161,8 +233,8 @@ const redirectToStudyMaterialPage = (
             >
                 <span
                     v-for="yearName in yearArray"
-                    :key="yearName"
-                    @click="changeSelectedYear(yearName)"
+                    :key="yearName._id"
+                    @click="changeSelectedYear(yearName.shortDisplayText)"
                     class="btn-get-started me-2 mb-2"
                     >{{ yearName.longDisplayText }}</span
                 >
@@ -171,10 +243,15 @@ const redirectToStudyMaterialPage = (
 
         <div
             data-select-branch-container
-            v-if="shouldShowBranch"
+            v-else
             class="d-flex align-items-center flex-column hero-custom-container"
         >
-            <h3 class="text-white mb-3">Please select the branch</h3>
+            <h3
+                class="mb-3"
+                :class="[isInnerPage ? 'text-dark' : 'text-white']"
+            >
+                Please select the branch
+            </h3>
 
             <div
                 data-program-btn-container
@@ -182,8 +259,8 @@ const redirectToStudyMaterialPage = (
             >
                 <span
                     v-for="branchName in branchArray"
-                    :key="branchName"
-                    @click="changeSelectedBranch(branchName)"
+                    :key="branchName._id"
+                    @click="changeSelectedBranch(branchName.longDisplayText)"
                     class="btn-get-started me-2 mb-2"
                     >{{ branchName.longDisplayText }}</span
                 >
@@ -207,6 +284,10 @@ const redirectToStudyMaterialPage = (
 
 @media (min-width: 2200px) {
     .search-subject-division {
+        margin-left: -8vw;
+    }
+
+    .inner-pages-css .search-subject-division {
         margin-left: -1vw;
     }
 }
