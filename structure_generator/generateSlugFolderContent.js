@@ -7,6 +7,8 @@
 export const programSchemeSlugContent = (programName = '', schemeName = '') => {
     return `---
 import Layout from "../../../layouts/Layout.astro";
+import InnerPageContainer from '../../../components/innerPageComponent/innerPageComponent.vue';
+
 // constants
 const programName = '${programName}';
 const schemeName = '${schemeName}';
@@ -24,7 +26,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { post } = Astro.props;
 ---
-<Layout title="" isInnerPage={isInnerPage}>
+<Layout title="" isInnerPage={true}>
   <h1>{slug}</h1>
   <h1>{JSON.stringify(post.post_id)}</h1>
   <></>

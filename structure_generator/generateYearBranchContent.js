@@ -15,6 +15,10 @@ export const yearBranchIndexContent = (
     // Return the year branch index page template
     return `---
   import Layout from "../../../../layouts/Layout.astro";
+  import SearchAndSelector from '../../../../components/homePage/heroComponent/partials/SearchAndSelector.vue';
+  import InnerPageContainer from '../../../../components/innerPageComponent/innerPageComponent.vue';
+
+
   // constants
   const programName = '${programName}';
   const schemeName = '${schemeName}';
@@ -30,8 +34,10 @@ export const yearBranchIndexContent = (
       ).then((response) => response.content);
   
   ---
-  <Layout title="" isInnerPage={isInnerPage}>
-    {/* Add content here */}
+  <Layout title="" isInnerPage={true}>
+  <InnerPageContainer>
+    <h1>default text</h1>
+  </InnerPageContainer>
   </Layout>
   <style></style>`;
 };

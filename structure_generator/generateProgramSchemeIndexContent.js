@@ -10,14 +10,23 @@ export const programSchemeIndexContent = (
 ) => {
     return `---
 import Layout from "../../../layouts/Layout.astro";
+import SearchAndSelector from '../../../components/homePage/heroComponent/partials/SearchAndSelector.vue';
+import InnerPageContainer from '../../../components/innerPageComponent/innerPageComponent.vue';
+
 // constants
 const programName = '${programName}';
 const schemeName = '${schemeName}';
 const { slug } = Astro.params;
 const { post } = Astro.props;
 ---
-<Layout title="" isInnerPage={isInnerPage}>
-  <></>
+<Layout title="" isInnerPage={true}>
+<InnerPageContainer>
+<div class="container-fluid" data-aos="fade-up">
+    <div class="row justify-content-center align-items-center">
+        <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName}" selectedSchemeProp="${schemeName}"/>
+    </div>
+</div>
+</InnerPageContainer>
 </Layout>
 <style></style>`;
 };
