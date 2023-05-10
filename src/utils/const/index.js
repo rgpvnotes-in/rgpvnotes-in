@@ -58,7 +58,7 @@ export const programNamesArray = [
         _order: 1,
         _display: true,
         shortDisplayText: 'MBA',
-        longDisplayText: '',
+        longDisplayText: 'Master in Business Administration',
         folderName: 'mba',
     },
     {
@@ -66,7 +66,7 @@ export const programNamesArray = [
         _order: 2,
         _display: true,
         shortDisplayText: 'M.Arch',
-        longDisplayText: '',
+        longDisplayText: 'Master of Architecture',
         folderName: 'march',
     },
     {
@@ -90,7 +90,7 @@ export const programNamesArray = [
         _order: 5,
         _display: true,
         shortDisplayText: 'BE-PTDC',
-        longDisplayText: '',
+        longDisplayText: 'Bachelor of Engineering - Part Time Diploma Courses',
         folderName: 'be-ptdc',
     },
     {
@@ -98,7 +98,7 @@ export const programNamesArray = [
         _order: 6,
         _display: true,
         shortDisplayText: 'B.Tech-PTDC',
-        longDisplayText: '',
+        longDisplayText: 'Bachelor of Technology - Part Time Diploma Courses',
         folderName: 'btech-ptdc',
     },
     {
@@ -106,7 +106,7 @@ export const programNamesArray = [
         _order: 7,
         _display: true,
         shortDisplayText: 'B.Pharm (PCI)',
-        longDisplayText: '',
+        longDisplayText: 'Bachelor of Pharmacy - Pharmacy Council of India',
         folderName: 'bpharm-(pci)',
     },
     {
@@ -114,7 +114,7 @@ export const programNamesArray = [
         _order: 8,
         _display: true,
         shortDisplayText: 'B.Pharm',
-        longDisplayText: '',
+        longDisplayText: 'Bachelor of Pharmacy ',
         folderName: 'bpharm',
     },
     {
@@ -122,7 +122,7 @@ export const programNamesArray = [
         _order: 9,
         _display: true,
         shortDisplayText: 'B.Arch',
-        longDisplayText: '',
+        longDisplayText: 'Bachelor Of Architecture',
         folderName: 'barch',
     },
     {
@@ -130,7 +130,7 @@ export const programNamesArray = [
         _order: 10,
         _display: true,
         shortDisplayText: 'M.E',
-        longDisplayText: '',
+        longDisplayText: 'Master of Engineering',
         folderName: 'me',
     },
     {
@@ -138,7 +138,7 @@ export const programNamesArray = [
         _order: 11,
         _display: true,
         shortDisplayText: 'M.Tech',
-        longDisplayText: '',
+        longDisplayText: 'Master of Technology',
         folderName: 'mtech',
     },
     {
@@ -146,7 +146,7 @@ export const programNamesArray = [
         _order: 12,
         _display: true,
         shortDisplayText: 'M.Tech (Part Time)',
-        longDisplayText: '',
+        longDisplayText: 'Master of Technology (Part Time)',
         folderName: 'mtech-(part-time)',
     },
     {
@@ -154,7 +154,7 @@ export const programNamesArray = [
         _order: 13,
         _display: true,
         shortDisplayText: 'M.Pharm',
-        longDisplayText: '',
+        longDisplayText: 'Master of Pharmacy',
         folderName: 'mpharm',
     },
     {
@@ -162,7 +162,7 @@ export const programNamesArray = [
         _order: 14,
         _display: true,
         shortDisplayText: 'M.Pharm PCI',
-        longDisplayText: '',
+        longDisplayText: 'Master of Pharmacy - Pharmacy Council of India',
         folderName: 'mpharm-pci',
     },
     {
@@ -170,7 +170,7 @@ export const programNamesArray = [
         _order: 15,
         _display: true,
         shortDisplayText: 'MCA 2 Year',
-        longDisplayText: '',
+        longDisplayText: 'Master of Computer Applications - 2 Year',
         folderName: 'mca-2-year',
     },
     {
@@ -178,7 +178,7 @@ export const programNamesArray = [
         _order: 16,
         _display: true,
         shortDisplayText: 'MCA',
-        longDisplayText: '',
+        longDisplayText: 'Master of Computer Applications',
         folderName: 'mca',
     },
     {
@@ -186,7 +186,7 @@ export const programNamesArray = [
         _order: 17,
         _display: true,
         shortDisplayText: 'MCA Dual Degree',
-        longDisplayText: '',
+        longDisplayText: 'Master of Computer Applications Dual Degree',
         folderName: 'mca-dual-degree',
     },
     {
@@ -194,7 +194,7 @@ export const programNamesArray = [
         _order: 18,
         _display: true,
         shortDisplayText: 'MBA Integrated',
-        longDisplayText: '',
+        longDisplayText: 'Master in Business Administration Integrated ',
         folderName: 'mba-integrated',
     },
     {
@@ -202,7 +202,7 @@ export const programNamesArray = [
         _order: 19,
         _display: true,
         shortDisplayText: 'DDI-PG',
-        longDisplayText: '',
+        longDisplayText: 'Dual Degree Integrated Post Graduate',
         folderName: 'ddi-pg',
     },
     {
@@ -210,7 +210,7 @@ export const programNamesArray = [
         _order: 20,
         _display: true,
         shortDisplayText: 'Diploma',
-        longDisplayText: '',
+        longDisplayText: 'Diploma',
         folderName: 'diploma',
     },
     {
@@ -218,7 +218,7 @@ export const programNamesArray = [
         _order: 21,
         _display: true,
         shortDisplayText: 'Ph.D',
-        longDisplayText: '',
+        longDisplayText: 'Doctor of Philosophy',
         folderName: 'phd',
     },
     {
@@ -226,23 +226,24 @@ export const programNamesArray = [
         _order: 22,
         _display: true,
         shortDisplayText: 'Ph.D Entrance',
-        longDisplayText: '',
+        longDisplayText: 'Doctor of Philosophy Entrance',
         folderName: 'phd-entrance',
     },
     {
         _id: 23,
         _order: 23,
         _display: true,
-        shortDisplayText: 'PGCMB',
-        longDisplayText: '',
-        folderName: 'pgcmb',
+        shortDisplayText: 'PGCPMB',
+        longDisplayText:
+            'Post Graduate Certificate Programme in Medical Biotechnology',
+        folderName: 'pgcpmb',
     },
     {
         _id: 24,
         _order: 24,
         _display: true,
         shortDisplayText: 'Pharm D',
-        longDisplayText: '',
+        longDisplayText: 'Diploma in Pharmacy',
         folderName: 'pharm-d',
     },
 ];
