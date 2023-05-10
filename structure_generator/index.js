@@ -80,7 +80,10 @@ try {
 
             for (const yearObject of yearArray) {
                 if ('1st year' === yearObject.shortDisplayText) {
-                    const yearPath = `${schemePath}/${yearObject.shortDisplayText}`;
+                    const yearPath = `${schemePath}/${yearObject.shortDisplayText.replace(
+                        / /gm,
+                        '-',
+                    )}`;
 
                     // create folder with program and scheme name if it does not exist
                     if (!fs.existsSync(yearPath)) {
@@ -94,7 +97,7 @@ try {
                     const yearIndexContent = getFirstYearIndexContent(
                         program.shortDisplayText,
                         scheme.shortDisplayText,
-                        yearObject.shortDisplayText,
+                        yearObject.shortDisplayText.replace(/ /gm, '-'),
                     );
                     fs.writeFileSync(
                         `${yearPath}/index.astro`,
@@ -105,9 +108,16 @@ try {
                     );
                 } else {
                     for (const branchObject of branchArray) {
-                        const yearBranchPath = `${schemePath}/${branchObject.longDisplayText.toLowerCase()}-${
-                            yearObject.shortDisplayText
-                        }`;
+                        const yearBranchPath = `${schemePath}/${branchObject.longDisplayText
+                            .toLowerCase()
+                            .replace(/&/gm, 'and')
+                            .replace(
+                                / /gm,
+                                '-',
+                            )}-${yearObject.shortDisplayText.replace(
+                            / /gm,
+                            '-',
+                        )}`;
 
                         // create folder with program and scheme name if it does not exist
                         if (!fs.existsSync(yearBranchPath)) {
