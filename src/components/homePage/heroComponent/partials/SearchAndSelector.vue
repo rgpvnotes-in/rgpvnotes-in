@@ -1,6 +1,13 @@
 <script setup>
 import { ref } from 'vue';
 
+const componentProps = defineProps({
+    isInnerPage: Boolean,
+});
+
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { isInnerPage = true } = componentProps;
+
 import {
     programNamesArray,
     schemeNamesArray,
@@ -57,7 +64,12 @@ const redirectToStudyMaterialPage = (
 
 <template>
     <div
-        class="col-xl-6 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+        class="pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+        :class="[
+            isInnerPage
+                ? 'inner-pages-css col-xl-12 col-lg-12'
+                : 'col-xl-6 col-lg-6',
+        ]"
     >
         <h1>Welcome To RGPV NOTES</h1>
         <h2>One stop solution for all your RGPV needs</h2>
@@ -71,9 +83,13 @@ const redirectToStudyMaterialPage = (
                 aria-label="subjectSubject"
                 aria-describedby="subjectSubject"
                 data-subject-search-input=""
+                :style="{ border: isInnerPage ? '1px solid #000' : '' }"
             />
             <button
-                class="btn btn-outline-light"
+                class="btn"
+                :class="[
+                    isInnerPage ? 'btn-outline-dark' : 'btn-outline-light',
+                ]"
                 type="button"
                 data-subject-search-btn=""
             >
@@ -90,7 +106,12 @@ const redirectToStudyMaterialPage = (
             v-if="shouldShowProgram"
             class="d-flex align-items-center flex-column hero-custom-container"
         >
-            <h3 class="text-white mb-3">Please select the program</h3>
+            <h3
+                class="mb-3"
+                :class="[isInnerPage ? 'text-dark' : 'text-white']"
+            >
+                Please select the program
+            </h3>
 
             <div
                 data-program-btn-container
@@ -171,8 +192,7 @@ const redirectToStudyMaterialPage = (
     </div>
 </template>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .hero-custom-container {
     width: 100%;
     max-width: 990px;
@@ -233,24 +253,8 @@ const redirectToStudyMaterialPage = (
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(
-            45deg,
-            rgba(86, 58, 250, 0.9) 0%,
-            rgba(116, 15, 214, 0.9) 100%
-        ),
-        url('/assets/img/hero-bg.jpg') center center no-repeat;
-    background-size: cover;
-}
 
-#hero .container,
-#hero .container-fluid {
-    padding-top: 84px;
-}
-
-#hero h1 {
+h1 {
     margin: 0;
     font-size: 52px;
     font-weight: 700;
@@ -258,13 +262,27 @@ const redirectToStudyMaterialPage = (
     color: #fff;
 }
 
-#hero h2 {
+.inner-pages-css h1 {
+    margin: 0;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #5846f9;
+}
+
+h2 {
     color: rgba(255, 255, 255, 0.8);
     margin: 10px 0 0 0;
     font-size: 20px;
 }
 
-#hero .btn-get-started {
+.inner-pages-css h2 {
+    color: rgba(0, 0, 0, 0.8);
+    margin: 10px 0 0 0;
+    font-size: 20px;
+}
+
+.btn-get-started {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -277,69 +295,66 @@ const redirectToStudyMaterialPage = (
     border: 2px solid #fff;
 }
 
-#hero .btn-get-started:hover {
+.inner-pages-css .btn-get-started {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.btn-get-started:hover {
     background: #fff;
     color: #5846f9;
 }
 
-#hero .animated {
+.inner-pages-css .btn-get-started:hover {
+    background: #5846f9;
+    color: #fff;
+}
+
+.animated {
     animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
-@media (min-width: 1200px) {
-    #hero {
-        background-attachment: fixed;
-    }
-}
-
 @media (max-width: 991px) {
-    #hero {
-        text-align: center;
-    }
-
-    #hero .container,
-    #hero .container-fluid {
-        padding-top: 68px;
-    }
-
-    #hero .animated {
+    .animated {
         animation: none;
     }
 
-    #hero .hero-img {
+    .hero-img {
         text-align: center;
     }
 
-    #hero .hero-img img {
+    .hero-img img {
         width: 50%;
     }
 }
 
 @media (max-width: 768px) {
-    #hero h1 {
+    h1 {
         font-size: 26px;
         line-height: 36px;
     }
 
-    #hero h2 {
+    h2 {
         font-size: 18px;
         line-height: 24px;
     }
 
-    #hero .hero-img img {
+    .hero-img img {
         width: 60%;
     }
 }
 
 @media (max-width: 575px) {
-    #hero .hero-img img {
+    .hero-img img {
         width: 80%;
-    }
-}
-
-@media (max-width: 575px), (max-height: 600px) {
-    #hero {
-        height: auto;
     }
 }
 
