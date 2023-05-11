@@ -25,8 +25,6 @@ export const yearBranchIndexContent = (
     const schemeName = '${schemeName}';
     const yearName = '${yearName}';
     const branchName = '${branchName}';
-    const { slug } = Astro.params;
-    const { post } = Astro.props;
     
     // Fetch the branch year data
     const getBranchYearData = await fetch(

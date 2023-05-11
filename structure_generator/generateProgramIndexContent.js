@@ -11,8 +11,6 @@ import InnerPageContainer from '../../components/innerPageComponent/innerPageCom
 
 // constants
 const programName = '${programName}';
-const { slug } = Astro.params;
-const { post } = Astro.props;
 ---
 <Layout title="" isInnerPage={true}>
 <InnerPageContainer>

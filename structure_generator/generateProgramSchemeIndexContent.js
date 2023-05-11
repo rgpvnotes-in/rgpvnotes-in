@@ -16,11 +16,8 @@ import InnerPageContainer from '../../../components/innerPageComponent/innerPage
 // constants
 const programName = '${programName}';
 const schemeName = '${schemeName}';
-const { slug } = Astro.params;
-const { post } = Astro.props;
 ---
 <Layout title="" isInnerPage={true}>
-<InnerPageContainer>
 <div class="container-fluid" data-aos="fade-up">
     <div class="row justify-content-center align-items-center">
         <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName}" selectedSchemeProp="${schemeName}"/>
