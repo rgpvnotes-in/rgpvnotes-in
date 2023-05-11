@@ -14,6 +14,7 @@ export const firstYearIndexContent = (
     return `---
   import Layout from "../../../../layouts/Layout.astro";
   import InnerPageContainer from '../../../../components/innerPageComponent/innerPageComponent.vue';
+  import SubjectCard from '../../../../components/postBodyComponent/multiColorBackground.vue';
 
   // constants
   const programName = '${programName}';
@@ -24,11 +25,41 @@ export const firstYearIndexContent = (
   const getBranchYearData = await fetch(
     'http://backend.rgpvnotes.in/api/v1/search.php?program_name=${programName}&scheme_name=${schemeName}&subject_year=${yearName}'
   ).then((response) => response.json()).then((response) => response.content).catch((error)=> {console.error(error)});  
+
+  const staticTitle = 'First Year';
+
+const pathArray = Astro.url.pathname.split('/');
+const breadCrumbsArray = [];
+
+for (let index = pathArray.length - 1; index >= 0; index--) {
+    let name = '';
+    if (0 === index) {
+        name = 'Home';
+    } else if (1 === index) {
+        name = programName;
+    } else if (2 === index) {
+        name = schemeName;
+    } else if (3 === index) {
+        name = staticTitle;
+    }
+
+    breadCrumbsArray.push({ name: name, url: pathArray.join('/') });
+    pathArray.pop();
+}
 ---
   <Layout title="" isInnerPage={true}>
-  <InnerPageContainer>
-    <h1>default text</h1>
-  </InnerPageContainer>
+  <InnerPageContainer
+  staticTitle={staticTitle}
+  breadCrumbsArray={breadCrumbsArray.reverse()}
+>
+  <div>
+      <h1 class="page-static-title d-flex justify-content-center mb-4">
+          {staticTitle}
+      </h1>
+
+      <SubjectCard getBranchYearDataArray={getBranchYearData} />
+  </div>
+</InnerPageContainer>
   </Layout>
   <style></style>`;
 };
