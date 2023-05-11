@@ -14,8 +14,8 @@ const programName = '${programName}';
 const schemeName = '${schemeName}';
 export async function getStaticPaths() {
   const getSlugsData = await fetch(
-    'http://backend.rgpvnotes.in/api/v1/all_post.php?program_name=' + programName + '&scheme_name=' + schemeName
-  ).then((response) => response.json());
+    'http://backend.rgpvnotes.in/api/v1/all_post.php?program_name=${programName}&scheme_name=${schemeName}'
+  ).then((response) => response.json()).catch((error)=> {console.error(error});
   return getSlugsData.content.map((post) => {   
     return {
       params: { slug: post.slug },

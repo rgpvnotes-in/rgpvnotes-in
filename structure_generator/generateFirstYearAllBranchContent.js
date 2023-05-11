@@ -25,8 +25,8 @@ export const firstYearIndexContent = (
   
   // Get the branch year data
   const getBranchYearData = await fetch(
-    'http://backend.rgpvnotes.in/api/v1/search.php?program_name=' + programName + '&scheme_name=' + schemeName + '&subject_year=' + yearName
-  ).then((response) => response.json()).then((response) => response.content);
+    'http://backend.rgpvnotes.in/api/v1/search.php?program_name=${programName}&scheme_name=${schemeName}&subject_year=${yearName}'
+  ).then((response) => response.json()).then((response) => response.content).catch((error)=> {console.error(error)});
   
   ---
   <Layout title="" isInnerPage={true}>
