@@ -101,9 +101,9 @@ export default {
             selectedBranch = '',
         ) => {
             if ('1st year' === selectedYear) {
-                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase()}/${selectedYear.replace(/ /gm, "-")}`;
+                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedYear.replace(/ /gm, "-")}`;
             } else {
-                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase()}/${selectedBranch.toLowerCase().replace(/&/gm, "and").replace(/ /gm, "-")}-${selectedYear.replace(/ /gm, "-")}`;
+                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedBranch.toLowerCase().replace(/&/gm, "and").replace(/ /gm, "-")}-${selectedYear.replace(/ /gm, "-")}`;
             }
         };
         return {
