@@ -3,12 +3,12 @@ import breadcrumbsComponent from '../breadcrumbsComponent/breadcrumbsComponent.v
 
 const props = defineProps({
     staticTitle: {
-        required: true,
+        required: false,
         type: String,
         default: '',
     },
     breadCrumbsArray: {
-        required: true,
+        required: false,
         type: Array,
     },
 });
