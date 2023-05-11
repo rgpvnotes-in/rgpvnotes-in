@@ -10,14 +10,14 @@ const props = defineProps({
 });
 
 const semesterArray = [];
-for (const subjectsData of props.allSubjectsData) {
+for (const subjectsData of props.getBranchYearDataArray) {
     semesterArray.push(subjectsData.semester);
 }
 
 let filteredSemesterArray = [...new Set(semesterArray)].sort();
 
 const filteredSubjectsData = (semesterName) =>
-    (props.allSubjectsData.filter(
+    (props.getBranchYearDataArray.filter(
         (subjectsData) => subjectsData.semester === semesterName,
     )).sort();
 
