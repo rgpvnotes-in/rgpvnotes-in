@@ -1,19 +1,8 @@
-<script>
-import { computed } from 'vue';
-
-export default {
-  setup(_, { slots }) {
-    const hasHeaderSlot = computed(() => slots.header && slots.header());
-
-    return {
-      hasHeaderSlot,
-    };
-  },
-};
+<script setup>
 </script>
 
 <template>
-    <div class="post-body-title-card" v-if="hasHeaderSlot">
+    <div class="post-body-title-card">
         <slot />
     </div>
 </template>
