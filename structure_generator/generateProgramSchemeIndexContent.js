@@ -18,9 +18,16 @@ const programName = '${programName}';
 const schemeName = '${schemeName}';
 ---
 <Layout title="" isInnerPage={true}>
+<InnerPageContainer>
 <div class="container-fluid" data-aos="fade-up">
     <div class="row justify-content-center align-items-center">
-        <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName}" selectedSchemeProp="${schemeName}"/>
+        <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName
+            .replace(/\./gm, '')
+            .toLowerCase()}" selectedSchemeProp="${schemeName
+        .replace(/\./gm, '')
+        .replace(' System', '')
+        .replace(/ /gm, '-')
+        .toLowerCase()}"/>
     </div>
 </div>
 </InnerPageContainer>

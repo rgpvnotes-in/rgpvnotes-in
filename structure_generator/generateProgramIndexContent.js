@@ -16,7 +16,9 @@ const programName = '${programName}';
 <InnerPageContainer>
 <div class="container-fluid" data-aos="fade-up">
     <div class="row justify-content-center align-items-center">
-        <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName}"/>
+        <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName
+            .replace(/\./gm, '')
+            .toLowerCase()}"/>
     </div>
 </div>
 </InnerPageContainer>
