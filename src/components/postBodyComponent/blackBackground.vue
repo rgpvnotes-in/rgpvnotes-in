@@ -1,8 +1,9 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-    <div class="post-body-title-card">
-        <slot />
+    <div class="d-flex justify-content-center">
+        <div class="post-body-title-card">
+            <h2><slot /></h2>
+        </div>
     </div>
 </template>
