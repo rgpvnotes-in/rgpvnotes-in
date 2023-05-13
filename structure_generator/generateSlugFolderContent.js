@@ -11,6 +11,7 @@ import InnerPageContainer from '../../../components/innerPageComponent/innerPage
 import MultiColorCard from '../../../components/postBodyComponent/multiColorBackground.vue';
 import StaticTitleCard from '../../../components/postBodyComponent/blackBackground.vue';
 import TitleTextBlock from '../../../components/postBodyComponent/titleTextBlock.vue'
+import TagsBlock from '../../../components/postBodyComponent/tagsBlock.vue';
 
 // constants
 const programName = '${programName}';
@@ -56,6 +57,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <div class="row">
 <div class="col-12 col-sm-12 col-md-8 col-lg-8">
     <img src={post.banner_url} alt="" srcset="" />
+    <TitleTextBlock title="Objective" textArray={post.objective} />
     <StaticTitleCard>Syllabus</StaticTitleCard>
     <MultiColorCard index={1} content={post.unit_1_syllabus} />
     <MultiColorCard index={2} content={post.unit_2_syllabus} />
@@ -98,9 +100,8 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
         title="books_list"
         textArray={post.books_list}
     />
-    <!-- <TitleTextBlock title="Objective" textArray={post.objective} /> -->
 
-    <p></p>
+    <TagsBlock labelArray={post.labels} />
 
     <p>{JSON.stringify(post)}</p>
 </div>
