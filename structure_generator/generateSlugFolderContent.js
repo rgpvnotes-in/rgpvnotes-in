@@ -12,6 +12,7 @@ import MultiColorCard from '../../../components/postBodyComponent/multiColorBack
 import StaticTitleCard from '../../../components/postBodyComponent/blackBackground.vue';
 import TitleTextBlock from '../../../components/postBodyComponent/titleTextBlock.vue'
 import TagsBlock from '../../../components/postBodyComponent/tagsBlock.vue';
+import AuthorBlock from '../../../components/postBodyComponent/authorBlock.vue';
 
 // constants
 const programName = '${programName}';
@@ -102,6 +103,13 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     />
 
     <TagsBlock labelArray={post.labels} />
+    <AuthorBlock />
+
+    <!-- 
+        
+    TODO:  
+    add you may also like using API
+-->
 
     <p>{JSON.stringify(post)}</p>
 </div>
