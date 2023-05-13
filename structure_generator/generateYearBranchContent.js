@@ -76,7 +76,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     </div>
     <div class="col-12 col-sm-12 col-md-4 col-lg-4">
         <StaticTitleCard>Labels</StaticTitleCard>
-        <MultiColorCard index={1} content={post.unit_1_syllabus} />
+
 
     </div>
 </div>
