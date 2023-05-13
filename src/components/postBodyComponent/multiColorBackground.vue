@@ -1,42 +1,46 @@
 <script setup>
 import '@assets/css/blogger-style.css';
-import StaticTitleCard from '../postBodyComponent/blackBackground.vue';
 
 const props = defineProps({
-    getBranchYearDataArray: {
-        required: true,
+    content: {
+        required: false,
         type: Array,
+    },
+    index: {
+        required: false,
+        type: Number,
+        default: 100,
+    },
+    subjectsDataList: {
+        required: false,
+        type: Object,
     },
 });
 
-const semesterArray = [];
-for (const subjectsData of props.getBranchYearDataArray) {
-    semesterArray.push(subjectsData.semester);
-}
-
-let filteredSemesterArray = [...new Set(semesterArray)].sort();
-
-const filteredSubjectsData = (semesterName) =>
-    (props.getBranchYearDataArray.filter(
-        (subjectsData) => subjectsData.semester === semesterName,
-    )).sort();
 
 </script>
 
 <template>
-    <div v-for="semesterData in filteredSemesterArray" :key="semesterData">
-        <StaticTitleCard>
-            <h2>{{ semesterData }}</h2>
-        </StaticTitleCard>
+    <div v-if="props.subjectsDataList">
         <div
             class="custom-fancy-container"
             :class="'fancy-container-background-' + (index + 1)"
             :key="subjectObject.post_id"
-            v-for="(subjectObject, index) in filteredSubjectsData(semesterData)"
+            v-for="(subjectObject, index) in subjectsDataList"
         >
             <a :href="subjectObject.slug"
                 ><b>{{ subjectObject.rendered_title }}</b></a
             >
         </div>
+    </div>
+    <div
+        class="custom-fancy-container"
+        :class="'fancy-container-background-' + props.index"
+        v-if="props.content?.length > 0 && props.index"
+    >
+        <p class="mb-0">
+            <strong>UNIT {{ props.index }}:</strong>
+        </p>
+        <p v-for="data in props.content" :key="{ data }">{{ data }}</p>
     </div>
 </template>
