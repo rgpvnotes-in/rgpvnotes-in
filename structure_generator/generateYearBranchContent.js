@@ -16,7 +16,9 @@ export const yearBranchIndexContent = (
     return `---
     import Layout from '../../../../layouts/Layout.astro';
     import InnerPageContainer from '../../../../components/innerPageComponent/innerPageComponent.vue';
-    import SubjectCard from '../../../../components/postBodyComponent/multiColorBackground.vue';
+    import PageComponent from '../../../../components/pageComponent/pageComponent.vue';
+    import MultiColorCard from '../../../../components/postBodyComponent/multiColorBackground.vue';
+    import StaticTitleCard from '../../../../components/postBodyComponent/blackBackground.vue';
     
     import { yearArray } from '../../../../utils/const/index';
     
@@ -57,22 +59,28 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     breadCrumbsArray.push({ name: name, url: pathArray.join('/') });
     pathArray.pop();
 }
-    ---
+---
     
     <Layout title="" isInnerPage={true}>
     <InnerPageContainer
         staticTitle={staticTitle}
         breadCrumbsArray={breadCrumbsArray.reverse()}
     >
-        <div>
-            <h1 class="page-static-title d-flex justify-content-center mb-4">
-                {staticTitle}
-            </h1>
+    <div class="row">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+    <h1 class="page-static-title d-flex justify-content-center mb-4">
+    {staticTitle}
+    </h1>
 
-            <SubjectCard getBranchYearDataArray={getBranchYearData} />
-        </div>
+<PageComponent getBranchYearDataArray={getBranchYearData} />
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+        <StaticTitleCard>Labels</StaticTitleCard>
+        <MultiColorCard index={1} content={post.unit_1_syllabus} />
+
+    </div>
+</div>
     </InnerPageContainer>
 </Layout>
-    <style></style>
-    `;
+    <style></style>`;
 };
