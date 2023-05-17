@@ -56,10 +56,16 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <Layout title="" isInnerPage={true}>
 <InnerPageContainer staticTitle={post.rendered_title} breadCrumbsArray={breadCrumbsArray.reverse()}>
 <div class="row">
-<div class="col-12 col-sm-12 col-md-8 col-lg-8 left-post-container pb-5 px-0">
+<div class="col-12 col-sm-12 col-md-8 col-lg-8 left-block-container pb-5 px-0">
 
 <div class="px-4">
-<img src={post.banner_url} alt="" srcset="" />
+<div class="d-flex justify-content-center">
+<img
+    src={post.banner_url}
+    alt={post.rendered_title + " banner image"}
+/>
+</div>
+
 <TitleTextBlock title="Objective" textArray={post.objective} />
 <StaticTitleCard>Syllabus</StaticTitleCard>
 <MultiColorCard index={1} content={post.unit_1_syllabus} />
@@ -78,29 +84,29 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     title="Recommended Text Books"
     textArray={post.recommended_text_books}
 />
-<TitleTextBlock title="practical" textArray={post.practical} />
+<TitleTextBlock title="Practical" textArray={post.practical} />
 <TitleTextBlock
-    title="books_recommended"
+    title="Books Recommended"
     textArray={post.books_recommended}
 />
 <TitleTextBlock
-    title="list_of_experiments"
+    title="List Of Experiments"
     textArray={post.list_of_experiments}
 />
 <TitleTextBlock
-    title="evaluation"
+    title="Evaluation"
     textArray={post.evaluation}
 />
 <TitleTextBlock
-    title="references"
+    title="References"
     textArray={post.references}
 />
 <TitleTextBlock
-    title="lab_assignments"
+    title="Lab Assignments"
     textArray={post.lab_assignments}
 />
 <TitleTextBlock
-    title="books_list"
+    title="Books List"
     textArray={post.books_list}
 />
 
@@ -110,7 +116,7 @@ TODO:
 add you may also like using API
 -->
 
-<TagsBlock labelArray={post.labels} />
+<TagsBlock labelArray={post.labels} showTag={true} />
 </div>
     <AuthorBlock />
 
@@ -118,8 +124,10 @@ add you may also like using API
 
 </div>
 <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
+<div class="right-block-container pb-4 px-3 mt-2">
     <StaticTitleCard>Labels</StaticTitleCard>
-    <MultiColorCard index={1} content={post.unit_1_syllabus} />
+    <TagsBlock labelArray={post.labels} showTag={false} />
+</div>   
 
 </div>
 </div>
@@ -128,7 +136,11 @@ add you may also like using API
 </InnerPageContainer>
 </Layout>
 <style scoped>
-.left-post-container {
+.left-block-container {
+    background-color: #f2f6f9;
+}
+
+.right-block-container {
     background-color: #f2f6f9;
 }
 </style>`;
