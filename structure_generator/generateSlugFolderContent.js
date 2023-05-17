@@ -56,64 +56,68 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <Layout title="" isInnerPage={true}>
 <InnerPageContainer staticTitle={post.rendered_title} breadCrumbsArray={breadCrumbsArray.reverse()}>
 <div class="row">
-<div class="col-12 col-sm-12 col-md-8 col-lg-8">
-    <img src={post.banner_url} alt="" srcset="" />
-    <TitleTextBlock title="Objective" textArray={post.objective} />
-    <StaticTitleCard>Syllabus</StaticTitleCard>
-    <MultiColorCard index={1} content={post.unit_1_syllabus} />
-    <MultiColorCard index={2} content={post.unit_2_syllabus} />
-    <MultiColorCard index={3} content={post.unit_3_syllabus} />
-    <MultiColorCard index={4} content={post.unit_4_syllabus} />
-    <MultiColorCard index={5} content={post.unit_5_syllabus} />
-    <MultiColorCard index={6} content={post.unit_7_syllabus} />
-    <MultiColorCard index={7} content={post.unit_7_syllabus} />
-    <MultiColorCard index={8} content={post.unit_8_syllabus} />
-    <MultiColorCard index={9} content={post.unit_9_syllabus} />
-    <MultiColorCard index={10} content={post.unit_10_syllabus} />
+<div class="col-12 col-sm-12 col-md-8 col-lg-8 left-post-container pb-5 px-0">
 
-    <TitleTextBlock title="Outcome" textArray={post.outcome} />
-    <TitleTextBlock
-        title="Recommended Text Books"
-        textArray={post.recommended_text_books}
-    />
-    <TitleTextBlock title="practical" textArray={post.practical} />
-    <TitleTextBlock
-        title="books_recommended"
-        textArray={post.books_recommended}
-    />
-    <TitleTextBlock
-        title="list_of_experiments"
-        textArray={post.list_of_experiments}
-    />
-    <TitleTextBlock
-        title="evaluation"
-        textArray={post.evaluation}
-    />
-    <TitleTextBlock
-        title="references"
-        textArray={post.references}
-    />
-    <TitleTextBlock
-        title="lab_assignments"
-        textArray={post.lab_assignments}
-    />
-    <TitleTextBlock
-        title="books_list"
-        textArray={post.books_list}
-    />
+<div class="px-4">
+<img src={post.banner_url} alt="" srcset="" />
+<TitleTextBlock title="Objective" textArray={post.objective} />
+<StaticTitleCard>Syllabus</StaticTitleCard>
+<MultiColorCard index={1} content={post.unit_1_syllabus} />
+<MultiColorCard index={2} content={post.unit_2_syllabus} />
+<MultiColorCard index={3} content={post.unit_3_syllabus} />
+<MultiColorCard index={4} content={post.unit_4_syllabus} />
+<MultiColorCard index={5} content={post.unit_5_syllabus} />
+<MultiColorCard index={6} content={post.unit_7_syllabus} />
+<MultiColorCard index={7} content={post.unit_7_syllabus} />
+<MultiColorCard index={8} content={post.unit_8_syllabus} />
+<MultiColorCard index={9} content={post.unit_9_syllabus} />
+<MultiColorCard index={10} content={post.unit_10_syllabus} />
 
-    <TagsBlock labelArray={post.labels} />
-    <AuthorBlock />
+<TitleTextBlock title="Outcome" textArray={post.outcome} />
+<TitleTextBlock
+    title="Recommended Text Books"
+    textArray={post.recommended_text_books}
+/>
+<TitleTextBlock title="practical" textArray={post.practical} />
+<TitleTextBlock
+    title="books_recommended"
+    textArray={post.books_recommended}
+/>
+<TitleTextBlock
+    title="list_of_experiments"
+    textArray={post.list_of_experiments}
+/>
+<TitleTextBlock
+    title="evaluation"
+    textArray={post.evaluation}
+/>
+<TitleTextBlock
+    title="references"
+    textArray={post.references}
+/>
+<TitleTextBlock
+    title="lab_assignments"
+    textArray={post.lab_assignments}
+/>
+<TitleTextBlock
+    title="books_list"
+    textArray={post.books_list}
+/>
 
-    <!-- 
-        
-    TODO:  
-    add you may also like using API
+<!-- 
+    
+TODO:  
+add you may also like using API
 -->
 
-    <p>{JSON.stringify(post)}</p>
+<TagsBlock labelArray={post.labels} />
 </div>
-<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+    <AuthorBlock />
+
+
+
+</div>
+<div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
     <StaticTitleCard>Labels</StaticTitleCard>
     <MultiColorCard index={1} content={post.unit_1_syllabus} />
 
@@ -123,5 +127,9 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <p>{JSON.stringify(post)}</p>
 </InnerPageContainer>
 </Layout>
-<style></style>`;
+<style scoped>
+.left-post-container {
+    background-color: #f2f6f9;
+}
+</style>`;
 };
