@@ -463,6 +463,7 @@
   }
   
   .Tooltip-btn:focus + .Tooltip-box,
+  .Tooltip-btn:hover + .Tooltip-box,
   .Tooltip-box:hover {
     visibility: visible;
     opacity: 1;
@@ -511,3 +512,14 @@
   .page-static-title{
     display: flex;
   }
+
+
+  /* 
+  custom offset for right side
+  */
+
+  @media (min-width: 768px) {
+    .offset-md-half {
+        margin-left: 4.33333333%;
+    }
+}
