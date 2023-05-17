@@ -74,7 +74,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 
 <PageComponent getBranchYearDataArray={getBranchYearData} />
     </div>
-    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
         <StaticTitleCard>Labels</StaticTitleCard>
 
 
