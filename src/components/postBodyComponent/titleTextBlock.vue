@@ -15,7 +15,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div v-if="1">
+    <div v-if="props.textArray.length > 0">
         <StaticTitleCard>
         {{ props.title }}
     </StaticTitleCard>
