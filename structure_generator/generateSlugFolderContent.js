@@ -15,6 +15,7 @@ import TagsBlock from '../../../components/postBodyComponent/tagsBlock.vue';
 import AuthorBlock from '../../../components/postBodyComponent/authorBlock.vue';
 import PopularPostsBlock from '../../../components/postBodyComponent/popularPostsBlock.vue';
 import YouMayAlsoLikeBlock from '../../../components/postBodyComponent/youMayAlsoLikeBlock.vue';
+import PreviousYearQuestionPaper from '../../../components/postBodyComponent/previousYearQuestionPaper.vue';
 
 // constants
 const programName = '${programName}';
@@ -112,7 +113,13 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     textArray={post.books_list}
 />
 
+<hr class="cool-line">
+
 <YouMayAlsoLikeBlock programName={post.subject_program} schemeName={post.subject_system_or_scheme} subjectBranch={post.subject_branch} subjectYear={post.year} subjectSemester={post.semester} />
+
+<hr class="cool-line">
+
+<PreviousYearQuestionPaper questionPaperDataArray={post.previous_year_question_papers} />
 
 <TagsBlock labelArray={post.labels} showTag={true} />
 </div>
