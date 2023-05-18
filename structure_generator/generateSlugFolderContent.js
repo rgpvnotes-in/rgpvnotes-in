@@ -14,6 +14,7 @@ import TitleTextBlock from '../../../components/postBodyComponent/titleTextBlock
 import TagsBlock from '../../../components/postBodyComponent/tagsBlock.vue';
 import AuthorBlock from '../../../components/postBodyComponent/authorBlock.vue';
 import PopularPostsBlock from '../../../components/postBodyComponent/popularPostsBlock.vue';
+import YouMayAlsoLikeBlock from '../../../components/postBodyComponent/youMayAlsoLikeBlock.vue';
 
 // constants
 const programName = '${programName}';
@@ -116,6 +117,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 TODO:  
 add you may also like using API
 -->
+<YouMayAlsoLikeBlock programName={post.subject_program} schemeName={post.subject_system_or_scheme} subjectBranch={post.subject_branch} subjectYear={post.year} subjectSemester={post.semester} />
 
 <TagsBlock labelArray={post.labels} showTag={true} />
 </div>
