@@ -37,6 +37,7 @@ const fetchData = await fetch(
 
 <template>
     <div v-if="fetchData.length > 0">
+        <hr class="cool-line" />
         <StaticTitleCard> You May Also Like </StaticTitleCard>
         <ul class="list-group">
             <li v-for="postData in fetchData" :key="postData.post_id" class="list-group-item border-0 bg-transparent ps-0">

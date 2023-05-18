@@ -113,11 +113,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     textArray={post.books_list}
 />
 
-<hr class="cool-line">
-
 <YouMayAlsoLikeBlock programName={post.subject_program} schemeName={post.subject_system_or_scheme} subjectBranch={post.subject_branch} subjectYear={post.year} subjectSemester={post.semester} />
-
-<hr class="cool-line">
 
 <PreviousYearQuestionPaper questionPaperDataArray={post.previous_year_question_papers} />
 
@@ -142,7 +138,6 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 </div>
 </div>
 
-<p>{JSON.stringify(post)}</p>
 </InnerPageContainer>
 </Layout>
 <style scoped>
