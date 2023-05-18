@@ -16,6 +16,7 @@ const props = defineProps({
 
 <template>
     <div v-if="props.textArray.length > 0">
+        <hr class="cool-line">
         <StaticTitleCard>
         {{ props.title }}
     </StaticTitleCard>
