@@ -13,6 +13,7 @@ import StaticTitleCard from '../../../components/postBodyComponent/blackBackgrou
 import TitleTextBlock from '../../../components/postBodyComponent/titleTextBlock.vue'
 import TagsBlock from '../../../components/postBodyComponent/tagsBlock.vue';
 import AuthorBlock from '../../../components/postBodyComponent/authorBlock.vue';
+import PopularPostsBlock from '../../../components/postBodyComponent/popularPostsBlock.vue';
 
 // constants
 const programName = '${programName}';
@@ -127,7 +128,12 @@ add you may also like using API
 <div class="right-block-container pb-4 px-3 mt-2">
     <StaticTitleCard>Labels</StaticTitleCard>
     <TagsBlock labelArray={post.labels} showTag={false} />
-</div>   
+</div>
+
+<div class="right-block-container pb-4 px-3 mt-3">
+    <StaticTitleCard>Popular Posts</StaticTitleCard>
+    <PopularPostsBlock postsArray={post.popular_posts} />
+</div>
 
 </div>
 </div>
