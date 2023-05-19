@@ -15,7 +15,8 @@ import TagsBlock from '../../../components/postBodyComponent/tagsBlock.vue';
 import AuthorBlock from '../../../components/postBodyComponent/authorBlock.vue';
 import PopularPostsBlock from '../../../components/postBodyComponent/popularPostsBlock.vue';
 import YouMayAlsoLikeBlock from '../../../components/postBodyComponent/youMayAlsoLikeBlock.vue';
-import PreviousYearQuestionPaper from '../../../components/postBodyComponent/previousYearQuestionPaper.vue';
+import PreviousYearQuestionPaperBlock from '../../../components/postBodyComponent/previousYearQuestionPaper.vue';
+import NotesBlock from '../../../components/postBodyComponent/notesBlock.vue';
 
 // constants
 const programName = '${programName}';
@@ -49,6 +50,8 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
         name = programName;
     } else if (2 === index) {
         name = schemeName;
+    } else if (3 === index) {
+        name = post.rendered_title;
     }
 
     breadCrumbsArray.push({ name: name, url: pathArray.join('/') });
@@ -82,6 +85,8 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <MultiColorCard index={9} content={post.unit_9_syllabus} />
 <MultiColorCard index={10} content={post.unit_10_syllabus} />
 
+<NotesBlock notesDataObject={post.subject_notes} affiliateBooksList={post.affiliate_books_list} />
+
 <TitleTextBlock title="Outcome" textArray={post.outcome} />
 <TitleTextBlock
     title="Recommended Text Books"
@@ -108,14 +113,10 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     title="Lab Assignments"
     textArray={post.lab_assignments}
 />
-<TitleTextBlock
-    title="Books List"
-    textArray={post.books_list}
-/>
 
 <YouMayAlsoLikeBlock programName={post.subject_program} schemeName={post.subject_system_or_scheme} subjectBranch={post.subject_branch} subjectYear={post.year} subjectSemester={post.semester} />
 
-<PreviousYearQuestionPaper questionPaperDataArray={post.previous_year_question_papers} />
+<PreviousYearQuestionPaperBlock questionPaperDataArray={post.previous_year_question_papers} />
 
 <TagsBlock labelArray={post.labels} showTag={true} />
 </div>
