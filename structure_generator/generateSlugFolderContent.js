@@ -72,7 +72,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 />
 </div>
 
-<TitleTextBlock title="Objective" textArray={post.objective} />
+<TitleTextBlock title="Course Objective" textArray={post.objective} />
 <StaticTitleCard>Syllabus</StaticTitleCard>
 <MultiColorCard index={1} content={post.unit_1_syllabus} />
 <MultiColorCard index={2} content={post.unit_2_syllabus} />
@@ -87,7 +87,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 
 <NotesBlock notesDataObject={post.subject_notes} affiliateBooksList={post.affiliate_books_list} />
 
-<TitleTextBlock title="Outcome" textArray={post.outcome} />
+<TitleTextBlock title="Course Outcome" textArray={post.outcome} />
 <TitleTextBlock
     title="Recommended Text Books"
     textArray={post.recommended_text_books}
@@ -102,11 +102,11 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     textArray={post.list_of_experiments}
 />
 <TitleTextBlock
-    title="Evaluation"
+    title="Course Evaluation"
     textArray={post.evaluation}
 />
 <TitleTextBlock
-    title="References"
+    title="References Books"
     textArray={post.references}
 />
 <TitleTextBlock
