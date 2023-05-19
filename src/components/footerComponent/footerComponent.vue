@@ -281,6 +281,17 @@ const props = defineProps({
           </div>
         </div>
       </div>
+        <div class="pb-4 d-flex justify-content-center container">
+                  <p class="mx-4 text-center">
+                      <span class="fw-bold">Disclaimer</span> : This is not an
+                      RGPV official site. We do not take any liability for the
+                      correctness of material we provide or host. For any <span class="fw-bold">legal</span> or
+                      <span class="fw-bold">business</span> queries please contact
+                      us on <span class="fw-bold">contact@rgpvnotes.in</span> with your official email.Any
+                      messages sent by contact form regarding business or legal
+                      inquiry will not be taken seriously.
+                  </p>
+              </div>
     </footer>
     <!-- End Footer -->
 
