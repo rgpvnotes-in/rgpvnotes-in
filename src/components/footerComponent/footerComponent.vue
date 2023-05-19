@@ -1,9 +1,15 @@
 <script setup>
 
 import rgpvRoundLogo from '../../assets/img/rgpv-round-logo-about.png'
+import ContactComponent from '../homePage/contactComponent/contactComponent.vue';
+
+const props = defineProps({
+    isInnerPage: Boolean,
+});
 </script>
 
 <template>
+  <ContactComponent v-if="props.isInnerPage"/>
   <div>
     <!-- ======= Footer ======= -->
     <footer id="footer">

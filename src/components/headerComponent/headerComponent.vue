@@ -44,7 +44,7 @@ const props = defineProps({
                         <a class="nav-link" href="/our-journey">Our Journey</a>
                     </li>
                     <li>
-                        <a class="nav-link scrollto" href="/#contact"
+                        <a class="nav-link scrollto" href="#contact"
                             >Contact</a
                         >
                     </li>
