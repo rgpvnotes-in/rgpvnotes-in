@@ -42,7 +42,7 @@ const fetchData = await fetch(
         <ul class="list-group">
             <li v-for="postData in fetchData" :key="postData.post_id" class="list-group-item border-0 bg-transparent ps-0">
                 <a :href="postData.slug" class="text-dark fw-bold"
-                    > {{ postData.rendered_title }}</a
+                    > {{ postData.rendered_title.replace(' ', ' - ') }}</a
                 >
             </li>
         </ul>
