@@ -21,7 +21,7 @@ export interface Props {
     isInnerPage: boolean;
 }
 
-const { title, isInnerPage=true } = Astro.props;
+const { title, isInnerPage = true } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ const { title, isInnerPage=true } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <link rel="sitemap" href="/sitemap-index.xml">
+        <link rel="sitemap" href="/sitemap-index.xml" />
 
         <title>www.rgpvnotes.in - One stop solution for all thing RGPV related.</title>
         <meta content="" name="description" />
@@ -64,3 +64,20 @@ const { title, isInnerPage=true } = Astro.props;
         <script src="/assets/js/main.js" is:global></script>
     </body>
 </html>
+
+<style type="text/css" is:global>
+/*
+ **    Reset CSS to default
+
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+        list-style: none;
+        word-wrap: break-word;
+    }
+    
+ */
+</style>
