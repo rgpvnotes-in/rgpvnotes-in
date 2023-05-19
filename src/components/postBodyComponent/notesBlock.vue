@@ -24,6 +24,14 @@ const shouldShow = (unitName = '', notesData = {}) => {
     return true;
 };
 
+const updateNotesUrl = (notesUrl = '') => {
+    if (notesUrl !== 'https://www.rgpvnotes.in/not-available/') {
+        return `https://www.rgpvnotes.in/notes-redirect.html?redirectToUrl=${notesUrl}`
+    }
+    return notesUrl;
+
+}
+
 const props = defineProps({
     notesDataObject: {
         required: true,
@@ -46,57 +54,35 @@ const props = defineProps({
 
         <StaticTitleCard> Notes </StaticTitleCard>
 
-        <div
-            class="d-flex justify-content-center  mb-3"
-
-        >
+        <div class="d-flex justify-content-center  mb-3">
             <span class="Tooltip">
                 <button class="Tooltip-btn click-btn click-btn--book">
                     Click Here For Books
                 </button>
-                <span class="Tooltip-box"
-                    ><ul class="d-flex flex-column justify-content-start" v-if="props.affiliateBooksList.length > 0">
-                        <li
-                            v-for="bookData in props.affiliateBooksList"
-                            :key="bookData"
-                        >
-                            <a
-                                target="_blank"
-                                rel="external nofollow"
-                                :href="bookData"
-                                >Server 1</a
-                            >
+                <span class="Tooltip-box">
+                    <ul class="d-flex flex-column justify-content-start" v-if="props.affiliateBooksList.length > 0">
+                        <li v-for="bookData in props.affiliateBooksList" :key="bookData">
+                            <a target="_blank" rel="external nofollow" :href="bookData">Server 1</a>
                         </li>
                     </ul>
                     <ul v-else>
                         <li>
-                            <a
-                                target="_blank"
-                                rel="external nofollow"
-                                :href="'https://www.amazon.in/s?k=$' + subjectName + '&i=stripbooks&crid=1L2MEIGT2WNIK&sprefix=' + subjectName + '%2Cstripbooks%2C286&tag=rgpvnotes06-21'"
-                                >Server 1</a
-                            >
+                            <a target="_blank" rel="external nofollow"
+                                :href="'https://www.amazon.in/s?k=$' + subjectName + '&i=stripbooks&crid=1L2MEIGT2WNIK&sprefix=' + subjectName + '%2Cstripbooks%2C286&tag=rgpvnotes06-21'">Server
+                                1</a>
                         </li>
                         <li>
-                            <a
-                                target="_blank"
-                                rel="external nofollow"
-                                :href="'https://www.flipkart.com/books/pr?q=' + subjectName + '&affid=rgpvnotes&sid=bks'"
-                                >Server 2</a
-                            >
+                            <a target="_blank" rel="external nofollow"
+                                :href="'https://www.flipkart.com/books/pr?q=' + subjectName + '&affid=rgpvnotes&sid=bks'">Server
+                                2</a>
                         </li>
                     </ul>
-                    </span
-                ></span
-            >
+                </span></span>
         </div>
 
 
         <ul class="d-flex flex-column justify-content-start remove-li-bullets">
-            <li
-                v-for="(notesData, unitName) in props.notesDataObject"
-                :key="unitName"
-            >
+            <li v-for="(notesData, unitName) in props.notesDataObject" :key="unitName">
                 <div v-if="shouldShow(unitName, notesData)">
                     <span class="text-uppercase-maybe h5 fw-bold me-3">{{
                         unitName.replace('_', ' ').replace('unit', 'Unit')
@@ -105,71 +91,46 @@ const props = defineProps({
                         <button class="Tooltip-btn click-btn click-btn--view">
                             View
                         </button>
-                        <span class="Tooltip-box"
-                            ><ul
-                                class="d-flex flex-column justify-content-start"
-                            >
+                        <span class="Tooltip-box">
+                            <ul class="d-flex flex-column justify-content-start">
                                 <li>
-                                    <a
-                                        target="_blank"
-                                        rel="external nofollow noreferrer"
-                                        :href="notesData.view_server_1"
-                                        >Server 1</a
-                                    >
+                                    <a target="_blank" rel="external nofollow noreferrer"
+                                        :href="updateNotesUrl(notesData.view_server_1)">Server 1</a>
                                 </li>
                                 <li>
-                                    <a
-                                        target="_blank"
-                                        rel="external nofollow noreferrer"
-                                        :href="notesData.view_server_2"
-                                        >Server 2</a
-                                    >
+                                    <a target="_blank" rel="external nofollow noreferrer"
+                                        :href="updateNotesUrl(notesData.view_server_2)">Server 2</a>
                                 </li>
-                            </ul></span
-                        ></span
-                    >
+                            </ul>
+                        </span></span>
                     <span class="Tooltip">
-                        <button
-                            class="Tooltip-btn click-btn click-btn--download"
-                        >
+                        <button class="Tooltip-btn click-btn click-btn--download">
                             Download
                         </button>
-                        <span class="Tooltip-box"
-                            ><ul
-                                class="d-flex flex-column justify-content-start"
-                            >
+                        <span class="Tooltip-box">
+                            <ul class="d-flex flex-column justify-content-start">
                                 <li>
-                                    <a
-                                        target="_blank"
-                                        rel="external nofollow noreferrer"
-                                        :href="notesData.download_server_1"
-                                        >Server 1</a
-                                    >
+                                    <a target="_blank" rel="external nofollow noreferrer"
+                                        :href="updateNotesUrl(notesData.download_server_1)">Server 1</a>
                                 </li>
                                 <li>
-                                    <a
-                                        target="_blank"
-                                        rel="external nofollow noreferrer"
-                                        :href="notesData.download_server_2"
-                                        >Server 2</a
-                                    >
+                                    <a target="_blank" rel="external nofollow noreferrer"
+                                        :href="updateNotesUrl(notesData.download_server_2)">Server 2</a>
                                 </li>
-                            </ul></span
-                        ></span
-                    >
+                            </ul>
+                        </span></span>
                 </div>
             </li>
         </ul>
 
         <div class="d-flex justify-content-center mt-3">
-            <a href="#questionPapers"
-                ><button class="Tooltip-btn click-btn click-btn--other">
+            <a href="#questionPapers"><button class="Tooltip-btn click-btn click-btn--other">
                     Previous Year Question Paper Here
-                </button></a
-            >
+                </button></a>
         </div>
     </div>
 </template>
+
 
 <style scoped>
 /*
