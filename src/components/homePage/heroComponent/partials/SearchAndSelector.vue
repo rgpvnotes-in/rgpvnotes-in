@@ -186,7 +186,7 @@ export default {
                     v-for="programName in programNamesArray"
                     :key="programName._id"
                     @click="changeSelectedProgram(programName.folderName)"
-                    class="btn-get-started me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2"
                     >{{ programName.shortDisplayText }}</span
                 >
             </div>
@@ -212,8 +212,15 @@ export default {
                     v-for="schemeName in schemeNamesArray"
                     :key="schemeName._id"
                     @click="changeSelectedScheme(schemeName.folderName)"
-                    class="btn-get-started me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2"
                     >{{ schemeName.shortDisplayText }}</span
+                >
+            </div>
+            <div>
+                <span
+                    @click="shouldShowProgram = true"
+                    class="theme-default-btn me-2 mb-2"
+                    > Back To Course Program List</span
                 >
             </div>
         </div>
@@ -238,8 +245,15 @@ export default {
                     v-for="yearName in yearArray"
                     :key="yearName._id"
                     @click="changeSelectedYear(yearName.shortDisplayText)"
-                    class="btn-get-started me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2"
                     >{{ yearName.longDisplayText }}</span
+                >
+            </div>
+            <div>
+                <span
+                    @click="shouldShowScheme = true"
+                    class="theme-default-btn me-2 mb-2"
+                    > Back To Scheme List</span
                 >
             </div>
         </div>
@@ -268,8 +282,15 @@ export default {
                             branchName.longDisplayText,
                         )
                     "
-                    class="btn-get-started me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2"
                     >{{ branchName.longDisplayText }}</span
+                >
+            </div>
+            <div>
+                <span
+                    @click="shouldShowYear = true"
+                    class="theme-default-btn me-2 mb-2"
+                    > Back To Year List</span
                 >
             </div>
         </div>
@@ -370,7 +391,7 @@ h2 {
     font-size: 20px;
 }
 
-.btn-get-started {
+.theme-default-btn {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -383,7 +404,7 @@ h2 {
     border: 2px solid #fff;
 }
 
-.inner-pages-css .btn-get-started {
+.inner-pages-css .theme-default-btn {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -396,32 +417,14 @@ h2 {
     border: 2px solid #000;
 }
 
-.btn-get-started:hover {
+.theme-default-btn:hover {
     background: #fff;
     color: #5846f9;
 }
 
-.inner-pages-css .btn-get-started:hover {
+.inner-pages-css .theme-default-btn:hover {
     background: #5846f9;
     color: #fff;
-}
-
-.animated {
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 991px) {
-    .animated {
-        animation: none;
-    }
-
-    .hero-img {
-        text-align: center;
-    }
-
-    .hero-img img {
-        width: 50%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -435,15 +438,6 @@ h2 {
         line-height: 24px;
     }
 
-    .hero-img img {
-        width: 60%;
-    }
-}
-
-@media (max-width: 575px) {
-    .hero-img img {
-        width: 80%;
-    }
 }
 
 @keyframes up-down {
