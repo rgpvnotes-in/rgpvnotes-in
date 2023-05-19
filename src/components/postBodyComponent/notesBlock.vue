@@ -3,8 +3,6 @@ import StaticTitleCard from './blackBackground.vue';
 
 import '@assets/css/blogger-post.css';
 
-const defaultAffiliateBooksListArray = []
-
 /*
  for most subject we only have 5 units, so we are conditionally rendering buttons for 6 th unit & above.
 */
@@ -68,12 +66,12 @@ const props = defineProps({
                     <ul v-else>
                         <li>
                             <a target="_blank" rel="external nofollow"
-                                :href="'https://www.amazon.in/s?k=$' + subjectName + '&i=stripbooks&crid=1L2MEIGT2WNIK&sprefix=' + subjectName + '%2Cstripbooks%2C286&tag=rgpvnotes06-21'">Server
+                                :href="'https://www.amazon.in/s?k=' + props.subjectName + '&i=stripbooks&crid=1L2MEIGT2WNIK&sprefix=' + props.subjectName + '%2Cstripbooks%2C286&tag=rgpvnotes06-21'">Server
                                 1</a>
                         </li>
                         <li>
                             <a target="_blank" rel="external nofollow"
-                                :href="'https://www.flipkart.com/books/pr?q=' + subjectName + '&affid=rgpvnotes&sid=bks'">Server
+                                :href="'https://www.flipkart.com/books/pr?q=' + props.subjectName + '&affid=rgpvnotes&sid=bks'">Server
                                 2</a>
                         </li>
                     </ul>
