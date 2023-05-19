@@ -13,7 +13,7 @@ import InnerPageContainer from '../../components/innerPageComponent/innerPageCom
 const programName = '${programName}';
 ---
 <Layout title="" isInnerPage={true}>
-<InnerPageContainer>
+<InnerPageContainer staticTitle='' breadCrumbsArray={[]}>
 <div class="container-fluid" data-aos="fade-up">
     <div class="row justify-content-center align-items-center">
         <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="${programName
