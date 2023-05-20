@@ -1,15 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import breadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 ---
 
 <Layout title="" isInnerPage={true}>
     <main id="main">
-        <breadcrumbsComponent :staticTitle="People Who Helped Us" />
+        <BreadcrumbsComponent
+            staticTitle="People Who Helped Us"
+            breadCrumbsArray={[]}
+        />
 
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <img
+                            src="/assets/img/helper/helper.png"
+                            alt="notes not found"
+                            class="page-img"
+                        /><h1 class="section-heading text-uppercase">
+                            <strong>Awesome People</strong>
+                        </h1><h4 class="section-subheading text-muted">
+                            These awesome people helped us by proving us <b
+                                >notes</b
+                            >, reporting <b>broken links</b> and <b
+                                >outdated syllabus and files</b
+                            >.
+                        </h4><div class="table-responsive text-left">
+                            <table class="table">
+                                <thead
+                                    ><tr
+                                        ><th>Name</th><th>Date</th><th
+                                            >How they helped</th
+                                        ></tr
+                                    ></thead
+                                ><tbody
+                                    ><tr
+                                        ><td>Kaajal Shah</td><td>12-05-2019</td
+                                        ><td
+                                            ><a
+                                                href="https://be-notes.rgpvnotes.in/2019/02/cyber-law-ethics-cs-8004.html"
+                                                >Provided Cyber Law &amp; Ethics
+                                                (CS-8004) Notes</a
+                                            ></td
+                                        ></tr
+                                    ><tr
+                                        ><td>Shubham Agaraiya</td><td
+                                            >14-06-2019</td
+                                        ><td
+                                            ><a
+                                                href="https://be-notes.rgpvnotes.in/2019/02/data-mining-cs-8003.html"
+                                                >Provided Data Mining (CS-8003)
+                                                Notes</a
+                                            ></td
+                                        ></tr
+                                    ><tr
+                                        ><td>Neha Vishwakarma</td><td
+                                            >19-04-2020</td
+                                        ><td>Reported a bug</td></tr
+                                    ><tr
+                                        ><td>Ayush Sinha</td><td>24-05-2020</td
+                                        ><td
+                                            ><a
+                                                href="https://be-notes.rgpvnotes.in/2019/02/cyber-security-iot-ec-8004.html"
+                                                >Provided Cyber Security &amp;
+                                                IOT (EC-8004) Notes</a
+                                            ></td
+                                        ></tr
+                                    ></tbody>
+                            </table>
+                        </div><a href="/hall-of-fame"
+                            ><button
+                                type="button"
+                                name="button"
+                                class="btn btn-primary"
+                            >
+                                Hall of Fame
+                            </button></a>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- End #main -->

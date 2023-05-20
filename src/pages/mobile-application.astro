@@ -1,15 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import breadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 ---
 
 <Layout title="" isInnerPage={true}>
     <main id="main">
-        <breadcrumbsComponent :staticTitle="Mobile Application" />
+        <BreadcrumbsComponent
+            staticTitle="Mobile Application"
+            breadCrumbsArray={[]}
+        />
 
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <img
+                            src="/assets/img/mobile-app/application.png"
+                            alt="notes not found"
+                            class="page-img"
+                        /><h1 class="section-heading text-uppercase">
+                            <strong>Coming Soon</strong>
+                        </h1><h4 class="section-subheading text-muted">
+                            Our team is working on it.
+                        </h4><p>
+                            You will be able to access notes, Syllabus,
+                            Timetable, News &amp; alerts from RGPV. We are also
+                            working on a feature which will allow you to view
+                            your result.
+                        </p><p>
+                            The plan is to launch it for Android first &amp;
+                            then Iphone.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- End #main -->

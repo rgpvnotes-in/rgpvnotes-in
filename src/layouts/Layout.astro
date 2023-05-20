@@ -3,12 +3,7 @@ import HeaderComponent from '../components/headerComponent/headerComponent.vue';
 import FooterComponent from '../components/footerComponent/footerComponent.vue';
 
 // Vendor CSS Files
-import '@assets/vendor/aos/aos.css';
 import '@assets/vendor/bootstrap/css/bootstrap.min.css';
-import '@assets/vendor/bootstrap-icons/bootstrap-icons.css';
-import '@assets/vendor/boxicons/css/boxicons.min.css';
-import '@assets/vendor/glightbox/css/glightbox.min.css';
-import '@assets/vendor/swiper/swiper-bundle.min.css';
 
 // Template Main CSS File
 import '@assets/css/style.css';
@@ -50,15 +45,9 @@ const { title, isInnerPage = true } = Astro.props;
         <HeaderComponent isInnerPage={isInnerPage} />
         <slot />
         <FooterComponent isInnerPage={isInnerPage}  />
-        <!-- Vendor JS Files -->
-        <script src="/assets/vendor/purecounter/purecounter_vanilla.js" is:global></script>
-        <script src="/assets/vendor/aos/aos.js" is:global></script>
+        <!-- bootstrap bundle JS -->
         <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:global
         ></script>
-        <script src="/assets/vendor/glightbox/js/glightbox.min.js" is:global></script>
-        <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" is:global></script>
-        <script src="/assets/vendor/swiper/swiper-bundle.min.js" is:global></script>
-        <script src="/assets/vendor/php-email-form/validate.js" is:global></script>
 
         <!-- Template Main JS File -->
         <script src="/assets/js/main.js" is:global></script>

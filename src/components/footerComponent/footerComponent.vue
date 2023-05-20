@@ -3,6 +3,8 @@
 import rgpvRoundLogo from '../../assets/img/rgpv-round-logo-about.png'
 import ContactComponent from '../homePage/contactComponent/contactComponent.vue';
 
+import '@assets/vendor/boxicons/css/boxicons.min.css';
+
 const props = defineProps({
     isInnerPage: Boolean,
 });

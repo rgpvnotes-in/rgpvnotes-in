@@ -1,28 +1,1306 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import breadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 ---
 
 <Layout title="" isInnerPage={true}>
     <main id="main">
-        <breadcrumbsComponent :staticTitle="Support Us" />
+        <BreadcrumbsComponent staticTitle="Support Us" breadCrumbsArray={[]} />
 
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <img
+                            src="/assets/img/support-us/QR%20Code%20%20UPI%20-%20www.rgpvnotes.in.png"
+                            alt="UPI QR Code rgpvnotes support"
+                            title="UPI QR Code rgpvnotes support"
+                            class="page-img"
+                        />
+                        <h1 class="section-heading text-uppercase">
+                            <strong>Support Us</strong>
+                        </h1>
+                        <h4 class="section-subheading text-muted">
+                            Your support will allow us keep our website running
+                            &amp; upload notes for all the branches &amp;
+                            subjects.
+                        </h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <caption> UPI</caption>
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="text-center">Type</th>
+                                        <th class="text-center">UPI ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes.in@paytm&pn=RGPV%20Notes"
+                                                ><img
+                                                    src="/assets/img/support-us/Paytm%20%20UPI%20-%20www.rgpvnotes.in.png"
+                                                    alt="PayTm UPI"
+                                                    title="PayTm UPI"
+                                                    class="payment-logo"
+                                                /></a
+                                            >
+                                        </td>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes.in@paytm&pn=RGPV%20Notes"
+                                                >rgpvnotes.in@paytm</a
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes@ybl&pn=RGPV%20Notes"
+                                                ><img
+                                                    src="/assets/img/support-us/phone%20pay%20UPI%20-%20www.rgpvnotes.in.png"
+                                                    alt="PhonePe UPI"
+                                                    class="payment-logo"
+                                                /></a
+                                            >
+                                        </td>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes@ybl&pn=RGPV%20Notes"
+                                                >rgpvnotes@ybl</a
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes.in@okaxis&pn=RGPV%20Notes"
+                                                ><img
+                                                    src="/assets/img/support-us/google%20pay%20UPI%20-%20www.rgpvnotes.in.png"
+                                                    alt="Google Pay (TEZ)"
+                                                    title="Google Pay (TEZ)"
+                                                    class="payment-logo"
+                                                /></a
+                                            >
+                                        </td>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes.in@okaxis&pn=RGPV%20Notes"
+                                                >rgpvnotes.in@okaxis</a
+                                            >
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <caption> Digital Wallet</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Type</th>
+                                        <th class="text-center"
+                                            >Wallet Number</th
+                                        >
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes.in@paytm&pn=RGPV%20Notes"
+                                                ><img
+                                                    src="/assets/img/support-us/Paytm%20%20UPI%20-%20www.rgpvnotes.in.png"
+                                                    alt="PayTm UPI"
+                                                    class="payment-logo"
+                                                /></a
+                                            >
+                                        </td>
+                                        <td>8989 5950 22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a
+                                                href="upi://pay?pa=rgpvnotes@ybl&pn=RGPV%20Notes"
+                                                ><img
+                                                    src="/assets/img/support-us/phone%20pay%20UPI%20-%20www.rgpvnotes.in.png"
+                                                    alt="PhonePe UPI"
+                                                    class="payment-logo"
+                                                /></a
+                                            >
+                                        </td>
+                                        <td>8989 5950 22</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h1>Top Supporter</h1>
+                        <div class="table-responsive v">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                        <th class="text-center">Month-Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mohammad Arshi Sheukh</td>
+                                        <td>500 Rs</td>
+                                        <td>March 2021</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h1>March 2023</h1>
+                        <div class="table-responsive container w-75">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Rishabh Sadanand</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kartik Dwivedi</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mb-5">
+                            <p>
+                                Disclaimer: This list is updated manually so,
+                                there might be some delay in adding new
+                                supporters to the list. If sent amount is less
+                                than 5 rs it will not be shown in the list.
+                            </p>
+                            <a href="/helper"
+                                ><button
+                                    type="button"
+                                    name="button"
+                                    class="btn btn-primary"
+                                >
+                                    People who helped us.
+                                </button></a
+                            ><a href="/hall-of-fame"
+                                ><button
+                                    type="button"
+                                    name="button"
+                                    class="btn btn-success"
+                                >
+                                    Hall of Fame
+                                </button></a
+                            ><a href="/"
+                                ><button
+                                    type="button"
+                                    name="button"
+                                    class="btn btn-primary"
+                                >
+                                    Home
+                                </button></a
+                            >
+                        </div>
+                        <h1>February 2023</h1>
+                        <div class="table-responsive container w-75">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sanjay Kumar</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Pratham Solanki</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jayash Deshmukh</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rohit Jatav</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jai Sharma</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h1>January 2023</h1>
+                        <div class="table-responsive container w-75">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Shobhit Dehariya</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Karan Kumar</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Md Affan Javed</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deepak Nagar</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vijeta Jaiswal</td>
+                                        <td>100 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kroshnan Chaturvedi</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Renu</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jai Sharma</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naveen Kumar Tiwari</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rupa Biswas</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dilip Kumar Shrivastava</td>
+                                        <td>100 Rs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h1>December 2022</h1>
+                        <div class="table-responsive container w-75">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Pallavi Singh</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rashid Iqbal</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atishara Shrivastava</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vijay Pawar</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yash Jain</td>
+                                        <td>11 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Avantika Vijay</td>
+                                        <td>50 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Akash Soni</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Vikash Kumar Saket</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Guru Prasad Yadav</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deepti Singh</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nitin Gangwani</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kshitij Jain</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anand Mishra</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Brajesh Kumar</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Sumit Kumar</td>
+                                        <td>21 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Harshit Kumar Ojha</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mustakim Ansari</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vibhash Verma</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Akul Gehlot</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashish Upadhayay</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gouhar Jamal</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ankit Meena</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sameer Khan</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harsh Gupta</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Usha Soni</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pooja W/o Subhash</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hemant Kumar Patankar</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jitendra Dhakad</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aman Tilotiya</td>
+                                        <td>11 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keshav Joshi</td>
+                                        <td>11 Rs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h1 class="mt-5">November 2022</h1>
+                        <div class="table-responsive container w-75">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Akanksha Yadav</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arbaz Hashmi</td>
+                                        <td>21 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Nidhi Agarwal</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Komal Kumari</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ujjawal Shukla</td>
+                                        <td>20 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Sourabh Patel</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ishween Khatri</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pushparaj Singh</td>
+                                        <td>100 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Rajkumar Agrawal</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aditya Chauhan</td>
+                                        <td>69 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hritik Yadav</td>
+                                        <td>6 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ujjawal Sharma</td>
+                                        <td>10 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prashant Dubey</td>
+                                        <td>11 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Krishna Kant Pathak</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prafull Mishra</td>
+                                        <td>30 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Varun Vishwakarma</td>
+                                        <td>15 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sohel Mansuri</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vishakha Gandhi</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Mohit Kumar Yadav</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Himi Sahu</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Lekhraj Kori</td>
+                                        <td>12 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anushka Porwal</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dipesh Chouhan</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abhishek Kumar Singh</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shubham Asati</td>
+                                        <td>5 Rs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h1 class="mt-5">Year 2020-2021</h1>
+                        <div class="table-responsive v">
+                            <table
+                                id="supporters-table"
+                                class="table table-bordered mt-3"
+                            >
+                                <caption> Supporters List</caption>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th
+                                            onclick="if (!window.__cfRLUnblockHandlers) return false; sortAmount();"
+                                            class="text-center"
+                                        >
+                                            Amount
+                                        </th>
+                                        <th class="text-center">Month-Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mohammad Arshi Sheukh</td>
+                                        <td>500 Rs</td>
+                                        <td>March 2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anurag Chandel</td>
+                                        <td>80 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vaibhav Poliwal</td>
+                                        <td>10 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kamata Singh</td>
+                                        <td>10 Rs</td>
+                                        <td>November 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rohit Kumar</td>
+                                        <td>5 Rs</td>
+                                        <td>November 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dushyant Malviya</td>
+                                        <td>5 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prashant Negi</td>
+                                        <td>20 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kratagya Mourya</td>
+                                        <td>30 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Muskan Rathore</td>
+                                        <td>5 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr. Rajat Vaish</td>
+                                        <td>11 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr Abbas Jaora Wala</td>
+                                        <td>20 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Namrta Dubey</td>
+                                        <td>20 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ritik Jain</td>
+                                        <td>15 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adnan Ali</td>
+                                        <td>13 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adarsh Choudhary</td>
+                                        <td>5 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Smriti Kashyap</td>
+                                        <td>11 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ravindra Kushwaha</td>
+                                        <td>10 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mahammad Adnan</td>
+                                        <td>10 Rs</td>
+                                        <td>October 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pragya Turkar</td>
+                                        <td>5 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ali Asgar</td>
+                                        <td>5 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nikunj</td>
+                                        <td>10 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Devendra Kumar</td>
+                                        <td>5 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Md Raghib Chishti</td>
+                                        <td>25 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ajit Kumar</td>
+                                        <td>10 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Asraf Ahmad</td>
+                                        <td>5 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abhinav Gupta</td>
+                                        <td>10 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sumit Kumar</td>
+                                        <td>200 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sachin Sahu</td>
+                                        <td>5 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anumeha Jain</td>
+                                        <td>50 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pritam Kumar</td>
+                                        <td>11 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abhinay Shrivastava</td>
+                                        <td>11 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kunal</td>
+                                        <td>60 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aman Jha</td>
+                                        <td>189 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Runjhun Goyal</td>
+                                        <td>5 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr Sanskar</td>
+                                        <td>9 Rs</td>
+                                        <td>September 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yashvardhan Singh</td>
+                                        <td>30 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Syed Hisham Ali</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sushma Kohli</td>
+                                        <td>11 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aditya Singh Tomar</td>
+                                        <td>15 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vikash Kumar</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rishta Barai</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aishwariya Reddy</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rajesh Kushwaha</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Virendra Kumar</td>
+                                        <td>249 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vaibhav Donge</td>
+                                        <td>200 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chandragopal Cherki</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ritesh Yadav</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Geetanjali Kori</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dhiraj Kumar</td>
+                                        <td>25 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mohit Suryawanshi</td>
+                                        <td>21 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abhishek Saxena</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rahul Kushwah</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kunal</td>
+                                        <td>15 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prashant Singh</td>
+                                        <td>13 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apoorv Mishra</td>
+                                        <td>50 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr Rajpal Singh Lodhi</td>
+                                        <td>50 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jay Chandwani</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nitish Kumar</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mansi Jain</td>
+                                        <td>50 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dharmendra Prahlad</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Neelesh Singh Thakur</td>
+                                        <td>30 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pranav Kumar</td>
+                                        <td>30 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aditya Bansal</td>
+                                        <td>200 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ayush Mishra</td>
+                                        <td>15 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rudranand Agrawal</td>
+                                        <td>11 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naman Bhawsar</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Suryansh Kumar</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aakash Kumar Choudhary</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shreyansh Dubey</td>
+                                        <td>60 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pratik Rajawat</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashish Sahu</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deepak Pandey</td>
+                                        <td>10 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pranjal Sisodiya</td>
+                                        <td>100 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Siddharth Mourya</td>
+                                        <td>50 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Umer Rashid</td>
+                                        <td>22 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Navneet Kumar Sharma</td>
+                                        <td>11 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ishant Sharma</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Narender Kumar Choudhary</td>
+                                        <td>20 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mithlesh Dubey</td>
+                                        <td>5 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anup Vishwakarma</td>
+                                        <td>13 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Siddharth Gupta</td>
+                                        <td>100 Rs</td>
+                                        <td>August 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Md Anzar Aman</td>
+                                        <td>5 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prachetash Singh</td>
+                                        <td>50 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ratnakar Singh</td>
+                                        <td>200 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Swapnil Kumar Kaushal</td>
+                                        <td>20 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Indrajeet Verma</td>
+                                        <td>10 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shubham Gupta</td>
+                                        <td>20 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bhupendra Shrinivas Patel</td>
+                                        <td>5 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aman Sharma</td>
+                                        <td>100 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amit Kumar Kundu</td>
+                                        <td>5 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dhiraj Kumar</td>
+                                        <td>20 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Parul Shrivastava</td>
+                                        <td>10 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anand Vishwakarma</td>
+                                        <td>10 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tahsin Raza</td>
+                                        <td>15 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vikas Kesharwani</td>
+                                        <td>100 Rs</td>
+                                        <td>July 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pratham Mishra</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Neeraj Rangwani</td>
+                                        <td>20 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr Ayush Chandra Ahirwar</td>
+                                        <td>20 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anuj Singh</td>
+                                        <td>50 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tarachand Solanki</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rahul Yadav</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ibrahim Mallic</td>
+                                        <td>15 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peeyush Soni</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sanskar Malviya</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Himank Jain</td>
+                                        <td>15 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shubham Kumar Choudhary</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anshuman Singh Choudhary</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr Mohit Ghidode</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pravin Hingve</td>
+                                        <td>9 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gayatri Devi Khare</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vinay Shrivastav</td>
+                                        <td>11 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Miss Akanchaa Patle</td>
+                                        <td>11 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shubham Satpute</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chandan Pandey</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prashu Saxena</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abhishek Argarey</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haritesh</td>
+                                        <td>50 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prem Sagar</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sameer Srivastava</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aniruddh Ojha</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vivek Kumar Sharma</td>
+                                        <td>15 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Samay Jain</td>
+                                        <td>8 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mr Aman Bhagat</td>
+                                        <td>22 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vaibhav</td>
+                                        <td>70 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mohit Singh</td>
+                                        <td>100 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arpit Gupta</td>
+                                        <td>30 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yash Kumar Sen</td>
+                                        <td>13 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sayema Naushad</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shrayansh Jha</td>
+                                        <td>11 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sultan Ashraf</td>
+                                        <td>5 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shivani</td>
+                                        <td>10 Rs</td>
+                                        <td>June 2020</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- End #main -->
 </Layout>
 
 <style scoped>
+    .table > :not(:first-child) {
+        border-top: unset;
+    }
 
-.table > :not(:first-child) {
-  border-top: unset;
-}
-
-.payment-logo {
-  height: 32px;
-}
-
+    .payment-logo {
+        height: 32px;
+    }
 </style>

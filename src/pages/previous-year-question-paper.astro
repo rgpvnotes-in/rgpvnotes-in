@@ -1,15 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import breadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import SearchAndSelector from '../components/homePage/heroComponent/partials/SearchAndSelector.vue';
 ---
 
 <Layout title="" isInnerPage={true}>
     <main id="main">
-        <breadcrumbsComponent :staticTitle="Previous Year Question Paper" />
+        <BreadcrumbsComponent staticTitle="Previous Year Question Paper"  breadCrumbsArray={[]} />
 
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <div class="container-fluid" data-aos="fade-up">
+                    <div class="row justify-content-center align-items-center">
+                        <SearchAndSelector client:load isInnerPage={true} selectedProgramProp="btech"/>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- End #main -->

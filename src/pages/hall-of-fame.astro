@@ -1,15 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import breadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 ---
 
 <Layout title="" isInnerPage={true}>
     <main id="main">
-        <breadcrumbsComponent :staticTitle="Hall Of Fame" />
+        <BreadcrumbsComponent
+            staticTitle="Hall Of Fame"
+            breadCrumbsArray={[]}
+        />
 
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <img
+                            src="/assets/img/bug-hunt/bug-hunter.png"
+                            alt="notes not found"
+                            title="notes not found"
+                            class="page-img"
+                        /><h1 class="section-heading text-uppercase">
+                            <strong>Hall of Fame</strong>
+                        </h1><h4 class="section-subheading text-muted">
+                            We take the security and privacy of users very
+                            seriously, and these awesome guys helped us in
+                            making our services more secure.
+                        </h4><div class="table-responsive text-left">
+                            <table class="table">
+                                <thead
+                                    ><tr
+                                        ><th>Name</th><th>Date</th><th
+                                            >What they reported</th
+                                        ></tr
+                                    ></thead
+                                ><tbody
+                                    ><tr
+                                        ><td colspan="3" class="text-center"
+                                            ><b
+                                                >The list is empty :( .<br /> Help
+                                                us by reporting bugs at <strong
+                                                    ><a
+                                                        href="mailto:contact@rgpvnotes.in"
+                                                        target="_blank"
+                                                        >contact@rgpvnotes.in</a
+                                                    ></strong
+                                                >.</b
+                                            ></td
+                                        ></tr
+                                    ></tbody>
+                            </table>
+                        </div><a href="/helper"
+                            ><button
+                                type="button"
+                                name="button"
+                                class="btn btn-primary"
+                            >
+                                People who helped us
+                            </button></a>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- End #main -->
