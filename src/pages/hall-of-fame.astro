@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import bugHunterImage from '@assets/img/bug-hunt/bug-hunter.png';
 ---
 
 <Layout title="" isInnerPage={true}>
@@ -15,7 +16,7 @@ import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbs
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <img
-                            src="/assets/img/bug-hunt/bug-hunter.png"
+                            src={bugHunterImage}
                             alt="notes not found"
                             title="notes not found"
                             class="page-img"

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import helperImg from '@assets/img/helper/helper.png';
 ---
 
 <Layout title="" isInnerPage={true}>
@@ -15,7 +16,7 @@ import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbs
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <img
-                            src="/assets/img/helper/helper.png"
+                            src={helperImg}
                             alt="notes not found"
                             class="page-img"
                         /><h1 class="section-heading text-uppercase">
