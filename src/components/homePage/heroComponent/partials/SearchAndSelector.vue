@@ -233,7 +233,7 @@ export default {
             <div>
                 <span
                     @click="shouldShowProgram = true"
-                    class="theme-default-btn me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2 theme-default-btn-orange-border"
                     > Back To Course Program List</span
                 >
             </div>
@@ -266,7 +266,7 @@ export default {
             <div>
                 <span
                     @click="shouldShowScheme = true"
-                    class="theme-default-btn me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2 theme-default-btn-orange-border"
                     > Back To Scheme List</span
                 >
             </div>
@@ -303,7 +303,7 @@ export default {
             <div>
                 <span
                     @click="shouldShowYear = true"
-                    class="theme-default-btn me-2 mb-2"
+                    class="theme-default-btn me-2 mb-2 theme-default-btn-orange-border"
                     > Back To Year List</span
                 >
             </div>
@@ -416,6 +416,10 @@ h2 {
     transition: 0.5s;
     color: #fff;
     border: 2px solid #fff;
+}
+
+.theme-default-btn-orange-border {
+    border: 2px solid orange;
 }
 
 .inner-pages-css .theme-default-btn {
