@@ -30,7 +30,7 @@ const submitContactForm = () => {
     <section id="contact" class="contact section-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Contact</h2>
+                <h2>Contact Us</h2>
                 <!-- <p>
           Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
           aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
@@ -115,7 +115,7 @@ const submitContactForm = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i class="bx bxl-whatsapp"></i>
+                            <i class="bi bi-whatsapp"></i>
                             <h3>Whatsapp</h3>
                             <p class="text-dark">+91 8989595022</p></a
                         >
@@ -140,7 +140,7 @@ const submitContactForm = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i class="bx bxl-telegram"></i>
+                            <i class="bi bi-telegram"></i>
                             <h3>Telegram</h3>
                             <p class="text-dark">+91 8989595022</p>
                         </a>
