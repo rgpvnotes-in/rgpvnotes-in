@@ -1,5 +1,5 @@
 <script setup>
-import breadcrumbsComponent from '../breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '../breadcrumbsComponent/breadcrumbsComponent.vue';
 
 const props = defineProps({
     staticTitle: {
@@ -17,7 +17,7 @@ const props = defineProps({
 
 <template>
     <main id="main">
-        <breadcrumbsComponent
+        <BreadcrumbsComponent
             :staticTitle="props.staticTitle"
             :breadCrumbsArray="props.breadCrumbsArray"
         />

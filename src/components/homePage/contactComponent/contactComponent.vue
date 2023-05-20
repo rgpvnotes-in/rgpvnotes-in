@@ -13,7 +13,7 @@ const submitContactForm = () => {
     const custom_form_message = `Subject: ${contactSubject.value} %0d%0a%0d%0a%0d%0a%0d%0a%0d%0a Message: ${contactMessage.value}`;
     const currentUrl = window.location.href;
     const email_msg = `${custom_form_message} %0d%0a%0d%0a%0d%0a%0d%0a%0d%0a Name: ${custom_form_name} %0d%0a%0d%0a Email: ${custom_form_email} %0d%0a%0d%0a URL:  ${currentUrl.value}`;
-    var link = `mailto:rgpvnotes.in@gmail.com?subject=Hello Team RGPV Notes&body=${email_msg}`;
+    var link = `mailto:hey@rgpvnotes.in?subject=Hello Team RGPV Notes&body=${email_msg}`;
 
     window.location.href = link;
 
@@ -100,7 +100,7 @@ const submitContactForm = () => {
                 <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
                     <div class="info-box mb-4">
                         <a
-                            href="mailto:rgpvnotes.in@gmail.com?Subject=Hello%20RGPV%20Notes"
+                            href="mailto:hey@rgpvnotes.in?Subject=Hello%20RGPV%20Notes"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

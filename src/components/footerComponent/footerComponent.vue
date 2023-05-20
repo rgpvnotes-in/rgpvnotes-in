@@ -263,7 +263,7 @@ const props = defineProps({
               ><i class="bx bxl-whatsapp"></i
             ></a>
             <a
-              href="mailto:rgpvnotes.in@gmail.com?Subject=Hello%20RGPV%20Notes"
+              href="mailto:hey@rgpvnotes.in?Subject=Hello%20RGPV%20Notes"
               target="_blank"
               class="e-mail"
               ><i class="bx bx-mail-send"></i
