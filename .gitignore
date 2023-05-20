@@ -2,7 +2,7 @@
 dist/
 
 # dynamically generated folders
-# src/pages/**/*
+src/pages/*/
 
 # generated types
 .astro/
