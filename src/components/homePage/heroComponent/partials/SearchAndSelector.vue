@@ -33,6 +33,8 @@ export default {
         },
     },
     setup(props) {
+        const searchSubjectName = ref('');
+        const searchMeBtnRef = ref(null)
         const shouldShowProgram =
             props.selectedProgramProp === '' ? ref(true) : ref(false);
         const shouldShowScheme =
@@ -106,6 +108,12 @@ export default {
                 window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedBranch.toLowerCase().replace(/&/gm, "and").replace(/ /gm, "-")}-${selectedYear.replace(/ /gm, "-")}`;
             }
         };
+
+        const searchSubject = () => {
+            searchMeBtnRef.value.click();
+            searchMeBtnRef.value = '';
+        }
+
         return {
             programNamesArray,
             schemeNamesArray,
@@ -119,6 +127,9 @@ export default {
             shouldShowScheme,
             shouldShowYear,
             shouldShowBranch,
+            searchSubjectName,
+            searchSubject,
+            searchMeBtnRef
         };
     },
 };
@@ -137,6 +148,7 @@ export default {
         <h2>One stop solution for all your RGPV needs</h2>
 
         <div class="input-group mb-3 mt-4 hero-custom-container">
+            <a :href="`https://www.google.com/search?q=site:www.rgpvnotes.in ${searchSubjectName}`" target="_blank" rel="noopener noreferrer" ref="searchMeBtnRef" ></a>
             <input
                 type="text"
                 class="form-control"
@@ -145,14 +157,16 @@ export default {
                 aria-label="subjectSubject"
                 aria-describedby="subjectSubject"
                 data-subject-search-input=""
-                :style="{ border: isInnerPage ? '1px solid #000' : '' }"
-            />
+                :style="[isInnerPage ? 'border:1px solid #000' : '']"
+                v-model="searchSubjectName"
+                v-on:keyup.enter="searchSubject()" >
             <button
                 class="btn"
                 :class="[
                     isInnerPage ? 'btn-outline-dark' : 'btn-outline-light',
                 ]"
                 type="button"
+                @click='searchSubject()'
                 data-subject-search-btn=""
             >
                 Search
