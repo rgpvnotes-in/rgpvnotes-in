@@ -1,14 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import breadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+import notAvailableImage from '@assets/img/not-found/404.png';
 ---
 
 <Layout title="" isInnerPage={true}>
     <main id="main">
-
         <section class="inner-page">
             <div class="container">
-                <p>Example inner page template</p>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <img src={notAvailableImage} alt="notes not found" />
+                        <h1 class="section-heading text-uppercase">
+                            <strong>File not found</strong>
+                        </h1>
+                        <h3 class="section-subheading text-muted">
+                            We are trying our best in preparing &amp; uploading
+                            notes of all the subjects.
+                        </h3>
+                        <h3 class="section-subheading text-uppercase">
+                            You can help in accelerating this process by <a
+                                href="/support-us.html"
+                                ><strong>Supporting Us</strong></a>
+                        </h3>
+                        <h3 class="section-subheading text-muted pt-5">
+                            If you think you can arrange
+                            missing notes or question paper for us, you can
+                            contact us on <strong
+                                ><a
+                                    href="mailto:notes@rgpvnotes.in"
+                                    target="_blank">notes@rgpvnotes.in</a
+                                ></strong
+                            >.
+                        </h3>
+                        <h3 class="section-subheading text-uppercase">
+                            If you help us, you will Get Featured On Our Website
+                            &amp; Instagram!
+                        </h3>
+
+                        <div class="mt-3">
+                            <a href="/helper.html"
+                                ><button
+                                    type="button"
+                                    name="button"
+                                    class="btn btn-primary me-2 mb-2"
+                                    >People who helped us.</button
+                                ></a
+                            >
+                            <a href="/hall-of-fame.html"
+                                ><button
+                                    type="button"
+                                    name="button"
+                                    class="btn btn-primary me-2 mb-2"
+                                    >Hall of Fame</button
+                                ></a
+                            >
+                            <a href="/support-us.html"
+                                ><button
+                                    type="button"
+                                    name="button"
+                                    class="btn btn-primary me-2 mb-2"
+                                    >Support Us</button
+                                ></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- End #main -->
