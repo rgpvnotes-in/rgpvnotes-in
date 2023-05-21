@@ -1,9 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import notAvailableImage from '@assets/img/not-found/404.png';
+
+const seoData = {
+    pageTitle: 'Study material not available',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'the study material you are trying to access is not available',
+    keywords: 'not available, not found',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/not-found/404.png',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <main id="main">
         <section class="inner-page">
             <div class="container">

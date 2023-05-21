@@ -5,9 +5,17 @@ import qrCodeImage from '@assets/img/support-us/QR Code  UPI - www.rgpvnotes.in.
 import paytmLogoImage from '@assets/img/support-us/Paytm  UPI - www.rgpvnotes.in.png';
 import phonepeLogoImage from '@assets/img/support-us/phone pay UPI - www.rgpvnotes.in.png';
 import gpayLogoImage from '@assets/img/support-us/google pay UPI - www.rgpvnotes.in.png';
+
+const seoData = {
+    pageTitle: 'Support Us',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'A list of all the supporters who contributed to our website.',
+    keywords: 'support cause, payment, supporter list',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/support-us/QR Code  UPI - www.rgpvnotes.in.png',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <main id="main">
         <BreadcrumbsComponent staticTitle="Support Us" breadCrumbsArray={[]} />
 

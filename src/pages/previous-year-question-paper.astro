@@ -2,9 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 import SearchAndSelector from '../components/homePage/heroComponent/partials/SearchAndSelector.vue';
+
+const seoData = {
+    pageTitle: 'RGPV previous year question papers',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'view download PDF of previous year question papers from RGPV university',
+    keywords: 'download pdf, previous year question papers, question papers, RGPV university ',
+    imageUrl: '',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <main id="main">
         <BreadcrumbsComponent staticTitle="Previous Year Question Paper"  breadCrumbsArray={[]} />
 

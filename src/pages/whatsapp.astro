@@ -1,8 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const seoData = {
+    pageTitle: 'Whatsapp redirection page',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'Whatsapp redirection page',
+    keywords: 'Whatsapp redirection page',
+    imageUrl: '',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
 <div>
     <h1>Redirecting you to our whatsapp page</h1>
     <meta http-equiv="refresh" content="0; url=https://api.whatsapp.com/send?phone=918989595022&text=Hey%20RGPV%20Notes%20Team%20I%20have%20some%20inquiry">

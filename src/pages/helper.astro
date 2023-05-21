@@ -2,9 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 import helperImg from '@assets/img/helper/helper.png';
+
+const seoData = {
+    pageTitle: 'Helpers',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'This page listes all the awesome guys helped us by providing us study material or by pointing out mistakes in our content which helped us improve services for eyeryone.',
+    keywords: 'new notes, broken links, issues',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/helper/helper.png',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <main id="main">
         <BreadcrumbsComponent
             staticTitle="People Who Helped Us"

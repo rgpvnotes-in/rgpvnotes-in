@@ -2,9 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
 import bugHunterImage from '@assets/img/bug-hunt/bug-hunter.png';
+
+const seoData = {
+    pageTitle: 'Hall of Fame',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'This page listes all the awesome guys helped us in making our services more secure',
+    keywords: 'Hall of Fame, bug bounty, security, privacy',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/bug-hunt/bug-hunter.png',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <main id="main">
         <BreadcrumbsComponent
             staticTitle="Hall Of Fame"

@@ -15,9 +15,17 @@ import TestimonialsComponent from '../components/homePage/testimonialsComponent/
 import '@assets/vendor/aos/aos.css';
 import '@assets/vendor/glightbox/css/glightbox.min.css';
 import '@assets/vendor/swiper/swiper-bundle.min.css';
+
+const seoData = {
+    pageTitle: 'Home Page - RGPV latest grading CBCS CBGS AICTE scheme PDF downloadable notes all unit free superfast server.Computer Science Mechanical Civil Information Technology Electronic',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'RGPV latest grading CBCS CBGS AICTE scheme PDF downloadable notes all unit free superfast server.Computer Science Mechanical Civil Information Technology Electronic',
+    keywords: 'RGPV,  latest notes, grading, CBCS, CBGS, AICTE, PDF notes, Computer Science, Mechanical, Civil, Information Technology, Electronic',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/rgpv-round-logo-about.png',
+}  
 ---
 
-<Layout title="" isInnerPage={false}>
+<Layout seoData={seoData} isInnerPage={false}>
     <HeroComponent client:load  />
     <main id="main">
         <AboutComponent  client:visible />

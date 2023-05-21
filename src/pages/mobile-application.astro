@@ -1,9 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BreadcrumbsComponent from '../components/breadcrumbsComponent/breadcrumbsComponent.vue';
+
+const seoData = {
+    pageTitle: 'Mobile Application',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'one stop mobile application for all the RGPV students.',
+    keywords: 'Mobile Application, RGPV',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/mobile-app/application.png',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <main id="main">
         <BreadcrumbsComponent
             staticTitle="Mobile Application"

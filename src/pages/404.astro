@@ -1,9 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import InnerPageContainer from '../components/innerPageComponent/innerPageComponent.vue';
+
+const seoData = {
+    pageTitle: '404 page not found',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: '404 page not found',
+    keywords: '404 page not found',
+    imageUrl: '',
+}  
 ---
 
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
     <InnerPageContainer staticTitle='' breadCrumbsArray={[]}>
         <h1>404 page</h1>
       </InnerPageContainer>
