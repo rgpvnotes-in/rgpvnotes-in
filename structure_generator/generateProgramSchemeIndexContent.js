@@ -18,9 +18,9 @@ const programName = '${programName}';
 const schemeName = '${schemeName}';
 
 const seoData = {
-    pageTitle: programName + schemeName + ' notes & question papers for RGPV students',
+    pageTitle: programName + ' ' + schemeName + ' notes & question papers for RGPV students',
     canonicalUrl: new URL(Astro.url.pathname, Astro.site),
-    description: programName + schemeName + ' latest notes & question papers for RGPV students',
+    description: programName + ' ' + schemeName + ' latest notes & question papers for RGPV students',
     keywords: programName + ', ' + schemeName + ', ' + ', latest notes, previous year question papers',
     imageUrl: '',
 } 

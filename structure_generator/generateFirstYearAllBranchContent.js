@@ -50,9 +50,9 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 }
 
 const seoData = {
-    pageTitle: programName + yearName + ' notes & question papers for RGPV students',
+    pageTitle: programName + ' ' + yearName + ' notes & question papers for RGPV students',
     canonicalUrl: new URL(Astro.url.pathname, Astro.site),
-    description: programName + yearName + schemeName + ' latest notes & question papers for RGPV students',
+    description: programName + ' ' + yearName + ' ' + schemeName + ' latest notes & question papers for RGPV students',
     keywords: programName + ', ' + schemeName + ', ' + yearName + ', latest notes, previous year question papers',
     imageUrl: '',
 }  

@@ -13,7 +13,7 @@ import InnerPageContainer from '../../components/innerPageComponent/innerPageCom
 const programName = '${programName}';
 
 const seoData = {
-    pageTitle: programName ' notes & question papers for RGPV students',
+    pageTitle: programName + ' notes & question papers for RGPV students',
     canonicalUrl: new URL(Astro.url.pathname, Astro.site),
     description: programName + ' latest notes & question papers for RGPV students',
     keywords: programName + ', ' + ', latest notes, previous year question papers',
