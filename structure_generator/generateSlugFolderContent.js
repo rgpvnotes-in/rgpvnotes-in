@@ -17,10 +17,14 @@ import PopularPostsBlock from '../../../components/postBodyComponent/popularPost
 import YouMayAlsoLikeBlock from '../../../components/postBodyComponent/youMayAlsoLikeBlock.vue';
 import PreviousYearQuestionPaperBlock from '../../../components/postBodyComponent/previousYearQuestionPaper.vue';
 import NotesBlock from '../../../components/postBodyComponent/notesBlock.vue';
+import { simpleGetJsonRequest } from "@utils/http/index.js";
 
 // constants
 const programName = '${programName}';
 const schemeName = '${schemeName}';
+
+const fetchedLabelArray = (await simpleGetJsonRequest('http://backend.rgpvnotes.in/api/v1/labels.php?program_name=${programName}&scheme_name=${schemeName}')).content;
+
 export async function getStaticPaths() {
   const getSlugsData = await fetch(
     'http://backend.rgpvnotes.in/api/v1/all_post.php?program_name=${programName}&scheme_name=${schemeName}'
@@ -134,7 +138,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
 <div class="right-block-container pb-4 px-3 mt-2">
     <StaticTitleCard>Labels</StaticTitleCard>
-    <TagsBlock labelArray={post.labels} showTag={false} />
+    <TagsBlock labelArray={fetchedLabelArray} showTag={false} />
 </div>
 
 <div class="right-block-container pb-4 px-3 mt-3">

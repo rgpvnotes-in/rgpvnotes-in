@@ -19,6 +19,9 @@ export const yearBranchIndexContent = (
     import PageComponent from '../../../../components/pageComponent/pageComponent.vue';
     import MultiColorCard from '../../../../components/postBodyComponent/multiColorBackground.vue';
     import StaticTitleCard from '../../../../components/postBodyComponent/blackBackground.vue';
+    import TagsBlock from '../../../../components/postBodyComponent/tagsBlock.vue';
+    import PopularPostsBlock from '../../../../components/postBodyComponent/popularPostsBlock.vue';
+    import { simpleGetJsonRequest } from "@utils/http/index.js";
     
     import { yearArray } from '../../../../utils/const/index';
     
@@ -27,6 +30,8 @@ export const yearBranchIndexContent = (
     const schemeName = '${schemeName}';
     const yearName = '${yearName}';
     const branchName = '${branchName}';
+
+    const fetchedLabelArray = (await simpleGetJsonRequest('http://backend.rgpvnotes.in/api/v1/labels.php?program_name=${programName}&scheme_name=${schemeName}')).content;
     
     // Fetch the branch year data
     const getBranchYearData = await fetch(
@@ -75,7 +80,7 @@ const seoData = {
         breadCrumbsArray={breadCrumbsArray.reverse()}
     >
     <div class="row">
-    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8 left-block-container pb-5 px-0">
     <h1 class="page-static-title d-flex justify-content-center mb-4">
     {staticTitle}
     </h1>
@@ -83,9 +88,16 @@ const seoData = {
 <PageComponent getBranchYearDataArray={getBranchYearData} />
     </div>
     <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="right-block-container pb-4 px-3 mt-2">
         <StaticTitleCard>Labels</StaticTitleCard>
-
-
+        <TagsBlock labelArray={fetchedLabelArray} showTag={false} />
+    </div>
+    
+    <div class="right-block-container pb-4 px-3 mt-3">
+        <StaticTitleCard>Popular Posts</StaticTitleCard>
+        <PopularPostsBlock postsArray={post.popular_posts} />
+    </div>
+    
     </div>
 </div>
     </InnerPageContainer>
