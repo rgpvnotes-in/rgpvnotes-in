@@ -1,6 +1,7 @@
 ---
 import HeaderComponent from '../components/headerComponent/headerComponent.vue';
 import FooterComponent from '../components/footerComponent/footerComponent.vue';
+import SeoComponent from '../components/seoBlock/seoBlock.vue';
 
 // Vendor CSS Files
 import '@assets/vendor/bootstrap/css/bootstrap.min.css';
@@ -13,23 +14,19 @@ import favIcon from '@assets/img/favicon.png';
 import favIconApple from '@assets/img/apple-touch-icon.png';
 
 export interface Props {
-    title: string;
+    seoData: Object;
     isInnerPage: boolean;
 }
 
-const { title, isInnerPage = true } = Astro.props;
+const { isInnerPage = true, seoData = {} } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <SeoComponent seoDetails={seoData}/>
         <link rel="sitemap" href="/sitemap-index.xml" />
 
-        <title>www.rgpvnotes.in - One stop solution for all thing RGPV related.</title>
-        <meta content="" name="description" />
-        <meta content="" name="keywords" />
 
         <!-- Favicons -->
         <link href={favIcon} rel="icon" />
