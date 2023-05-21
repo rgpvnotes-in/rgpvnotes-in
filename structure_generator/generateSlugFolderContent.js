@@ -58,8 +58,15 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     pathArray.pop();
   }
 
+  const seoData = {
+    pageTitle: post.rendered_title + ' notes & question papers for RGPV ' + post.subject_program + ' students',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: post.rendered_title + ' notes & question papers for RGPV ' + post.subject_program + post.subject_branch + ' students',
+    keywords: post.subject_name + '' + post.subject_code + '' + post.subject_branch + ',' + post.subject_program + 'latest notes, previous year question papers',
+    imageUrl: post.banner_url,
+}  
 ---
-<Layout title="" isInnerPage={true}>
+<Layout seoData={seoData} isInnerPage={true}>
 <InnerPageContainer staticTitle={post.rendered_title} breadCrumbsArray={breadCrumbsArray.reverse()}>
 <div class="row">
 <div class="col-12 col-sm-12 col-md-8 col-lg-8 left-block-container pb-5 px-0">
