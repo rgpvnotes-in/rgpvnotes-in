@@ -21,7 +21,7 @@ const props = defineProps({
     <!-- basic -->
     <meta name="robots" content="index, follow" />
     <link rel="manifest" href="/manifest.json" />
-    <title> {{ props.seoDetails.pageTitle ?? placeHolder.pageTitle }} </title>
+    <title> {{ props.seoDetails.pageTitle + ' - www.rgpvnotes.in' ?? placeHolder.pageTitle }} </title>
     <link :href="props.seoDetails.canonicalUrl ?? placeHolder.canonicalUrl" rel="canonical" />
     <meta :content="props.seoDetails.keywords ?? placeHolder.keywords " name="keywords" />
 
@@ -37,7 +37,7 @@ const props = defineProps({
     <meta content="@rgpvnotes_in" name="twitter:site" />
     <meta content="@rgpvnotes_in" name="twitter:creator" />
     <meta content="summary_large_image" name="twitter:card" />
-    <meta :content="props.seoDetails.pageTitle ?? placeHolder.pageTitle" name="twitter:title" />
+    <meta :content="props.seoDetails.pageTitle + ' - www.rgpvnotes.in' ?? placeHolder.pageTitle" name="twitter:title" />
     <meta :content="props.seoDetails.imageUrl ?? placeHolder.imageUrl" property="twitter:image" />
     <meta :content="props.seoDetails.description ?? placeHolder.description " name="twitter:description" />
 
@@ -46,7 +46,7 @@ const props = defineProps({
     <meta content="website" property="og:type" />
     <meta content="RGPV Notes" property="og:site_name" />
     <meta content="https://www.aadityajain.dev/" property="article:author" />
-    <meta :content="props.seoDetails.pageTitle ?? placeHolder.pageTitle " property="og:title" />
+    <meta :content="props.seoDetails.pageTitle + ' - www.rgpvnotes.in' ?? placeHolder.pageTitle " property="og:title" />
     <meta :content="props.seoDetails.canonicalUrl ?? placeHolder.canonicalUrl" property="og:url" />
     <meta :content="props.seoDetails.imageUrl ?? placeHolder.imageUrl" property="og:image" />
     <meta :content="props.seoDetails.description ?? placeHolder.description " property="og:description" />
