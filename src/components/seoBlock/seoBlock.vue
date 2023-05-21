@@ -4,7 +4,8 @@ const placeHolder = {
     pageTitle: '',
     canonicalUrl: '',
     description: '',
-    imageUrl: 'https://cdn.rgpvnotes.in/www/media/header-bg.jpg'
+    imageUrl: 'https://cdn.rgpvnotes.in/www/media/header-bg.jpg',
+    keywords: '',
 }
 
 const props = defineProps({
@@ -22,6 +23,7 @@ const props = defineProps({
     <link rel="manifest" href="/manifest.json" />
     <title> {{ props.seoDetails.pageTitle ?? placeHolder.pageTitle }} </title>
     <link :href="props.seoDetails.canonicalUrl ?? placeHolder.canonicalUrl" rel="canonical" />
+    <meta :content="props.seoDetails.keywords ?? placeHolder.keywords " name="keywords" />
 
 
     <!-- basic meta tags -->
