@@ -62,7 +62,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     pageTitle: post.rendered_title + ' notes & question papers for RGPV ' + post.subject_program + ' students',
     canonicalUrl: new URL(Astro.url.pathname, Astro.site),
     description: post.rendered_title + ' notes & question papers for RGPV ' + post.subject_program + post.subject_branch + ' students',
-    keywords: post.subject_name + '' + post.subject_code + '' + post.subject_branch + ',' + post.subject_program + 'latest notes, previous year question papers',
+    keywords: post.subject_name + ', ' + post.subject_code + ', ' + post.subject_branch + ', ' + post.subject_program + ' latest notes, previous year question papers',
     imageUrl: post.banner_url,
 }  
 ---
