@@ -32,6 +32,7 @@ export const yearBranchIndexContent = (
     const branchName = '${branchName}';
 
     const fetchedLabelArray = (await simpleGetJsonRequest('http://backend.rgpvnotes.in/api/v1/labels.php?program_name=${programName}&scheme_name=${schemeName}')).content;
+    const popularPostArray = (await simpleGetJsonRequest('http://backend.rgpvnotes.in/api/v1/popular_post.php?program_name=${programName}&scheme_name=${schemeName}')).content;
     
     // Fetch the branch year data
     const getBranchYearData = await fetch(
@@ -81,11 +82,13 @@ const seoData = {
     >
     <div class="row">
     <div class="col-12 col-sm-12 col-md-8 col-lg-8 left-block-container pb-5 px-0">
+    <div class="px-4">
     <h1 class="page-static-title d-flex justify-content-center mb-4">
     {staticTitle}
     </h1>
 
 <PageComponent getBranchYearDataArray={getBranchYearData} />
+</div>
     </div>
     <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
     <div class="right-block-container pb-4 px-3 mt-2">
@@ -95,12 +98,20 @@ const seoData = {
     
     <div class="right-block-container pb-4 px-3 mt-3">
         <StaticTitleCard>Popular Posts</StaticTitleCard>
-        <PopularPostsBlock postsArray={post.popular_posts} />
+        <PopularPostsBlock postsArray={popularPostArray} />
     </div>
     
     </div>
 </div>
     </InnerPageContainer>
 </Layout>
-    <style></style>`;
+<style scoped>
+.left-block-container {
+    background-color: #f2f6f9;
+}
+
+.right-block-container {
+    background-color: #f2f6f9;
+}
+</style>`;
 };
