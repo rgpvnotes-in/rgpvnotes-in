@@ -1,8 +1,8 @@
-# www.rgpvnotes.in
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/rgpvnotes-in/rgpvnotes-in/main/main.png" />
 </p>
+
+# www.rgpvnotes.in
 
 # About
 
