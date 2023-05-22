@@ -49,6 +49,7 @@ export const yearBranchIndexContent = (
 
 const pathArray = Astro.url.pathname.split('/');
 const breadCrumbsArray = [];
+pathArray[0] = '/';
 
 for (let index = pathArray.length - 1; index >= 0; index--) {
     let name = '';
@@ -62,7 +63,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
         name = staticTitle;
     }
 
-    breadCrumbsArray.push({ name: name, url: pathArray.join('/') });
+    breadCrumbsArray.push({ name: name, url: pathArray.join('/') ?? '/' });
     pathArray.pop();
 }
 

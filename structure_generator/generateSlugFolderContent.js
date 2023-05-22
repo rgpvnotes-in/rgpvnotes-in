@@ -45,6 +45,7 @@ const { post } = Astro.props;
 
 const pathArray = Astro.url.pathname.split('/');
 const breadCrumbsArray = [];
+pathArray[0] = '/';
 
 for (let index = pathArray.length - 1; index >= 0; index--) {
     let name = '';
