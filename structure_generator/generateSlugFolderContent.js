@@ -40,7 +40,7 @@ export async function getStaticPaths() {
     };
   });
 }
-const { slug } = Astro.params;
+const { slug: astroSlug } = Astro.params;
 const { post } = Astro.props;
 
 const pathArray = Astro.url.pathname.split('/');
@@ -125,7 +125,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
     textArray={post.lab_assignments}
 />
 
-<YouMayAlsoLikeBlock programName={post.subject_program} schemeName={post.subject_system_or_scheme} subjectBranch={post.subject_branch} subjectYear={post.year} subjectSemester={post.semester} />
+<YouMayAlsoLikeBlock programName={post.subject_program} schemeName={post.subject_system_or_scheme} subjectBranch={post.subject_branch} subjectYear={post.year} subjectSemester={post.semester} astroSlug={astroSlug}/>
 
 <PreviousYearQuestionPaperBlock questionPaperDataArray={post.previous_year_question_papers} />
 

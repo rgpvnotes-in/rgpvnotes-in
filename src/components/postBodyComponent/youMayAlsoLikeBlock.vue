@@ -22,6 +22,10 @@ const props = defineProps({
         required: true,
         type: String,
     },
+    astroSlug: {
+        required: true,
+        type: String,
+    },
 });
 
 const fetchData = await fetch(
@@ -33,17 +37,21 @@ const fetchData = await fetch(
         console.error(error);
         return [];
     });
+
+// removing object if slug matches requesting slug
+const filteredFetchData = fetchData.filter(subjectData => subjectData.slug !== props.astroSlug);
+
+
 </script>
 
 <template>
-    <div v-if="fetchData.length > 0">
+    <div v-if="filteredFetchData.length > 0">
         <hr class="cool-line" />
         <StaticTitleCard> You May Also Like </StaticTitleCard>
         <ul class="list-group">
-            <li v-for="postData in fetchData" :key="postData.post_id" class="list-group-item border-0 bg-transparent ps-0">
-                <a :href="postData.slug" class="text-dark fw-bold"
-                    > {{ postData.rendered_title }}</a
-                >
+            <li v-for="postData in filteredFetchData" :key="postData.post_id"
+                class="list-group-item border-0 bg-transparent ps-0">
+                <a :href="postData.slug" class="text-dark fw-bold"> {{ postData.rendered_title }}</a>
             </li>
         </ul>
     </div>
