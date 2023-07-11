@@ -137,15 +137,15 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 
 </div>
 <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
-<div class="right-block-container pb-4 px-3 mt-2">
-    <StaticTitleCard>Labels</StaticTitleCard>
-    <TagsBlock labelArray={fetchedLabelArray} showTag={false} />
-</div>
+{fetchedLabelArray.length > 0  && <div class="right-block-container pb-4 px-3 mt-2">
+<StaticTitleCard>Labels</StaticTitleCard>
+<TagsBlock labelArray={fetchedLabelArray} showTag={false} />
+</div>}
 
-<div class="right-block-container pb-4 px-3 mt-3">
-    <StaticTitleCard>Popular Posts</StaticTitleCard>
-    <PopularPostsBlock postsArray={post.popular_posts} />
-</div>
+{(post.popular_posts).length > 0  && <div class="right-block-container pb-4 px-3 mt-3">
+<StaticTitleCard>Popular Posts</StaticTitleCard>
+<PopularPostsBlock postsArray={post.popular_posts} />
+</div>}
 
 </div>
 </div>

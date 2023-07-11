@@ -80,15 +80,15 @@ const seoData = {
     </div>
 </div>
 <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
-<div class="right-block-container pb-4 px-3 mt-2">
-    <StaticTitleCard>Labels</StaticTitleCard>
-    <TagsBlock labelArray={fetchedLabelArray} showTag={false} />
-</div>
+{fetchedLabelArray.length > 0  && <div class="right-block-container pb-4 px-3 mt-2">
+<StaticTitleCard>Labels</StaticTitleCard>
+<TagsBlock labelArray={fetchedLabelArray} showTag={false} />
+</div>}
 
-<div class="right-block-container pb-4 px-3 mt-3">
-    <StaticTitleCard>Popular Posts</StaticTitleCard>
-    <PopularPostsBlock postsArray={popularPostArray} />
-</div>
+{popularPostArray.length > 0  && <div class="right-block-container pb-4 px-3 mt-3">
+<StaticTitleCard>Popular Posts</StaticTitleCard>
+<PopularPostsBlock postsArray={popularPostArray} />
+</div>}
 
 </div>
 </div>

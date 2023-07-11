@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <div class="author-block-bg py-3 px-4 mb-2">
+    <div class="author-block-bg py-3 px-4 my-2">
         <div class="row">
             <div class="col-12 col-md-3">
                 <img
