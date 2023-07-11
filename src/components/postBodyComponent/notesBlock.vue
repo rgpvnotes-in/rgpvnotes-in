@@ -43,6 +43,10 @@ const props = defineProps({
         required: true,
         type: String,
     },
+    previousYearQP: {
+        required: true,
+        type: Boolean,
+    },
 });
 </script>
 
@@ -121,7 +125,7 @@ const props = defineProps({
             </li>
         </ul>
 
-        <div class="d-flex justify-content-center mt-3">
+        <div class="d-flex justify-content-center mt-3" v-if="previousYearQP">
             <a href="#questionPapers"><button class="Tooltip-btn click-btn click-btn--other">
                     Previous Year Question Paper Here
                 </button></a>

@@ -97,7 +97,7 @@ for (let index = pathArray.length - 1; index >= 0; index--) {
 <MultiColorCard index={9} content={post.unit_9_syllabus} />
 <MultiColorCard index={10} content={post.unit_10_syllabus} />
 
-<NotesBlock notesDataObject={post.subject_notes} affiliateBooksList={post.affiliate_books_list} subjectName={post.subject_name} />
+<NotesBlock notesDataObject={post.subject_notes} affiliateBooksList={post.affiliate_books_list} subjectName={post.subject_name} previousYearQP={post.previous_year_question_papers.length > 0}/>
 <TitleTextBlock title="Course Outcome" textArray={post.outcome} />
 <TitleTextBlock
     title="Recommended Text Books"
