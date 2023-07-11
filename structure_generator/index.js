@@ -97,7 +97,7 @@ try {
                     const yearIndexContent = getFirstYearIndexContent(
                         program.shortDisplayText,
                         scheme.shortDisplayText,
-                        yearObject.shortDisplayText.replace(/ /gm, '-'),
+                        yearObject.longDisplayText,
                     );
                     fs.writeFileSync(
                         `${yearPath}/index.astro`,
