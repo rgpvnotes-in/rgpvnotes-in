@@ -60,6 +60,7 @@ export const programNamesArray = [
         shortDisplayText: 'MBA',
         longDisplayText: 'Master in Business Administration',
         folderName: 'mba',
+        associatedSchemes: [1],
     },
     {
         _id: 2,
@@ -68,6 +69,7 @@ export const programNamesArray = [
         shortDisplayText: 'M.Arch',
         longDisplayText: 'Master of Architecture',
         folderName: 'march',
+        associatedSchemes: [1],
     },
     {
         _id: 3,
@@ -76,6 +78,7 @@ export const programNamesArray = [
         shortDisplayText: 'B.Tech',
         longDisplayText: 'Bachelor of Technology',
         folderName: 'btech',
+        associatedSchemes: [1, 2],
     },
     {
         _id: 4,
@@ -84,6 +87,7 @@ export const programNamesArray = [
         shortDisplayText: 'BE',
         longDisplayText: 'Bachelor of Engineering',
         folderName: 'be',
+        associatedSchemes: [1, 2, 4, 5],
     },
     {
         _id: 5,
@@ -92,6 +96,7 @@ export const programNamesArray = [
         shortDisplayText: 'BE-PTDC',
         longDisplayText: 'Bachelor of Engineering - Part Time Diploma Courses',
         folderName: 'be-ptdc',
+        associatedSchemes: [1, 2],
     },
     {
         _id: 6,
@@ -100,6 +105,7 @@ export const programNamesArray = [
         shortDisplayText: 'B.Tech-PTDC',
         longDisplayText: 'Bachelor of Technology - Part Time Diploma Courses',
         folderName: 'btech-ptdc',
+        associatedSchemes: [],
     },
     {
         _id: 7,
@@ -108,6 +114,7 @@ export const programNamesArray = [
         shortDisplayText: 'B.Pharm (PCI)',
         longDisplayText: 'Bachelor of Pharmacy - Pharmacy Council of India',
         folderName: 'bpharm-(pci)',
+        associatedSchemes: [1],
     },
     {
         _id: 8,
@@ -116,6 +123,7 @@ export const programNamesArray = [
         shortDisplayText: 'B.Pharm',
         longDisplayText: 'Bachelor of Pharmacy ',
         folderName: 'bpharm',
+        associatedSchemes: [1, 2, 3, 4, 5],
     },
     {
         _id: 9,
@@ -124,6 +132,7 @@ export const programNamesArray = [
         shortDisplayText: 'B.Arch',
         longDisplayText: 'Bachelor Of Architecture',
         folderName: 'barch',
+        associatedSchemes: [1, 4, 5, 6],
     },
     {
         _id: 10,
@@ -132,6 +141,7 @@ export const programNamesArray = [
         shortDisplayText: 'M.E',
         longDisplayText: 'Master of Engineering',
         folderName: 'me',
+        associatedSchemes: [1],
     },
     {
         _id: 11,
@@ -140,6 +150,7 @@ export const programNamesArray = [
         shortDisplayText: 'M.Tech',
         longDisplayText: 'Master of Technology',
         folderName: 'mtech',
+        associatedSchemes: [1],
     },
     {
         _id: 12,
@@ -148,6 +159,7 @@ export const programNamesArray = [
         shortDisplayText: 'M.Tech (Part Time)',
         longDisplayText: 'Master of Technology (Part Time)',
         folderName: 'mtech-(part-time)',
+        associatedSchemes: [1],
     },
     {
         _id: 13,
@@ -156,6 +168,7 @@ export const programNamesArray = [
         shortDisplayText: 'M.Pharm',
         longDisplayText: 'Master of Pharmacy',
         folderName: 'mpharm',
+        associatedSchemes: [1, 2],
     },
     {
         _id: 14,
@@ -164,6 +177,7 @@ export const programNamesArray = [
         shortDisplayText: 'M.Pharm PCI',
         longDisplayText: 'Master of Pharmacy - Pharmacy Council of India',
         folderName: 'mpharm-pci',
+        associatedSchemes: [1],
     },
     {
         _id: 15,
@@ -172,6 +186,7 @@ export const programNamesArray = [
         shortDisplayText: 'MCA 2 Year',
         longDisplayText: 'Master of Computer Applications - 2 Year',
         folderName: 'mca-2-year',
+        associatedSchemes: [1],
     },
     {
         _id: 16,
@@ -180,6 +195,7 @@ export const programNamesArray = [
         shortDisplayText: 'MCA',
         longDisplayText: 'Master of Computer Applications',
         folderName: 'mca',
+        associatedSchemes: [1, 2],
     },
     {
         _id: 17,
@@ -188,6 +204,7 @@ export const programNamesArray = [
         shortDisplayText: 'MCA Dual Degree',
         longDisplayText: 'Master of Computer Applications Dual Degree',
         folderName: 'mca-dual-degree',
+        associatedSchemes: [1],
     },
     {
         _id: 18,
@@ -196,6 +213,7 @@ export const programNamesArray = [
         shortDisplayText: 'MBA Integrated',
         longDisplayText: 'Master in Business Administration Integrated ',
         folderName: 'mba-integrated',
+        associatedSchemes: [1],
     },
     {
         _id: 19,
@@ -204,6 +222,7 @@ export const programNamesArray = [
         shortDisplayText: 'DDI-PG',
         longDisplayText: 'Dual Degree Integrated Post Graduate',
         folderName: 'ddi-pg',
+        associatedSchemes: [1],
     },
     {
         _id: 20,
@@ -212,6 +231,7 @@ export const programNamesArray = [
         shortDisplayText: 'Diploma',
         longDisplayText: 'Diploma',
         folderName: 'diploma',
+        associatedSchemes: [],
     },
     {
         _id: 21,
@@ -220,6 +240,7 @@ export const programNamesArray = [
         shortDisplayText: 'Ph.D',
         longDisplayText: 'Doctor of Philosophy',
         folderName: 'phd',
+        associatedSchemes: [],
     },
     {
         _id: 22,
@@ -228,6 +249,7 @@ export const programNamesArray = [
         shortDisplayText: 'Ph.D Entrance',
         longDisplayText: 'Doctor of Philosophy Entrance',
         folderName: 'phd-entrance',
+        associatedSchemes: [],
     },
     {
         _id: 23,
@@ -237,6 +259,7 @@ export const programNamesArray = [
         longDisplayText:
             'Post Graduate Certificate Programme in Medical Biotechnology',
         folderName: 'pgcpmb',
+        associatedSchemes: [],
     },
     {
         _id: 24,
@@ -245,6 +268,16 @@ export const programNamesArray = [
         shortDisplayText: 'Pharm D',
         longDisplayText: 'Diploma in Pharmacy',
         folderName: 'pharm-d',
+        associatedSchemes: [1],
+    },
+    {
+        _id: 25,
+        _order: 25,
+        _display: true,
+        shortDisplayText: 'B.Design',
+        longDisplayText: 'Bachelor of Design',
+        folderName: 'b-design',
+        associatedSchemes: [],
     },
 ];
 

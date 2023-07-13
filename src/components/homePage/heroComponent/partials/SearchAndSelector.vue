@@ -34,7 +34,7 @@ export default {
     },
     setup(props) {
         const searchSubjectName = ref('');
-        const searchMeBtnRef = ref(null)
+        const searchMeBtnRef = ref(null);
         const shouldShowProgram =
             props.selectedProgramProp === '' ? ref(true) : ref(false);
         const shouldShowScheme =
@@ -61,10 +61,32 @@ export default {
                 ? ref('')
                 : ref(props.selectedBranchProp);
 
+        const filteredSchemesArray = ref([]);
+
+        // filtering programs who doesn't have associated Schemes
+        const filteredProgramNamesArray = programNamesArray.filter(
+            (program) => program.associatedSchemes.length > 0,
+        );
+
         const changeSelectedProgram = (programName = '') => {
             selectedProgram.value = programName;
             shouldShowProgram.value = false;
-            shouldShowScheme.value = true;
+            const selectedProgramObject = filteredProgramNamesArray.filter(
+                (program) => program.folderName === selectedProgram.value,
+            )[0];
+
+            // filter schemes names based on selected program
+            filteredSchemesArray.value = schemeNamesArray.filter((scheme) =>
+                selectedProgramObject.associatedSchemes.includes(scheme._id),
+            );
+
+            if (filteredSchemesArray.value.length === 1) {
+                // if only a single scheme is present for program then select it by default, no need to show options
+                changeSelectedScheme(filteredSchemesArray.value[0].folderName);
+            } else {
+                // if more than 1 options is there then show all available options
+                shouldShowScheme.value = true;
+            }
         };
         const changeSelectedScheme = (schemeName = '') => {
             selectedScheme.value = schemeName;
@@ -112,11 +134,11 @@ export default {
         const searchSubject = () => {
             searchMeBtnRef.value.click();
             searchMeBtnRef.value = '';
-        }
+        };
 
         return {
-            programNamesArray,
-            schemeNamesArray,
+            filteredProgramNamesArray,
+            filteredSchemesArray,
             yearArray,
             branchArray,
             changeSelectedProgram,
@@ -129,7 +151,7 @@ export default {
             shouldShowBranch,
             searchSubjectName,
             searchSubject,
-            searchMeBtnRef
+            searchMeBtnRef,
         };
     },
 };
@@ -195,9 +217,10 @@ export default {
             <div
                 data-program-btn-container
                 class="d-flex flex-wrap justify-content-center"
+                v-if="filteredProgramNamesArray.length > 0"
             >
                 <span
-                    v-for="programName in programNamesArray"
+                    v-for="programName in filteredProgramNamesArray"
                     :key="programName._id"
                     @click="changeSelectedProgram(programName.folderName)"
                     class="theme-default-btn me-2 mb-2"
@@ -223,7 +246,7 @@ export default {
                 class="d-flex flex-wrap justify-content-center"
             >
                 <span
-                    v-for="schemeName in schemeNamesArray"
+                    v-for="schemeName in filteredSchemesArray"
                     :key="schemeName._id"
                     @click="changeSelectedScheme(schemeName.folderName)"
                     class="theme-default-btn me-2 mb-2"
@@ -291,11 +314,7 @@ export default {
                 <span
                     v-for="branchName in branchArray"
                     :key="branchName._id"
-                    @click="
-                        changeSelectedBranch(
-                            branchName.longDisplayText,
-                        )
-                    "
+                    @click="changeSelectedBranch(branchName.longDisplayText)"
                     class="theme-default-btn me-2 mb-2"
                     >{{ branchName.longDisplayText }}</span
                 >
@@ -347,6 +366,7 @@ export default {
     max-width: 667px;
     font-weight: bold;
 }
+
 .search-subject-division:before {
     content: '';
     /* 
@@ -359,6 +379,7 @@ export default {
     width: 100%;
     height: 1px;
 }
+
 .search-subject-division:after {
     content: attr(data-content);
     position: relative;
@@ -455,7 +476,6 @@ h2 {
         font-size: 18px;
         line-height: 24px;
     }
-
 }
 
 @keyframes up-down {
