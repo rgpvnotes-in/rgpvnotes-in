@@ -13,6 +13,7 @@ import PreviousYearQuestionPaperBlock from '@components/postBodyComponent/previo
 import NotesBlock from '@components/postBodyComponent/notesBlock.vue';
 import { simpleGetJsonRequest } from "@utils/http/index.js";
 
+import "@css/slug-style.css"
 
 interface PopularPost {
   rendered_title: string;
@@ -185,13 +186,3 @@ const seoData = {
     </div>
   </InnerPageContainer>
 </Layout>
-
-<style scoped>
-  .left-block-container {
-    background-color: #f2f6f9;
-  }
-
-  .right-block-container {
-    background-color: #f2f6f9;
-  }
-</style>
