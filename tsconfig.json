@@ -5,7 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
+      "@css/*": ["src/assets/css/*"],
+      "@vendor/*": ["src/assets/vendor/*"],
+      "@js/*": ["src/assets/js/*"],
+      "@images/*": ["src/assets/img/*"],
       "@utils/*": ["src/utils/*"],
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"]
