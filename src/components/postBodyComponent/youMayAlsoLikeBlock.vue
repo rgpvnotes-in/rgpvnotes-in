@@ -28,8 +28,10 @@ const props = defineProps({
     },
 });
 
-const fetchData = await fetch(
-    `http://backend.rgpvnotes.in:8000/api/v1/search.php?program_name=${props.programName}&scheme_name=${props.schemeName}&subject_branch=${props.subjectBranch}&subject_year=${props.subjectYear}&subject_semester=${props.subjectSemester}`,
+const fetchedData = []
+for (const seprateBranch of props.subjectBranch) {
+    const apiResponse = await fetch(
+    `http://backend.rgpvnotes.in:8000/api/v1/search.php?program_name=${props.programName}&scheme_name=${props.schemeName}&subject_branch=${seprateBranch}&subject_year=${props.subjectYear}&subject_semester=${props.subjectSemester}`,
 )
     .then((response) => response.json())
     .then((data) => data.content)
@@ -37,9 +39,11 @@ const fetchData = await fetch(
         console.error(error);
         return [];
     });
+    fetchedData.concat(apiResponse);
+}
 
 // removing object if slug matches requesting slug
-const filteredFetchData = fetchData.filter(subjectData => subjectData.slug !== props.astroSlug);
+const filteredFetchData = fetchedData.filter(subjectData => subjectData.slug !== props.astroSlug);
 
 
 </script>
