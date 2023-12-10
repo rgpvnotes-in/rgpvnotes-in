@@ -14,16 +14,16 @@ export const yearBranchIndexContent = (
 ) => {
     // Return the year branch index page template
     return `---
-    import Layout from '../../../../layouts/Layout.astro';
-    import InnerPageContainer from '../../../../components/innerPageComponent/innerPageComponent.vue';
-    import PageComponent from '../../../../components/pageComponent/pageComponent.vue';
-    import MultiColorCard from '../../../../components/postBodyComponent/multiColorBackground.vue';
-    import StaticTitleCard from '../../../../components/postBodyComponent/blackBackground.vue';
-    import TagsBlock from '../../../../components/postBodyComponent/tagsBlock.vue';
-    import PopularPostsBlock from '../../../../components/postBodyComponent/popularPostsBlock.vue';
+    import Layout from '@layouts/Layout.astro';
+    import InnerPageContainer from '@components/innerPageComponent/innerPageComponent.vue';
+    import PageComponent from '@components/pageComponent/pageComponent.vue';
+    import MultiColorCard from '@components/postBodyComponent/multiColorBackground.vue';
+    import StaticTitleCard from '@components/postBodyComponent/blackBackground.vue';
+    import TagsBlock from '@components/postBodyComponent/tagsBlock.vue';
+    import PopularPostsBlock from '@components/postBodyComponent/popularPostsBlock.vue';
     import { simpleGetJsonRequest } from "@utils/http/index.js";
     
-    import { yearArray } from '../../../../utils/const/index';
+    import { yearArray } from '@utils/const/index';
     
     // constants
     const programName = '${programName}';

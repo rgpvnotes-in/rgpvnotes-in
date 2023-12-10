@@ -5,9 +5,9 @@
  */
 export const programIndexContent = (programName = '') => {
     return `---
-import Layout from "../../layouts/Layout.astro";
-import SearchAndSelector from '../../components/homePage/heroComponent/partials/SearchAndSelector.vue';
-import InnerPageContainer from '../../components/innerPageComponent/innerPageComponent.vue';
+import Layout from "@layouts/Layout.astro";
+import SearchAndSelector from '@components/homePage/heroComponent/partials/SearchAndSelector.vue';
+import InnerPageContainer from '@components/innerPageComponent/innerPageComponent.vue';
 
 // constants
 const programName = '${programName}';
