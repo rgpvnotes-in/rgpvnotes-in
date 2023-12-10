@@ -1,0 +1,69 @@
+---
+import HeaderComponent from '@components/headerComponent/headerComponent.vue';
+import FooterComponent from '@components/footerComponent/footerComponent.vue';
+import SeoComponent from '@components/seoBlock/seoBlock.vue';
+
+// Vendor CSS Files
+import '@vendor/bootstrap/css/bootstrap.css';
+
+// Template Main CSS File
+import '@css/style.css';
+
+// import favIcon from '@assets/img/favicon.png';
+// import favIconApple from '@assets/img/apple-touch-icon.png';
+
+export interface Props {
+    seoData: Object;
+    isInnerPage: boolean;
+}
+
+const { isInnerPage = true, seoData = {} } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <SeoComponent seoDetails={seoData}/>
+        <link rel="sitemap" href="/sitemap-index.xml" />
+
+
+        <!-- Favicons -->
+        <!-- <link href={favIcon} rel="icon" /> -->
+        <!-- <link href={favIconApple} rel="apple-touch-icon" /> -->
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <HeaderComponent isInnerPage={isInnerPage} />
+        <slot />
+        <FooterComponent isInnerPage={isInnerPage}  />
+        <!-- bootstrap bundle JS -->
+        <!-- <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:global
+        ></script> -->
+
+        <!-- Template Main JS File -->
+        <!-- <script src="/assets/js/main.js" is:global></script> -->
+    </body>
+</html>
+
+<style type="text/css" is:global>
+/*
+ **    Reset CSS to default
+
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+        list-style: none;
+        word-wrap: break-word;
+    }
+    
+ */
+</style>
