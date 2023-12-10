@@ -1,0 +1,44 @@
+.cool-line {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 1px;
+  height: 1px;
+  font-size: 1em;
+  border-top: 1px solid #8c8b8b;
+  text-align: center;
+  margin: 30px;
+  overflow: visible;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.cool-line:after {
+  content: url(https://cdn.rgpvnotes.in/B.Tech/notes/media/images/BTech%20book%20rgpvnotes.in.png);
+  color: #999;
+  display: inline;
+  background-color: #161617;
+  padding: 0 0.5em;
+  display: inline-block;
+  position: relative;
+  top: -10px;
+}
+
+/* Special rule for Internet Explorer */
+x:-o-prefocus,
+.cool-line:after {
+  content: "";
+}
+
+.page-static-title {
+  display: flex;
+}
+
+/* Custom offset for right side */
+@media (min-width: 768px) {
+  .offset-md-half {
+    margin-left: 4.33333333%;
+  }
+}
