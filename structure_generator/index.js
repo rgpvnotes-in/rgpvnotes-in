@@ -107,40 +107,54 @@ try {
                         `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}`,
                     );
                 } else {
-                    for (const branchObject of branchArray) {
-                        const yearBranchPath = `${schemePath}/${branchObject.longDisplayText
-                            .toLowerCase()
-                            .replace(/&/gm, 'and')
-                            .replace(
-                                / /gm,
-                                '-',
-                            )}-${yearObject.shortDisplayText.replace(
-                            / /gm,
-                            '-',
-                        )}`;
+                    const associatedBranchesList =
+                        branchArray?.[program.shortDisplayText]?.[
+                            scheme.shortDisplayText
+                        ];
+                    if (associatedBranchesList) {
+                        for (const branchObject of associatedBranchesList) {
+                            const branchFolderSlug =
+                                branchObject.longDisplayText
+                                    .toLowerCase()
+                                    .replace(/&/gm, 'and')
+                                    .replace('/', 'or')
+                                    .replace(/ /gm, '-');
+                            let yearBranchPath = '';
+                            if (branchFolderSlug == 'no-branch') {
+                                yearBranchPath = `${schemePath}/${yearObject.shortDisplayText.replace(
+                                    / /gm,
+                                    '-',
+                                )}`;
+                            } else {
+                                yearBranchPath = `${schemePath}/${branchFolderSlug}-${yearObject.shortDisplayText.replace(
+                                    / /gm,
+                                    '-',
+                                )}`;
+                            }
 
-                        // create folder with program and scheme name if it does not exist
-                        if (!fs.existsSync(yearBranchPath)) {
+                            // create folder with program and scheme name if it does not exist
+                            if (!fs.existsSync(yearBranchPath)) {
+                                console.log(
+                                    `creating new folder with path: ${yearBranchPath}`,
+                                );
+                                fs.mkdirSync(yearBranchPath);
+                            }
+                            // create index file for scheme
+                            const branchYearIndexContent =
+                                getYearBranchIndexContent(
+                                    program.shortDisplayText,
+                                    scheme.shortDisplayText,
+                                    yearObject.longDisplayText,
+                                    branchObject.longDisplayText,
+                                );
+                            fs.writeFileSync(
+                                `${yearBranchPath}/index.astro`,
+                                branchYearIndexContent,
+                            );
                             console.log(
-                                `creating new folder with path: ${yearBranchPath}`,
+                                `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}, ${branchObject.longDisplayText}`,
                             );
-                            fs.mkdirSync(yearBranchPath);
                         }
-                        // create index file for scheme
-                        const branchYearIndexContent =
-                            getYearBranchIndexContent(
-                                program.shortDisplayText,
-                                scheme.shortDisplayText,
-                                yearObject.longDisplayText,
-                                branchObject.longDisplayText,
-                            );
-                        fs.writeFileSync(
-                            `${yearBranchPath}/index.astro`,
-                            branchYearIndexContent,
-                        );
-                        console.log(
-                            `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}, ${branchObject.longDisplayText}`,
-                        );
                     }
                 }
             }
