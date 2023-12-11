@@ -250,7 +250,8 @@ export default {
             v-else-if="shouldShowScheme"
             class="d-flex align-items-center flex-column hero-custom-container"
         >
-            <h3
+    <div v-if="filteredSchemesArray.length > 0">
+    <h3
                 class="mb-3"
                 :class="[isInnerPage ? 'text-dark' : 'text-white']"
             >
@@ -276,6 +277,7 @@ export default {
                     > Back To Course Program List</span
                 >
             </div>
+    </div>
         </div>
 
         <div
