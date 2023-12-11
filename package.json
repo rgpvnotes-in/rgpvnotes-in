@@ -23,7 +23,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate": "node ./structure_generator/index.js",
+    "generate": "node ./src/utils/const/prepare.js && node ./structure_generator/index.js",
     "prepare": "husky install"
   },
   "lint-staged": {
