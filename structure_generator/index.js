@@ -50,110 +50,122 @@ try {
 
         // loop through each scheme
         for (const scheme of schemeNamesArray) {
-            const schemePath = `${programPath}/${scheme.folderName}`;
+            if (
+                program.associatedSchemes.find(
+                    (associatedScheme) => associatedScheme === scheme._id,
+                )
+            ) {
+                const schemePath = `${programPath}/${scheme.folderName}`;
 
-            // create folder with program and scheme name if it does not exist
-            if (!fs.existsSync(schemePath)) {
-                console.log(`creating new folder with path: ${schemePath}`);
-                fs.mkdirSync(schemePath);
-            }
+                // create folder with program and scheme name if it does not exist
+                if (!fs.existsSync(schemePath)) {
+                    console.log(`creating new folder with path: ${schemePath}`);
+                    fs.mkdirSync(schemePath);
+                }
 
-            // create slug file
-            const slugFileContent = getProgramSchemeSlugContent(
-                program.shortDisplayText,
-                scheme.shortDisplayText,
-            );
-            fs.writeFileSync(`${schemePath}/[...slug].astro`, slugFileContent);
-            console.log(
-                `slug file written successfully for ${program.folderName}, ${scheme.shortDisplayText}`,
-            );
+                // create slug file
+                const slugFileContent = getProgramSchemeSlugContent(
+                    program.shortDisplayText,
+                    scheme.shortDisplayText,
+                );
+                fs.writeFileSync(
+                    `${schemePath}/[...slug].astro`,
+                    slugFileContent,
+                );
+                console.log(
+                    `slug file written successfully for ${program.folderName}, ${scheme.shortDisplayText}`,
+                );
 
-            // create index file for scheme
-            const schemeIndexContent = getProgramSchemeIndexContent(
-                program.shortDisplayText,
-                scheme.shortDisplayText,
-            );
-            fs.writeFileSync(`${schemePath}/index.astro`, schemeIndexContent);
-            console.log(
-                `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}`,
-            );
+                // create index file for scheme
+                const schemeIndexContent = getProgramSchemeIndexContent(
+                    program.shortDisplayText,
+                    scheme.shortDisplayText,
+                );
+                fs.writeFileSync(
+                    `${schemePath}/index.astro`,
+                    schemeIndexContent,
+                );
+                console.log(
+                    `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}`,
+                );
 
-            for (const yearObject of yearArray) {
-                if ('1st year' === yearObject.shortDisplayText) {
-                    const yearPath = `${schemePath}/${yearObject.shortDisplayText.replace(
-                        / /gm,
-                        '-',
-                    )}`;
+                for (const yearObject of yearArray) {
+                    if ('1st year' === yearObject.shortDisplayText) {
+                        const yearPath = `${schemePath}/${yearObject.shortDisplayText.replace(
+                            / /gm,
+                            '-',
+                        )}`;
 
-                    // create folder with program and scheme name if it does not exist
-                    if (!fs.existsSync(yearPath)) {
-                        console.log(
-                            `creating new folder with path: ${yearPath}`,
-                        );
-                        fs.mkdirSync(yearPath);
-                    }
-
-                    // create index file for scheme
-                    const yearIndexContent = getFirstYearIndexContent(
-                        program.shortDisplayText,
-                        scheme.shortDisplayText,
-                        yearObject.longDisplayText,
-                    );
-                    fs.writeFileSync(
-                        `${yearPath}/index.astro`,
-                        yearIndexContent,
-                    );
-                    console.log(
-                        `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}`,
-                    );
-                } else {
-                    const associatedBranchesList =
-                        branchArray?.[program.shortDisplayText]?.[
-                            scheme.shortDisplayText
-                        ];
-                    if (associatedBranchesList) {
-                        for (const branchObject of associatedBranchesList) {
-                            const branchFolderSlug =
-                                branchObject.longDisplayText
-                                    .toLowerCase()
-                                    .replace(/&/gm, 'and')
-                                    .replace('/', 'or')
-                                    .replace(/ /gm, '-');
-                            let yearBranchPath = '';
-                            if (branchFolderSlug == 'no-branch') {
-                                yearBranchPath = `${schemePath}/${yearObject.shortDisplayText.replace(
-                                    / /gm,
-                                    '-',
-                                )}`;
-                            } else {
-                                yearBranchPath = `${schemePath}/${branchFolderSlug}-${yearObject.shortDisplayText.replace(
-                                    / /gm,
-                                    '-',
-                                )}`;
-                            }
-
-                            // create folder with program and scheme name if it does not exist
-                            if (!fs.existsSync(yearBranchPath)) {
-                                console.log(
-                                    `creating new folder with path: ${yearBranchPath}`,
-                                );
-                                fs.mkdirSync(yearBranchPath);
-                            }
-                            // create index file for scheme
-                            const branchYearIndexContent =
-                                getYearBranchIndexContent(
-                                    program.shortDisplayText,
-                                    scheme.shortDisplayText,
-                                    yearObject.longDisplayText,
-                                    branchObject.longDisplayText,
-                                );
-                            fs.writeFileSync(
-                                `${yearBranchPath}/index.astro`,
-                                branchYearIndexContent,
-                            );
+                        // create folder with program and scheme name if it does not exist
+                        if (!fs.existsSync(yearPath)) {
                             console.log(
-                                `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}, ${branchObject.longDisplayText}`,
+                                `creating new folder with path: ${yearPath}`,
                             );
+                            fs.mkdirSync(yearPath);
+                        }
+
+                        // create index file for scheme
+                        const yearIndexContent = getFirstYearIndexContent(
+                            program.shortDisplayText,
+                            scheme.shortDisplayText,
+                            yearObject.longDisplayText,
+                        );
+                        fs.writeFileSync(
+                            `${yearPath}/index.astro`,
+                            yearIndexContent,
+                        );
+                        console.log(
+                            `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}`,
+                        );
+                    } else {
+                        const associatedBranchesList =
+                            branchArray?.[program.shortDisplayText]?.[
+                                scheme.shortDisplayText
+                            ];
+                        if (associatedBranchesList) {
+                            for (const branchObject of associatedBranchesList) {
+                                const branchFolderSlug =
+                                    branchObject.longDisplayText
+                                        .toLowerCase()
+                                        .replace(/&/gm, 'and')
+                                        .replace('/', 'or')
+                                        .replace(/ /gm, '-');
+                                let yearBranchPath = '';
+                                if (branchFolderSlug == 'no-branch') {
+                                    yearBranchPath = `${schemePath}/${yearObject.shortDisplayText.replace(
+                                        / /gm,
+                                        '-',
+                                    )}`;
+                                } else {
+                                    yearBranchPath = `${schemePath}/${branchFolderSlug}-${yearObject.shortDisplayText.replace(
+                                        / /gm,
+                                        '-',
+                                    )}`;
+                                }
+
+                                // create folder with program and scheme name if it does not exist
+                                if (!fs.existsSync(yearBranchPath)) {
+                                    console.log(
+                                        `creating new folder with path: ${yearBranchPath}`,
+                                    );
+                                    fs.mkdirSync(yearBranchPath);
+                                }
+                                // create index file for scheme
+                                const branchYearIndexContent =
+                                    getYearBranchIndexContent(
+                                        program.shortDisplayText,
+                                        scheme.shortDisplayText,
+                                        yearObject.longDisplayText,
+                                        branchObject.longDisplayText,
+                                    );
+                                fs.writeFileSync(
+                                    `${yearBranchPath}/index.astro`,
+                                    branchYearIndexContent,
+                                );
+                                console.log(
+                                    `index file written successfully for ${program.folderName}, ${scheme.shortDisplayText}, ${yearObject.shortDisplayText}, ${branchObject.longDisplayText}`,
+                                );
+                            }
                         }
                     }
                 }
