@@ -104,8 +104,21 @@ export default {
                     selectedBranch.value,
                 );
             } else {
-                shouldShowYear.value = false;
-                shouldShowBranch.value = true;
+                const selectedProgramName = (programNamesArray.filter((programObject) => programObject.folderName === selectedProgram.value))[0]
+                const selectedSchemeName = (schemeNamesArray.filter((schemeObject) => schemeObject.folderName === selectedScheme.value))[0]
+
+                const associatedBranchesList = branchArray?.[selectedProgramName.shortDisplayText]?.[selectedSchemeName.shortDisplayText];
+                if (associatedBranchesList?.length > 1) {
+                    shouldShowYear.value = false;
+                    shouldShowBranch.value = true;
+                } else {
+                    redirectToStudyMaterialPage(
+                            selectedProgram.value,
+                            selectedScheme.value,
+                            selectedYear.value,
+                            associatedBranchesList?.[0].longDisplayText);
+                }
+
             }
         };
         const changeSelectedBranch = (branch = '') => {
@@ -126,8 +139,11 @@ export default {
         ) => {
             if ('1st year' === selectedYear) {
                 window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedYear.replace(/ /gm, "-")}`;
+            }
+             else if(selectedBranch === 'No Branch') {
+                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedYear.replace(/ /gm, "-")}`;
             } else {
-                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedBranch.toLowerCase().replace(/&/gm, "and").replace(/ /gm, "-")}-${selectedYear.replace(/ /gm, "-")}`;
+                window.location.href = `/${selectedProgram.toLowerCase()}/${selectedScheme.toLowerCase().replace(/ /gm, "-")}/${selectedBranch.toLowerCase().replace(/&/gm, "and").replace('/', 'or').replace(/ /gm, "-")}-${selectedYear.replace(/ /gm, "-")}`;
             }
         };
 
