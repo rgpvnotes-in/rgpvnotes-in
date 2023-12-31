@@ -5,7 +5,7 @@
  * @returns {string} The content of the slug file
  */
 export const programSchemeSlugContent = (programName = '', schemeName = '') => {
-return `---
+    return `---
 // Import statements
 import Layout from "@layouts/Layout.astro";
 import InnerPageContainer from '@components/innerPageComponent/innerPageComponent.vue';
@@ -53,7 +53,7 @@ interface Post {
   subject_code: string;
   subject_optional_title: string;
   banner_url: string;
-  labels: string[];
+  label: string;
   unit_1_syllabus: string[];
   unit_2_syllabus: string[];
   unit_3_syllabus: string[];
@@ -175,7 +175,7 @@ const seoData = {
                 
                 <PreviousYearQuestionPaperBlock questionPaperDataArray={post.previous_year_question_papers} />
                 
-                <TagsBlock labelArray={post.labels} showTag={true} />
+                <TagsBlock postLabel={post.label} showTag={true} />
         </div>
         <AuthorBlock />
 
@@ -185,7 +185,7 @@ const seoData = {
       <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
         {fetchedLabelArray.length > 0  && <div class="right-block-container pb-4 px-3 mt-2">
             <StaticTitleCard>Labels</StaticTitleCard>
-            <TagsBlock labelArray={fetchedLabelArray} showTag={false} />
+            <TagsBlock postLabel={fetchedLabelArray} showTag={false} />
             </div>}
             
             {(post.popular_posts).length > 0  && <div class="right-block-container pb-4 px-3 mt-3">

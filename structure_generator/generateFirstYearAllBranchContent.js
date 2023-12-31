@@ -82,7 +82,7 @@ const seoData = {
 <div class="offset-md-half col-12 col-sm-12 col-md-3 col-lg-3">
 {fetchedLabelArray.length > 0  && <div class="right-block-container pb-4 px-3 mt-2">
 <StaticTitleCard>Labels</StaticTitleCard>
-<TagsBlock labelArray={fetchedLabelArray} showTag={false} />
+<TagsBlock postLabel={fetchedLabelArray} showTag={false} />
 </div>}
 
 {popularPostArray.length > 0  && <div class="right-block-container pb-4 px-3 mt-3">
