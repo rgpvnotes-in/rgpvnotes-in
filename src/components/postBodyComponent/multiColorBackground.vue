@@ -39,7 +39,7 @@ const props = defineProps({
         <p class="mb-0">
             <strong>UNIT {{ props.index }}:</strong>
         </p>
-        <p v-for="data in props.content" :key="{ data }">{{ data }}</p>
+        <p v-for="data in props.content" :key="{ data }" v-html="data.trim().replace('</b>',' </b>')"></p>
     </div>
 </template>
 
