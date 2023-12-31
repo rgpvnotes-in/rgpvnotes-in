@@ -4,3 +4,5 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow:
+
+Sitemap: https://www.rgpvnotes.in/sitemap.xml
