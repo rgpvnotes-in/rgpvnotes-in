@@ -9,6 +9,30 @@
 </template>
 
 <style scoped>
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(10px)
+    }
+
+    100% {
+        transform: translateY(-10px)
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px)
+    }
+
+    100% {
+        transform: translateY(-10px)
+    }
+}
+#hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
 @media (max-width: 991px) {
     .hero-img {
         text-align: center;
