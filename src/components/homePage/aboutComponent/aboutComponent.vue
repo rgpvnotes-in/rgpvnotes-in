@@ -26,24 +26,30 @@
           </p>
           <ul>
             <li>
-              <i class="bi bi-check-circle"></i> There is no mandatory fee for
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+              </svg> There is no mandatory fee for
               the students, they can freely use most of our services without
               paying even a single rupee to us.
             </li>
             <li>
-              <i class="bi bi-check-circle"></i> All the study material is just
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+              </svg> All the study material is just
               one click away, with just a single click you can either view or
               download study material from our ultra-fast servers.
             </li>
             <li>
-              <i class="bi bi-check-circle"></i>You don't have to register for
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+              </svg> You don't have to register for
               most of the services we provide. Mostly everything is available
               freely for the students without any condition or restriction.
             </li>
           </ul>
-          <!-- <a href="#" class="read-more"
-            >Read More <i class="bi bi-long-arrow-right"></i
-          ></a> -->
         </div>
       </div>
     </div>
@@ -74,8 +80,10 @@
   padding-bottom: 10px;
 }
 
-.about .content ul i {
+.about .content ul svg {
   font-size: 20px;
+  width: 24px;
+  height: 27px;
   padding-right: 4px;
   color: #5846f9;
 }
@@ -102,7 +110,7 @@
   background: linear-gradient(180deg, #5846f9 0%, #7b27d8 100%);
 }
 
-.about .content .read-more i {
+.about .content .read-more svg {
   font-size: 22px;
   position: absolute;
   right: 20px;
