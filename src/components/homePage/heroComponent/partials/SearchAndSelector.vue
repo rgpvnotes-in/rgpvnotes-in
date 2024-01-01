@@ -1,5 +1,5 @@
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 import {
     programNamesArray,
@@ -152,6 +152,58 @@ export default {
             searchMeBtnRef.value = '';
         };
 
+        const phrases = ["notes", "university alert", "previous year question paper"];
+      let currentPhraseIndex = 0;
+      let currentCharacterIndex = 0;
+      let isTyping = true;
+  
+      const typingContainer = ref(null);
+  
+      function typeText() {
+        const currentPhrase = phrases[currentPhraseIndex];
+  
+        if (isTyping) {
+          typingContainer.value.textContent += currentPhrase[currentCharacterIndex];
+          currentCharacterIndex++;
+  
+          if (currentCharacterIndex === currentPhrase.length) {
+            isTyping = false;
+            setTimeout(eraseText, 1000);
+          } else {
+            setTimeout(typeText, 100);
+          }
+        } else {
+          typingContainer.value.textContent = currentPhrase.substring(0, currentCharacterIndex);
+          currentCharacterIndex--;
+  
+          if (currentCharacterIndex === 0) {
+            isTyping = true;
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            setTimeout(typeText, 1000);
+          } else {
+            setTimeout(eraseText, 100);
+          }
+        }
+      }
+  
+      function eraseText() {
+        const currentPhrase = phrases[currentPhraseIndex];
+  
+        if (currentCharacterIndex > 0) {
+          typingContainer.value.textContent = currentPhrase.substring(0, currentCharacterIndex - 1);
+          currentCharacterIndex--;
+          setTimeout(eraseText, 100);
+        } else {
+          isTyping = true;
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          setTimeout(typeText, 1000);
+        }
+      }
+  
+      onMounted(() => {
+        typeText();
+      });
+
         return {
             filteredProgramNamesArray,
             filteredSchemesArray,
@@ -168,6 +220,7 @@ export default {
             searchSubjectName,
             searchSubject,
             searchMeBtnRef,
+            typingContainer
         };
     },
 };
@@ -184,6 +237,7 @@ export default {
     >
         <h1>Welcome To RGPV NOTES</h1>
         <h2>One stop solution for all your RGPV needs</h2>
+        <h2>We Provide <span ref="typingContainer"></span></h2>
 
         <div class="input-group mb-3 mt-4 hero-custom-container">
             <a :href="`https://www.google.com/search?q=site:www.rgpvnotes.in ${searchSubjectName}`" target="_blank" rel="noopener noreferrer" ref="searchMeBtnRef" ></a>
