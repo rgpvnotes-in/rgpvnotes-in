@@ -1,0 +1,43 @@
+---
+import Layout from '@layouts/Layout.astro';
+import AboutComponent from '@components/homePage/aboutComponent/aboutComponent.vue';
+import ContactComponent from '@components/homePage/contactComponent/contactComponent.vue';
+import CountComponent from '@components/homePage/countComponent/countComponent.vue';
+import HeroComponent from '@components/homePage/heroComponent/heroComponent.vue';
+import PortfolioComponent from '@components/homePage/portfolioComponent/portfolioComponent.vue';
+import ServicesComponent from '@components/homePage/servicesComponent/servicesComponent.vue';
+
+// Vendor CSS Files
+// import '@vendor/aos/aos.css';
+// import '@vendor/glightbox/css/glightbox.min.css';
+// import '@vendor/swiper/swiper-bundle.min.css';
+
+const seoData = {
+    pageTitle: 'Home Page - RGPV latest grading CBCS CBGS AICTE scheme PDF downloadable notes all unit free superfast server.Computer Science Mechanical Civil Information Technology Electronic',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'RGPV latest grading CBCS CBGS AICTE scheme PDF downloadable notes all unit free superfast server.Computer Science Mechanical Civil Information Technology Electronic',
+    keywords: 'RGPV,  latest notes, grading, CBCS, CBGS, AICTE, PDF notes, Computer Science, Mechanical, Civil, Information Technology, Electronic',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/rgpv-round-logo-about.png',
+}  
+---
+
+<Layout seoData={seoData} isInnerPage={false}>
+    <HeroComponent client:load  />
+    <main id="main">
+        <AboutComponent  client:visible />
+        <CountComponent  client:visible  />
+        <ServicesComponent  client:visible  />
+        <PortfolioComponent  client:visible  />
+        <ContactComponent client:idle  />
+    </main>
+
+            <!-- Vendor JS Files -->  
+            <!-- <script src="/assets/vendor/purecounter/purecounter_vanilla.js" is:global></script>
+            <script src="/assets/vendor/aos/aos.js" is:global></script>
+            <script src="/assets/vendor/glightbox/js/glightbox.min.js" is:global></script>
+            <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" is:global></script>
+            <script src="/assets/vendor/swiper/swiper-bundle.min.js" is:global></script>
+            <script src="/assets/js/home-page-only.js" is:global></script> -->
+</Layout>
+
+<style></style>

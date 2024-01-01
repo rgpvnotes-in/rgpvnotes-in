@@ -1,0 +1,72 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerPageContainer from '@components/innerPageComponent/innerPageComponent.vue';
+
+const seoData = {
+    pageTitle: 'Portal to study material',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'a portal to study material',
+    keywords: 'study material, redirection',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/loading.gif',
+}  
+---
+
+<Layout seoData={seoData} isInnerPage={true}>
+    <InnerPageContainer staticTitle="" breadCrumbsArray={[]}>
+        <div class="center-this">
+            <img src="https://www.rgpvnotes.in/assets/img/loading.gif" alt="loading notes gif" />
+            <p>Loading latest notes for you...</p>
+            <p id="countdown"></p>
+        </div>
+        <script is:inline>
+            let timeleft = 10;
+            let downloadTimer = setInterval(function () {
+                if (timeleft <= 0) {
+                    clearInterval(downloadTimer);
+                    document.getElementById('countdown').innerHTML =
+                        'redirecting';
+                } else {
+                    document.getElementById('countdown').innerHTML =
+                        timeleft + ' seconds remaining';
+                }
+                timeleft -= 1;
+            }, 1000);
+
+            const redirectToUrl = window.location.href
+                .split('redirectToUrl')[1]
+                .slice(1);
+            if (redirectToUrl) {
+                window.setTimeout(function () {
+                    window.location.replace(redirectToUrl);
+                }, 11000);
+            }
+        </script>
+    </InnerPageContainer>
+</Layout>
+
+<style>
+    body {
+        background-color: #212529;
+        color: #fff;
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center-this {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center-this img {
+        max-width: 250px;
+    }
+
+    .center-this p {
+        font-size: 2rem;
+    }
+</style>

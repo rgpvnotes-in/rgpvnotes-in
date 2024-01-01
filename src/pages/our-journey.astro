@@ -1,0 +1,148 @@
+---
+import Layout from '@layouts/Layout.astro';
+import BreadcrumbsComponent from '@components/breadcrumbsComponent/breadcrumbsComponent.vue';
+
+const seoData = {
+    pageTitle: 'Timeline our our journey',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'a basic imeline our our journey',
+    keywords: 'timeline, journey',
+    imageUrl: '',
+}  
+---
+
+<Layout seoData={seoData} isInnerPage={true}>
+    <main id="main">
+        <BreadcrumbsComponent staticTitle="Our Journey" breadCrumbsArray={[]} />
+
+        <section class="inner-page">
+            <div class="container table-responsive">
+                <table class="table table-striped">
+                    <thead
+                        ><tr
+                            ><th scope="col">#</th><th scope="col">Date</th><th
+                                scope="col">Description</th
+                            ></tr
+                        ></thead
+                    ><tbody
+                        ><tr
+                            ><td>1</td><td>2015</td><td>
+                                In the second quarter of 2015 Aditya Jain
+                                founded <strong
+                                    >3ngineeringnotes.blogspot.com.</strong
+                                ></td
+                            ></tr
+                        ><tr
+                            ><td>2</td><td>26/02/2017</td><td>
+                                Shifted blog to a new domain: <strong
+                                    >rgpvcbcs.blogspot.in</strong
+                                >.
+                            </td></tr
+                        ><tr
+                            ><td>3</td><td>23/03/2017</td><td
+                                >Designed a lame new logo.</td
+                            ></tr
+                        ><tr
+                            ><td>4</td><td>25/03/2017</td><td>
+                                Dropbox policy changed, all old PDF links are
+                                private now, no can download via them. <strong
+                                    >we are doomed !</strong
+                                >.
+                            </td></tr
+                        ><tr
+                            ><td>5</td><td>30/08/2017</td><td>
+                                We registered a DOT.TK domain <strong
+                                    >rgpv.tk</strong
+                                >, Akash Chaubey Created a new logo ❤ .
+                            </td></tr
+                        ><tr
+                            ><td>6</td><td>30/08/2017</td><td
+                                >Ankit joined us.</td
+                            ></tr
+                        ><tr
+                            ><td>7</td><td>16/09/2017</td><td>
+                                After 10 hours of continuous work, finally
+                                created our cover video &amp; uploaded it.
+                            </td></tr
+                        ><tr
+                            ><td>8</td><td>29/10/2017</td><td>
+                                Registered <strong>rgpvnotes.in</strong> on the occasion
+                                of Aditya Jain's birthday.
+                            </td></tr
+                        ><tr
+                            ><td>9</td><td>02/11/2017</td><td>
+                                Finally after some DNS mess, we connected our
+                                blog with new domain ❤ .
+                            </td></tr
+                        ><tr
+                            ><td>10</td><td>12/02/2018</td><td>
+                                Finished developing <strong
+                                    >automated bot</strong
+                                > &amp; launching it on the birthday of our former
+                                team member miss Akshita Jain.
+                            </td></tr
+                        ><tr
+                            ><td>11</td><td>17/02/2018</td><td
+                                >Completed 100,000 visits.</td
+                            ></tr
+                        ><tr
+                            ><td>12</td><td>12/03/2018</td><td>
+                                Created <strong>redirect.rgpvnotes.in</strong> for
+                                more attractive FB posts.
+                            </td></tr
+                        ><tr
+                            ><td>13</td><td>28/03/2018</td><td
+                                >Completed 200,000 visits.</td
+                            ></tr
+                        ><tr
+                            ><td>14</td><td>18/04/2018</td><td
+                                >Completed 300,000 visits.</td
+                            ></tr
+                        ><tr
+                            ><td>15</td><td>26/06/2018</td><td
+                                >Uploaded new theme at <strong
+                                    >be.rgpvnotes.in</strong
+                                >.</td
+                            ></tr
+                        ><tr
+                            ><td>16</td><td>06/07/2018</td><td
+                                >Launched Web Notification alert system.</td
+                            ></tr
+                        ><tr
+                            ><td>17</td><td>10/02/2019</td><td>
+                                Updated code of BE, B.Tech &amp; main domain.
+                                Relaunched Whatsapp Bot.
+                            </td></tr
+                        ><tr
+                            ><td>18</td><td>13/05/2019</td><td>
+                                Completed 2,300,000 visits on <strong
+                                    >be.rgpvnotes.in</strong
+                                >.
+                            </td></tr
+                        ><tr
+                            ><td>19</td><td>12/07/2019</td><td>
+                                Completed 2,500,000 visits on <strong
+                                    >be.rgpvnotes.in</strong
+                                >. We reset the stats to zero
+                            </td></tr
+                        ><tr
+                            ><td>20</td><td>12/10/2019</td><td>
+                                Shifted <strong>WWW</strong> and <strong
+                                    >CDN</strong
+                                > from firebase to github. Registered on a service
+                                to monitor and notify us about downtime of our website.
+                            </td></tr
+                        ><tr
+                            ><td>21</td><td>10/01/2020</td><td>
+                                "<strong>Andhera kayam rahe</strong>" We finally
+                                finished our designing &amp; today we are
+                                launching our dark-themed web-apps.
+                            </td></tr
+                        ></tbody>
+                </table>
+            </div>
+        </section>
+    </main><!-- End #main -->
+</Layout>
+
+<style></style>
