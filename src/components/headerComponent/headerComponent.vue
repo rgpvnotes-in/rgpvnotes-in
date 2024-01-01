@@ -1,5 +1,5 @@
 <script setup>
-import logoImage from '../../assets/img/logo.png';
+import logoImage from '@images/logo.png';
 
 const props = defineProps({
     isInnerPage: Boolean,
@@ -17,7 +17,7 @@ const props = defineProps({
             class="container d-flex align-items-center justify-content-between"
         >
             <a href="/" class="logo"
-                ><img :src="logoImage" alt="" class="img-fluid"
+                ><img :src="logoImage" alt="rgpv logo Image" class="img-fluid"
             /></a>
 
             <nav id="navbar" class="navbar">
@@ -55,6 +55,9 @@ const props = defineProps({
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list mobile-nav-toggle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
             </nav>
             <!-- .navbar -->
         </div>
@@ -137,9 +140,9 @@ const props = defineProps({
     position: relative;
 }
 
-.navbar a i,
-.navbar a:focus i {
-    font-size: 12px;
+.navbar a svg,
+.navbar a:focus svg {
+    width: 1rem;
     line-height: 0;
     margin-left: 5px;
 }
@@ -219,8 +222,8 @@ const props = defineProps({
     color: #2c4964;
 }
 
-.navbar .dropdown ul a i {
-    font-size: 12px;
+.navbar .dropdown ul a svg {
+    width: 1rem;
 }
 
 .navbar .dropdown ul a:hover,
@@ -264,6 +267,7 @@ const props = defineProps({
 .mobile-nav-toggle {
     color: #fff;
     font-size: 28px;
+    width: 28px;
     cursor: pointer;
     display: none;
     line-height: 0;
@@ -359,8 +363,8 @@ const props = defineProps({
     padding: 10px 20px;
 }
 
-.navbar-mobile .dropdown ul a i {
-    font-size: 12px;
+.navbar-mobile .dropdown ul a svg {
+    width: 1rem;
 }
 
 .navbar-mobile .dropdown ul a:hover,
