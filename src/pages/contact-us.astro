@@ -1,0 +1,13 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+const seoData = {
+    pageTitle: 'Contact Us',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'This page have all contact details of www.rgpvnotes.in',
+    keywords: 'contact us, reach out',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/helper/helper.png',
+}  
+---
+
+<Layout seoData={seoData} isInnerPage={true} />
