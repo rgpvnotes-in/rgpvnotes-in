@@ -1,6 +1,5 @@
 <script setup>
 
-import rgpvRoundLogo from '@images/rgpv-round-logo-about.png'
 import ContactComponent from '@components/homePage/contactComponent/contactComponent.vue';
 
 // import '@vendor//boxicons/css/boxicons.min.css';
@@ -21,7 +20,7 @@ const props = defineProps({
           <div class="row">
             <div class="col-12 col-md-12 col-lg-3 footer-contact text-center">
               <img
-                :src="rgpvRoundLogo"
+                src="https://www.rgpvnotes.in/assets/img/rgpv-round-logo-about.png"
                 class="img-fluid footer-rgpv-logo"
                 alt="rgpv Round Logo"
               />

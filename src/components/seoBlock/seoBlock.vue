@@ -4,7 +4,7 @@ const placeHolder = {
     pageTitle: '',
     canonicalUrl: '',
     description: '',
-    imageUrl: 'https://cdn.rgpvnotes.in/www/media/header-bg.jpg',
+    imageUrl: 'https://www.rgpvnotes.in/assets/img/header-bg.jpg',
     keywords: '',
 }
 
@@ -75,13 +75,13 @@ const props = defineProps({
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta name="apple-mobile-web-app-title" content="www.rgpvnotes.in" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon-152x152.png" />
-    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#4DBA87" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png" />
-    <link href="https://cdn.rgpvnotes.in/www/media/favicon.ico" rel="apple-touch-icon" />
-    <meta name="msapplication-TileImage" content="/img/icons/msapplication-icon-144x144.png" />
-    <link href="https://cdn.rgpvnotes.in/www/media/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://www.rgpvnotes.in/assets/img/icons/apple-touch-icon-152x152.png" />
+    <link rel="mask-icon" href="https://www.rgpvnotes.in/assets/img/icons/safari-pinned-tab.svg" color="#4DBA87" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.rgpvnotes.in/assets/img/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.rgpvnotes.in/assets/img/icons/favicon-16x16.png" />
+    <link href="https://www.rgpvnotes.in/assets/img/favicon.ico" rel="apple-touch-icon" />
+    <meta name="msapplication-TileImage" content="https://www.rgpvnotes.in/assets/img/icons/msapplication-icon-144x144.png" />
+    <link href="https://www.rgpvnotes.in/assets/img/favicon.ico" rel="icon" type="image/x-icon" />
     <meta content="Aeiwi, Alexa, AllTheWeb, AltaVista, AOL Netfind, Anzwers, Canada, DirectHit, EuroSeek, Excite, Overture, Go, Google, HotBot. InfoMak, Kanoodle, Lycos, MasterSite, National Directory, Northern Light, SearchIt, SimpleSearch, WebsMostLinked, WebTop, What-U-Seek, AOL, Yahoo, WebCrawler, Infoseek, Excite, Magellan, LookSmart, CNET, Googlebot" name="search engines" />
 
 </template>

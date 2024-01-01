@@ -1,6 +1,4 @@
 <script setup>
-import logoImage from '@images/logo.png';
-
 const props = defineProps({
     isInnerPage: Boolean,
 });
@@ -17,7 +15,7 @@ const props = defineProps({
             class="container d-flex align-items-center justify-content-between"
         >
             <a href="/" class="logo"
-                ><img :src="logoImage" alt="rgpv logo Image" class="img-fluid"
+                ><img src="https://www.rgpvnotes.in/assets/img/logo.png" alt="rgpv logo Image" class="img-fluid"
             /></a>
 
             <nav id="navbar" class="navbar">

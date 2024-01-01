@@ -14,11 +14,20 @@ export const programList = [
         programCategory: [
             {
                 name: 'non-grading',
-                image: 'assets/img/program/be-non-grading.png',
+                image: 'https://www.rgpvnotes.in/assets/img/program/be-non-grading.png',
             },
-            { name: 'grading', image: 'assets/img/program/be-grading.png' },
-            { name: 'cbcs', image: 'assets/img/program/be-cbcs.png' },
-            { name: 'cbgs', image: 'assets/img/program/be-cbgs.png' },
+            {
+                name: 'grading',
+                image: 'https://www.rgpvnotes.in/assets/img/program/be-grading.png',
+            },
+            {
+                name: 'cbcs',
+                image: 'https://www.rgpvnotes.in/assets/img/program/be-cbcs.png',
+            },
+            {
+                name: 'cbgs',
+                image: 'https://www.rgpvnotes.in/assets/img/program/be-cbgs.png',
+            },
         ],
     },
     {
@@ -27,9 +36,12 @@ export const programList = [
         programCategory: [
             {
                 name: 'non-grading',
-                image: 'assets/img/program/btech-non-grading.png',
+                image: 'https://www.rgpvnotes.in/assets/img/program/btech-non-grading.png',
             },
-            { name: 'grading', image: 'assets/img/program/btech-grading.png' },
+            {
+                name: 'grading',
+                image: 'https://www.rgpvnotes.in/assets/img/program/btech-grading.png',
+            },
         ],
     },
 ];

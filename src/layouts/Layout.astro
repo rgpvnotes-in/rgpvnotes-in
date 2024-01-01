@@ -9,9 +9,6 @@ import '@vendor/bootstrap/css/bootstrap.css';
 // Template Main CSS File
 import '@css/style.css';
 
-// import favIcon from '@images/favicon.png';
-// import favIconApple from '@images/apple-touch-icon.png';
-
 export interface Props {
     seoData: Object;
     isInnerPage: boolean;
@@ -28,8 +25,8 @@ const { isInnerPage = true, seoData = {} } = Astro.props;
 
 
         <!-- Favicons -->
-        <!-- <link href={favIcon} rel="icon" /> -->
-        <!-- <link href={favIconApple} rel="apple-touch-icon" /> -->
+        <link href="https://www.rgpvnotes.in/assets/img/icons/favicon-32x32.png" rel="icon" />
+        <link href="https://www.rgpvnotes.in/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
 
         <!-- Google Fonts -->
         <link
