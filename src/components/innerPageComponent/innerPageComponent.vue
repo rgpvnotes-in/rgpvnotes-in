@@ -1,5 +1,5 @@
 <script setup>
-import BreadcrumbsComponent from '../breadcrumbsComponent/breadcrumbsComponent.vue';
+import BreadcrumbsComponent from '@components/breadcrumbsComponent/breadcrumbsComponent.vue';
 
 const props = defineProps({
     staticTitle: {

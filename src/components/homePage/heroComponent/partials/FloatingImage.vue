@@ -1,5 +1,5 @@
 <script setup>
-import heroImg from '../../../../assets/img/hero-img.png';
+import heroImg from '@images/hero-img.png';
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import heroImg from '../../../../assets/img/hero-img.png';
         data-aos="zoom-in"
         data-aos-delay="150"
     >
-        <img :src="heroImg" class="img-fluid animated" alt="" />
+        <img :src="heroImg" class="img-fluid animated" alt="hero Img" />
     </div>
 </template>
 

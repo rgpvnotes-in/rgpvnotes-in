@@ -1,7 +1,7 @@
 <script setup>
 import '@css/blogger-style.css';
-import StaticTitleCard from '../postBodyComponent/blackBackground.vue';
-import MultiColorCard from '../postBodyComponent/multiColorBackground.vue';
+import StaticTitleCard from '@components/postBodyComponent/blackBackground.vue';
+import MultiColorCard from '@components/postBodyComponent/multiColorBackground.vue';
 
 const props = defineProps({
     getBranchYearDataArray: {

@@ -6,7 +6,7 @@
             <div class="col-12 col-md-3">
                 <img
                     src="https://1.bp.blogspot.com/-GspVWYBYfyE/Wfi8WFXMbQI/AAAAAAAABBI/i5VB100O5E0zaX2vTQ_VT_gtVngAk4CrQCLcBGAs/s1600/rgpv%2Bnotes%2Blogo.png"
-                    alt=""
+                    alt="author image"
                     srcset=""
                     class="author-image"
                 />
