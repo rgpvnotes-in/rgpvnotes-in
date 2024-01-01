@@ -1,0 +1,26 @@
+---
+import Layout from '@layouts/Layout.astro';
+import BreadcrumbsComponent from '@components/breadcrumbsComponent/breadcrumbsComponent.vue';
+
+const seoData = {
+    pageTitle: 'view students latest results from RGPV university',
+    canonicalUrl: new URL(Astro.url.pathname, Astro.site),
+    description: 'view students latest results from RGPV university',
+    keywords: 'latest results, RGPV students',
+    imageUrl: '',
+}  
+---
+
+<Layout seoData={seoData} isInnerPage={true}>
+    <main id="main">
+        <BreadcrumbsComponent staticTitle="View Your Result" breadCrumbsArray={[]} />
+
+        <section class="inner-page">
+            <div class="container">
+                <p>Coming Soon</p>
+            </div>
+        </section>
+    </main><!-- End #main -->
+</Layout>
+
+<style></style>
