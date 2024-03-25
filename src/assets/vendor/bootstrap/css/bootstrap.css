@@ -683,6 +683,9 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
 }
+.row #year-list a{
+  cursor: pointer;
+}
 
 .col {
   flex: 1 0 0%;
